@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { styled as muiStyled } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
+import { styled as muiStyled } from "@mui/system";
+import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 
 export const NavContainer = styled.nav`
   display: flex;
@@ -26,36 +26,34 @@ export const NavUl = styled.ul`
 `;
 
 export const LogoExample = styled.p`
-  font-size: 17;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -0.005em;
   margin-right: 51px;
   color: #00e676;
-  letter-spacing: -0.5px;
-  font-weight: bold;
-  font-family: "Roboto";
-  line-height: 20;
 `;
 
 export const SearchContainer = styled.div`
   position: relative;
 `;
 
-export const SearchInput = muiStyled(InputBase)(({ theme }) => ({
-  "& .MuiInputBase-input": {
-    borderRadius: 13,
-    position: "relative",
-    backgroundColor: "#F5F5F5",
-    border: "1px solid rgba(238, 238, 238, 1)",
-    fontSize: 15,
-    fontWeight: 400,
-    color: "rgba(189,189,189,1)",
-    paddingRight: "45px !important",
-    padding: "11px 18px",
-    transition: theme.transitions.create([
-      "border-color",
-      "background-color",
-      "box-shadow",
-    ]),
-    // Use the system font instead of the default Roboto font.
-    fontFamily: ["Roboto"].join(","),
-  },
-}));
+export const SearchInput = muiStyled(InputBase)<InputBaseProps>(
+  ({ theme }) => ({
+    "& .MuiInputBase-input": {
+      borderRadius: 13,
+      position: "relative",
+      backgroundColor: theme.palette.Gray100,
+      border: `1px solid ${theme.palette.Gray200}`,
+      fontSize: 15,
+      fontWeight: 400,
+      lineHeight: 28,
+      color: theme.palette.Gray400,
+      paddingRight: "45px !important",
+      padding: "11px 18px",
+      fontFamily: "Roboto",
+    },
+  })
+);
