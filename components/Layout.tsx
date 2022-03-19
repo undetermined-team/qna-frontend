@@ -1,7 +1,11 @@
 import React from "react";
 import Nav from "./Nav/index";
 
-const Layout = ({ children }) => {
+interface IProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<IProps> = ({ children }) => {
   return (
     <>
       <Nav />

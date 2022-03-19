@@ -9,7 +9,7 @@ import {
 } from "./styles";
 import IconButton from "@mui/material/IconButton";
 
-const Nav = () => {
+const Nav: React.FC = () => {
   return (
     <NavContainer>
       <NavContent>
