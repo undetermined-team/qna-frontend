@@ -39,16 +39,16 @@ const Nav = () => {
               <path
                 d="M8.33333 14.1667C11.555 14.1667 14.1667 11.555 14.1667 8.33333C14.1667 5.11167 11.555 2.5 8.33333 2.5C5.11167 2.5 2.5 5.11167 2.5 8.33333C2.5 11.555 5.11167 14.1667 8.33333 14.1667Z"
                 stroke="#BDBDBD"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M12.5 12.5L17.5 17.5"
                 stroke="#BDBDBD"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </IconButton>
@@ -73,9 +73,9 @@ const Nav = () => {
                 <path
                   d="M27.6585 17.7012L20.6585 11.5762C20.2815 11.2463 19.7185 11.2463 19.3415 11.5762L12.3415 17.7012C12.1245 17.8911 12 18.1654 12 18.4538V27C12 27.5523 12.4477 28 13 28H27C27.5523 28 28 27.5523 28 27V18.4538C28 18.1654 27.8755 17.8911 27.6585 17.7012Z"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </IconButton>
@@ -99,25 +99,25 @@ const Nav = () => {
                 <path
                   d="M20 29C24.9706 29 29 24.9706 29 20C29 15.0294 24.9706 11 20 11C15.0294 11 11 15.0294 11 20C11 24.9706 15.0294 29 20 29Z"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M11 20H29"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M20 29C21.6569 29 23 24.9706 23 20C23 15.0294 21.6569 11 20 11C18.3431 11 17 15.0294 17 20C17 24.9706 18.3431 29 20 29Z"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </IconButton>
@@ -145,9 +145,9 @@ const Nav = () => {
                 <path
                   d="M17.3379 23.9896C18.1586 26.3254 20.3838 28 23.0001 28C24.1808 28 25.2819 27.659 26.2101 27.07L29.0001 28L28.0701 25.21L28.2122 24.9744C28.7136 24.0977 29.0001 23.0823 29.0001 22C29.0001 18.6863 26.3138 16 23.0001 16L22.7752 16.0041L22.6623 16.0101"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </IconButton>
@@ -171,23 +171,23 @@ const Nav = () => {
                 <path
                   d="M20 21C21.6569 21 23 19.6569 23 18C23 16.3431 21.6569 15 20 15C18.3431 15 17 16.3431 17 18C17 19.6569 18.3431 21 20 21Z"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M28 11H12C11.4477 11 11 11.4477 11 12V28C11 28.5523 11.4477 29 12 29H28C28.5523 29 29 28.5523 29 28V12C29 11.4477 28.5523 11 28 11Z"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M15 29C15 26.2386 17.2386 24 20 24C22.7614 24 25 26.2386 25 29"
                   stroke="#BDBDBD"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </IconButton>
