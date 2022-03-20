@@ -18,7 +18,11 @@ const Nav: React.FC = () => {
 
         <SearchContainer>
           <SearchInput
-            sx={{ width: 562, height: 40 }}
+            sx={{
+              ".MuiInputBase-input": { borderRadius: "8px", padding: "11px 18px" },
+              width: 562,
+              height: 40,
+            }}
             placeholder="궁금한게 있다면 검색해보세요."
           />
 
