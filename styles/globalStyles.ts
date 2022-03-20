@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 15px;
   }
 
+  h2 {
+    margin: 0;
+  }
+
   p {
     margin: 0;
   }
