@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { styled as muiStyled } from "@mui/system";
-import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 
 export const NavContainer = styled.nav`
   display: flex;
@@ -39,21 +37,3 @@ export const LogoExample = styled.p`
 export const SearchContainer = styled.div`
   position: relative;
 `;
-
-export const SearchInput = muiStyled(InputBase)<InputBaseProps>(
-  ({ theme }) => ({
-    "& .MuiInputBase-input": {
-      borderRadius: 13,
-      position: "relative",
-      backgroundColor: theme.palette.Gray100,
-      border: `1px solid ${theme.palette.Gray200}`,
-      fontSize: 15,
-      fontWeight: 400,
-      lineHeight: 28,
-      color: theme.palette.Gray400,
-      paddingRight: "45px !important",
-      padding: "11px 18px",
-      fontFamily: "Roboto",
-    },
-  })
-);
