@@ -3,7 +3,6 @@ import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 
 export const SearchInput = muiStyled(InputBase)<InputBaseProps>(({ theme }) => ({
   "& .MuiInputBase-input": {
-    borderRadius: 13,
     position: "relative",
     backgroundColor: theme.palette.Gray100,
     border: `1px solid ${theme.palette.Gray200}`,
@@ -12,7 +11,6 @@ export const SearchInput = muiStyled(InputBase)<InputBaseProps>(({ theme }) => (
     lineHeight: 28,
     color: theme.palette.Gray400,
     paddingRight: "45px !important",
-    padding: "11px 18px",
     fontFamily: "Roboto",
 
     "&:placeholder": {
