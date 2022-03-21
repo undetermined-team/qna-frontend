@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-interface IProps {
+interface UserNameProps {
   url: string;
   name?: String;
 }
@@ -17,7 +17,7 @@ const NickName = styled.a`
   color: ${(props) => props.theme.palette.LightBlueA700};
 `;
 
-const UserName: React.FC<IProps> = (props) => {
+const UserName: React.FC<UserNameProps> = (props) => {
   return (
     <Link href={props.url}>
       <NickName>{props.name}</NickName>
