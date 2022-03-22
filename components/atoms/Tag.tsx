@@ -15,4 +15,7 @@ export const Tag = muiStyled(Chip)<ChipProps>(({ theme }) => ({
     textAlign: "center",
     padding: "4px 16px 5px 10px",
   },
+  ".MuiChip-deleteIcon": {
+    cursor: "pointer",
+  },
 }));
