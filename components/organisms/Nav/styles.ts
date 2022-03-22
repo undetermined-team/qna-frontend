@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const NavContainer = styled.nav`
   display: flex;
   background-color: white;
+  border: 1px solid #eeeeee;
   padding: 10px;
   height: 60px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 export const NavContent = styled.div`
