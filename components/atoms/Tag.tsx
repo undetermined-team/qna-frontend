@@ -2,7 +2,6 @@ import { styled as muiStyled } from "@mui/system";
 import { Chip, ChipProps } from "@mui/material";
 
 export const Tag = muiStyled(Chip)<ChipProps>(({ theme }) => ({
-  marginRight: 8,
   borderRadius: 2,
   height: 22,
   backgroundColor: theme.palette.BlueGray50,
