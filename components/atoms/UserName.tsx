@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface UserNameProps {
   url: string;
-  name?: String;
+  name: String;
 }
 
 const NickName = styled.a`
@@ -12,7 +12,6 @@ const NickName = styled.a`
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
-  line-height: 15px;
   cursor: pointer;
   color: ${(props) => props.theme.palette.LightBlueA700};
 `;
