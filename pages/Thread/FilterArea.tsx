@@ -7,12 +7,10 @@ const FilterArea = () => {
   const onDelete = (e) => {};
 
   return (
-    <div
+    <article
       style={{
-        maxWidth: "708px",
+        minWidth: "705px",
         padding: "23px 26px",
-        border: "2px solid #D6D6D6",
-        borderTop: "none",
         borderBottom: "6px solid #F5F5F5",
       }}
     >
@@ -44,14 +42,14 @@ const FilterArea = () => {
               color: "rgba(0, 200, 83, 1)",
               fontFamily: "Roboto",
               fontStyle: "normal",
-              fontWeight: 500,
+              fontWeight: 600,
               fontSize: 15,
               letterSpacing: "-0.005em",
             }}
           >
             1,515,546
           </span>
-          개의 질문이 답변을 기다리고 있습니다.
+          <span>개의 질문이 답변을 기다리고 있습니다.</span>
         </p>
       </div>
 
@@ -161,7 +159,7 @@ const FilterArea = () => {
           모두 삭제
         </FilterButton>
       </div>
-    </div>
+    </article>
   );
 };
 
