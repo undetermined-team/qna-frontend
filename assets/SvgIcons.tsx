@@ -127,3 +127,9 @@ export const Space = (
     <rect width="220" height="1" fill="#E0E0E0" />
   </svg>
 );
+
+export const EmptyProfile = (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="36" height="36" rx="3" fill="#CFD8DC" />
+  </svg>
+);
