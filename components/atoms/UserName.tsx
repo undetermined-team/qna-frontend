@@ -4,15 +4,15 @@ import Link from "next/link";
 
 interface UserNameProps {
   url: string;
-  name?: String;
+  name: String;
 }
 
 const NickName = styled.a`
   font-family: "Roboto";
   font-style: normal;
+  line-height: 15.23px;
   font-weight: 600;
   font-size: 13px;
-  line-height: 15px;
   cursor: pointer;
   color: ${(props) => props.theme.palette.LightBlueA700};
 `;
