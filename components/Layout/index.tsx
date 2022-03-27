@@ -9,7 +9,9 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Nav />
+      <header>
+        <Nav />
+      </header>
       <LayoutContainer>{children}</LayoutContainer>
     </>
   );
