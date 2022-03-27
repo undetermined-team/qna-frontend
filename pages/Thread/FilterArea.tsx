@@ -10,7 +10,7 @@ const FilterArea = () => {
     <article
       style={{
         minWidth: "705px",
-        padding: "23px 26px",
+        padding: "23px 26px 25px 26px",
         borderBottom: "6px solid #F5F5F5",
       }}
     >
@@ -35,6 +35,7 @@ const FilterArea = () => {
             fontWeight: 400,
             fontSize: 14,
             color: "#9E9E9E",
+            lineHeight: "16.41px",
           }}
         >
           <span
@@ -45,6 +46,7 @@ const FilterArea = () => {
               fontWeight: 600,
               fontSize: 15,
               letterSpacing: "-0.005em",
+              lineHeight: "18px",
             }}
           >
             1,515,546
@@ -59,6 +61,7 @@ const FilterArea = () => {
             color: "#fff",
             backgroundColor: "#00B0FF",
             height: 36,
+            marginRight: "4px",
 
             "&:hover": {
               backgroundColor: "#00B0FF",
@@ -74,7 +77,7 @@ const FilterArea = () => {
             color: "#757575",
             border: "1px solid #E0E0E0",
             height: 36,
-
+            marginRight: "4px",
             "&:hover": {
               borderColor: "#E0E0E0",
             },
@@ -89,7 +92,7 @@ const FilterArea = () => {
             color: "#757575",
             border: "1px solid #E0E0E0",
             height: 36,
-
+            marginRight: "4px",
             "&:hover": {
               borderColor: "#E0E0E0",
             },
@@ -104,7 +107,7 @@ const FilterArea = () => {
             color: "#757575",
             border: "1px solid #E0E0E0",
             height: 36,
-
+            marginRight: "4px",
             "&:hover": {
               borderColor: "#E0E0E0",
             },
@@ -142,10 +145,18 @@ const FilterArea = () => {
       </div>
 
       <div style={{ position: "relative" }}>
-        <Tag label="javascript" onDelete={onDelete} style={{ fontWeight: 600 }} />
-        <Tag label="vue.js" onDelete={onDelete} style={{ fontWeight: 600 }} />
-        <Tag label="react-native" onDelete={onDelete} style={{ fontWeight: 600 }} />
-        <Tag label="react-js" onDelete={onDelete} style={{ fontWeight: 600 }} />
+        <Tag
+          label="javascript"
+          onDelete={onDelete}
+          style={{ fontWeight: 600, marginRight: "8px" }}
+        />
+        <Tag label="vue.js" onDelete={onDelete} style={{ fontWeight: 600, marginRight: "8px" }} />
+        <Tag
+          label="react-native"
+          onDelete={onDelete}
+          style={{ fontWeight: 600, marginRight: "8px" }}
+        />
+        <Tag label="react-js" onDelete={onDelete} style={{ fontWeight: 600, marginRight: "8px" }} />
 
         <FilterButton
           sx={{
@@ -153,6 +164,7 @@ const FilterArea = () => {
             height: 36,
             color: "#FF8F00",
             right: 0,
+            padding: 0,
           }}
           variant="text"
         >

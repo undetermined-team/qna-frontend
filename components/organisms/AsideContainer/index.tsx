@@ -7,7 +7,7 @@ const Title = styled.strong`
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
-  line-height: 15px;
+  line-height: 15.23px;
   height: 15px;
 `;
 
@@ -30,6 +30,9 @@ const index: React.FC<AsideProps> = (props) => {
             color: "#FF8F00",
             height: "15px",
             right: 0,
+            bottom: 5,
+            padding: 0,
+            lineHeight: "14.06px",
             fontFamily: "Roboto",
             fontStyle: "normal",
             fontWeight: 400,
@@ -40,7 +43,6 @@ const index: React.FC<AsideProps> = (props) => {
           {props.subButtonText}
         </FilterButton>
       </div>
-
       <div style={{ width: 220 }}>{props.children}</div>
     </aside>
   );

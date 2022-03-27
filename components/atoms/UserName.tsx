@@ -10,6 +10,7 @@ interface UserNameProps {
 const NickName = styled.a`
   font-family: "Roboto";
   font-style: normal;
+  line-height: 15.23px;
   font-weight: 600;
   font-size: 13px;
   cursor: pointer;

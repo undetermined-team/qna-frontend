@@ -12,9 +12,11 @@ export const Tag = muiStyled(Chip)<ChipProps>(({ theme }) => ({
     fontSize: 11,
     color: theme.palette.BlueGray600,
     textAlign: "center",
-    padding: "4px 16px 5px 10px",
+    padding: "4px 10px",
+    lineHeight: "13px",
   },
   ".MuiChip-deleteIcon": {
+    marginLeft: "-4px",
     cursor: "pointer",
   },
 }));
