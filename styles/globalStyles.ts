@@ -3,10 +3,10 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   html,
   body {
+    font-family: "Roboto";
     padding: 0;
     margin: 0;
-    letter-spacing: -1px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   h2 {
