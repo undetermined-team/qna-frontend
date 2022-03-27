@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import { ThemeProvider } from "styled-components";
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { muiTheme, theme } from "../styles/theme";
+import { RecoilRoot } from 'recoil';
 import CssBaseline from "@mui/material/CssBaseline";
 
 function MyApp({ Component, pageProps }) {
@@ -13,7 +14,9 @@ function MyApp({ Component, pageProps }) {
           <GlobalStyle />
           <Layout>
             <CssBaseline />
-            <Component {...pageProps} />
+            <RecoilRoot>
+              <Component {...pageProps} />
+            </RecoilRoot>
           </Layout>
         </MuiThemeProvider>
       </ThemeProvider>
