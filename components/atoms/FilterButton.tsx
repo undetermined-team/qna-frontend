@@ -8,6 +8,7 @@ export const FilterButton = muiStyled(Button)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 2,
   boxShadow: "none",
+  lineHeight: "normal",
 
   "&:hover": {
     backgroundColor: "#fff",
