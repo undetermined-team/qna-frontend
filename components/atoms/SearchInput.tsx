@@ -13,8 +13,9 @@ export const SearchInput = muiStyled(InputBase)<InputBaseProps>(({ theme }) => (
     paddingRight: "45px !important",
     fontFamily: "Roboto",
 
-    "&:placeholder": {
+    "&::placeholder": {
       color: theme.palette.Gray400,
+      opacity: 1,
     },
   },
 }));
