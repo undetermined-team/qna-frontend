@@ -24,7 +24,6 @@ export const NavUl = styled.ul`
 `;
 
 export const LogoExample = styled.p`
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 17px;

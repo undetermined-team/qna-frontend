@@ -11,7 +11,6 @@ export const SearchInput = muiStyled(InputBase)<InputBaseProps>(({ theme }) => (
     lineHeight: 28,
     color: theme.palette.Gray400,
     paddingRight: "45px !important",
-    fontFamily: "Roboto",
 
     "&::placeholder": {
       color: theme.palette.Gray400,

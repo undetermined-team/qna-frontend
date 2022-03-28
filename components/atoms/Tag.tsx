@@ -7,7 +7,6 @@ export const Tag = muiStyled(Chip)<ChipProps>(({ theme }) => ({
   backgroundColor: theme.palette.BlueGray50,
 
   ".MuiChip-label": {
-    fontFamily: "Roboto",
     fontStyle: "normal",
     fontSize: 11,
     color: theme.palette.BlueGray600,

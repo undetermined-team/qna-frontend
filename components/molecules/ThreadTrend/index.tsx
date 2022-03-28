@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Label = styled.span`
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -14,7 +13,6 @@ const Label = styled.span`
 `;
 
 const Count = styled.span`
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

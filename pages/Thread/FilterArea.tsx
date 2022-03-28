@@ -17,7 +17,6 @@ const FilterArea = () => {
       <div style={{ marginBottom: "22px" }}>
         <h2
           style={{
-            fontFamily: "Roboto",
             fontStyle: "normal",
             fontWeight: 700,
             fontSize: 20,
@@ -30,7 +29,6 @@ const FilterArea = () => {
 
         <p
           style={{
-            fontFamily: "Roboto",
             fontStyle: "normal",
             fontWeight: 400,
             fontSize: 14,
@@ -41,7 +39,6 @@ const FilterArea = () => {
           <span
             style={{
               color: "rgba(0, 200, 83, 1)",
-              fontFamily: "Roboto",
               fontStyle: "normal",
               fontWeight: 600,
               fontSize: 15,

@@ -2,7 +2,6 @@ import { styled as muiStyled } from "@mui/system";
 import { Button } from "@mui/material";
 
 export const FilterButton = muiStyled(Button)(({ theme }) => ({
-  fontFamily: "Roboto",
   fontStyle: "normal",
   fontWeight: 400,
   fontSize: 14,

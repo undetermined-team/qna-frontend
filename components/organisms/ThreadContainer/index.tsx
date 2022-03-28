@@ -64,7 +64,6 @@ const index: React.FC<ThreadContainerProps> = (props) => {
             style={{
               marginLeft: 18,
               color: "#9E9E9E",
-              fontFamily: "Roboto",
               fontWeight: 600,
               fontSize: "13px",
               lineHeight: "15.23px",

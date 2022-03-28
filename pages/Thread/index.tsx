@@ -39,7 +39,6 @@ const Thread = () => {
         <p
           style={{
             padding: "13px 26px",
-            fontFamily: "Roboto",
             fontStyle: "normal",
             fontWeight: 400,
             fontSize: 13,

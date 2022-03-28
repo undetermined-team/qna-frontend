@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { FilterButton } from "../../atoms/FilterButton";
 
 const Title = styled.strong`
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -33,7 +32,6 @@ const index: React.FC<AsideProps> = (props) => {
             bottom: 5,
             padding: 0,
             lineHeight: "14.06px",
-            fontFamily: "Roboto",
             fontStyle: "normal",
             fontWeight: 400,
             fontSize: 12,
