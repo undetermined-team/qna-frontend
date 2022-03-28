@@ -1,7 +1,7 @@
 import React from "react";
-import { FilterButton } from "../../atoms/FilterButton";
+import styled from "styled-components";
+import { Tag } from "../../atoms/Tag";
 import UserName from "../../atoms/UserName";
-import DeleteTag from "../../molecules/DeleteTag";
 import ThreadTrend from "../../molecules/ThreadTrend";
 
 interface ThreadContainerProps {
@@ -12,43 +12,48 @@ interface ThreadContainerProps {
   trend: Object;
 }
 
+const ThreadTitle = styled.span`
+  ${(props) => props.theme.typography.Heading3};
+  margin-right: 12px;
+`;
+
+const ThreadBounty = styled.span`
+  ${(props) => props.theme.typography.Captions};
+  padding: 3px;
+  background-color: #69f0ae;
+  color: "#004D40";
+  border-radius: 2px;
+  width: 29px;
+  text-align: "center";
+  height: 21px;
+`;
+
+const ThreadContainer = styled.div`
+  position: relative;
+  padding: 13px 26px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  border-right: none;
+  border-left: none;
+`;
+
+const ThreadTime = styled.span`
+  ${(props) => props.theme.typography.Captions};
+  margin-left: 18px;
+  color: #9e9e9e;
+  text-align: right;
+`;
+
 const index: React.FC<ThreadContainerProps> = (props) => {
   return (
-    <div
-      style={{
-        position: "relative",
-        padding: "13px 26px",
-        border: "1px solid #E0E0E0",
-        backgroundColor: "white",
-        borderRight: "none",
-        borderLeft: "none",
-      }}
-    >
+    <ThreadContainer>
       <div style={{ marginBottom: 11 }}>
-        <b style={{ marginRight: 12, fontSize: 15, lineHeight: "18px", letterSpacing: "-0.005em" }}>
-          {props.title}
-        </b>
-        <span
-          style={{
-            padding: "3px",
-            backgroundColor: "#69F0AE",
-            color: "#004D40",
-            borderRadius: 2,
-            width: 29,
-            fontWeight: 600,
-            fontSize: 13,
-            fontStyle: "normal",
-            lineHeight: "15px",
-            textAlign: "center",
-            height: 21,
-          }}
-        >
-          +{props.bounty}
-        </span>
+        <ThreadTitle>{props.title}</ThreadTitle>
+        <ThreadBounty>+{props.bounty}</ThreadBounty>
       </div>
 
       {props.tags.map((tag, i) => (
-        <DeleteTag key={i} style={{ marginRight: "8px", fontWeight: 600 }} label={tag} />
+        <Tag key={i} style={{ marginRight: "8px", fontWeight: 600 }} label={tag} />
       ))}
 
       <div style={{ position: "absolute", right: 18, top: 13 }}>
@@ -60,21 +65,10 @@ const index: React.FC<ThreadContainerProps> = (props) => {
 
         <div style={{ textAlign: "right" }}>
           <UserName url="/" name={props.userName} />
-          <span
-            style={{
-              marginLeft: 18,
-              color: "#9E9E9E",
-              fontWeight: 600,
-              fontSize: "13px",
-              lineHeight: "15.23px",
-              textAlign: "right",
-            }}
-          >
-            1시간 전
-          </span>
+          <ThreadTime>1시간 전</ThreadTime>
         </div>
       </div>
-    </div>
+    </ThreadContainer>
   );
 };
 
