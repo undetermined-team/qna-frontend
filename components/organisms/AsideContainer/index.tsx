@@ -10,6 +10,19 @@ const Title = styled.strong`
   height: 15px;
 `;
 
+const AsideSubButtonStyle = {
+  position: "absolute",
+  color: "#FF8F00",
+  height: "15px",
+  right: 0,
+  bottom: 5,
+  padding: 0,
+  lineHeight: "14.06px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  fontSize: 12,
+};
+
 interface AsideProps {
   title: String;
   subButtonText: String;
@@ -23,21 +36,7 @@ const index: React.FC<AsideProps> = (props) => {
       <div style={{ marginBottom: 9, position: "relative" }}>
         <Title>{props.title}</Title>
 
-        <FilterButton
-          sx={{
-            position: "absolute",
-            color: "#FF8F00",
-            height: "15px",
-            right: 0,
-            bottom: 5,
-            padding: 0,
-            lineHeight: "14.06px",
-            fontStyle: "normal",
-            fontWeight: 400,
-            fontSize: 12,
-          }}
-          variant="text"
-        >
+        <FilterButton sx={AsideSubButtonStyle} variant="text">
           {props.subButtonText}
         </FilterButton>
       </div>

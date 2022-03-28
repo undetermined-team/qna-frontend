@@ -261,20 +261,96 @@ export const theme = {
   },
 
   typography: {
-    Tags: "Roboto Semibold 11px",
-    Title: "Roboto Extra Bold, 30px",
-    Subtitle: "Roboto Bold, 24px",
-    Heading1: "Roboto Bold 20px",
-    Heading2: "Roboto Bold 17px",
-    Heading3: "Roboto Medium 15px",
-    Body: "Roboto Regular 15px",
-    Body2: "Roboto Regular 14px",
-    Captions: "Roboto Semibold 13px",
-    Footnote: "Roboto Regular 13px",
-    Footnote2: "Roboto Regular 12px",
-    Nickname: "Roboto Semibold 13px",
-    Body3: "Regular 11px",
-    Code: "JetBrains Mono Regular 15px",
+    Title: `
+      font-style: normal;
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 35px;
+      letter-spacing: -0.005em;
+    `,
+    Subtitle: `
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: -0.005em;
+    `,
+    Heading1: `
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: -0.005em;
+    `,
+    Heading2: `
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 20px;
+      letter-spacing: -0.005em;
+    `,
+    Heading3: `
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: -0.005em;
+    `,
+    Body: `
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 28px;
+    `,
+    Body2: `
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+    `,
+    Captions: `
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 15px;
+    `,
+    Footnote: `
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 24px;
+    `,
+    Footnote2: `
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+    `,
+    Nickname: `
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 15px;
+      color: #0091EA;
+    `,
+    Body3: `
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13px;
+    `,
+    Tags: `
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 20px;
+      `,
+    Button: `
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      `,
   },
 };
 
