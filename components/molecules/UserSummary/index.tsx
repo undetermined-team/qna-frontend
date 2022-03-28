@@ -5,7 +5,7 @@ import UserName from "../../atoms/UserName";
 interface UserSummaryProps {
   userName: String;
   bounty: Number;
-  index: Number;
+  index?: Number;
   style?: React.CSSProperties;
 }
 
