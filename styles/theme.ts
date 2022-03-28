@@ -303,21 +303,18 @@ export const theme = {
       line-height: 28px;
     `,
     Body2: `
-      font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
       line-height: 16px;
     `,
     Captions: `
-      font-family: 'Roboto';
       font-style: normal;
       font-weight: 600;
       font-size: 13px;
-      line-height: 24px;
+      line-height: 15px;
     `,
     Footnote: `
-      font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
       font-size: 13px;
