@@ -5,12 +5,18 @@ import UserName from "../../atoms/UserName";
 import ThreadTrend from "../ThreadTrend";
 import { ThreadBounty, ThreadContainer, ThreadTime, ThreadTitle } from "./styles";
 
+interface ITrend {
+  view: Number;
+  like: Number;
+  answerCount: Number;
+}
+
 export interface ThreadContainerProps {
   title: String;
   tags?: Array<String>;
   userName: String;
   bounty: Number;
-  trend: Object;
+  trend: ITrend;
 }
 
 const ThreadHeader = styled.header`
