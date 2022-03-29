@@ -1,6 +1,6 @@
 import React from "react";
-import FilterArea from "./FilterArea";
 import { Tag } from "../../components/atoms/Tag";
+import FilterArea from "../../components/template/ThreadPage/FilterArea";
 import AsideContainer from "../../components/organisms/AsideContainer";
 import { Space } from "../../assets/SvgIcons";
 import ThreadContainer from "../../components/organisms/ThreadContainer";

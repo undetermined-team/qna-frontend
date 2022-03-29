@@ -1,7 +1,7 @@
 import React from "react";
-import { SearchInput } from "../../components/atoms/SearchInput";
-import Tag from "../../components/molecules/DeleteTag";
-import { FilterButton } from "../../components/atoms/FilterButton";
+import { SearchInput } from "../../atoms/SearchInput";
+import Tag from "../../molecules/DeleteTag";
+import { FilterButton } from "../../atoms/FilterButton";
 
 const FilterArea = () => {
   const onDelete = (e) => {};
