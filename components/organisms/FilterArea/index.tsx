@@ -2,57 +2,30 @@ import React from "react";
 import { SearchInput } from "../../atoms/SearchInput";
 import Tag from "../../molecules/DeleteTag";
 import { FilterButton } from "../../atoms/FilterButton";
+import {
+  FilterLayout,
+  ServiceAbout,
+  ServiceSummary,
+  QuestionDescription,
+  QuestionCount,
+  ButtonGroup,
+} from "./styles";
 
 const FilterArea = () => {
   const onDelete = (e) => {};
 
   return (
-    <article
-      style={{
-        minWidth: "705px",
-        padding: "23px 26px 25px 26px",
-        borderBottom: "6px solid #F5F5F5",
-      }}
-    >
-      <div style={{ marginBottom: "22px" }}>
-        <h2
-          style={{
-            fontStyle: "normal",
-            fontWeight: 700,
-            fontSize: 20,
-            letterSpacing: "-0.005em",
-            color: "#212121",
-          }}
-        >
-          여러분의 지식을 나눠주세요.
-        </h2>
+    <FilterLayout>
+      <ServiceAbout>
+        <ServiceSummary>여러분의 지식을 나눠주세요.</ServiceSummary>
 
-        <p
-          style={{
-            fontStyle: "normal",
-            fontWeight: 400,
-            fontSize: 14,
-            color: "#9E9E9E",
-            lineHeight: "16.41px",
-          }}
-        >
-          <span
-            style={{
-              color: "rgba(0, 200, 83, 1)",
-              fontStyle: "normal",
-              fontWeight: 600,
-              fontSize: 15,
-              letterSpacing: "-0.005em",
-              lineHeight: "18px",
-            }}
-          >
-            1,515,546
-          </span>
+        <QuestionDescription>
+          <QuestionCount>1,515,546</QuestionCount>
           <span>개의 질문이 답변을 기다리고 있습니다.</span>
-        </p>
-      </div>
+        </QuestionDescription>
+      </ServiceAbout>
 
-      <div style={{ marginBottom: "11px", position: "relative" }}>
+      <ButtonGroup>
         <FilterButton
           sx={{
             color: "#fff",
@@ -139,7 +112,7 @@ const FilterArea = () => {
         >
           질문하기
         </FilterButton>
-      </div>
+      </ButtonGroup>
 
       <div style={{ position: "relative" }}>
         <Tag
@@ -168,7 +141,7 @@ const FilterArea = () => {
           모두 삭제
         </FilterButton>
       </div>
-    </article>
+    </FilterLayout>
   );
 };
 
