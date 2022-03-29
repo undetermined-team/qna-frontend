@@ -1,7 +1,7 @@
 import React from "react";
 import { Tag } from "../../components/atoms/Tag";
 import FilterArea from "../../components/template/ThreadPage/FilterArea";
-import AsideContainer from "../../components/organisms/AsideContainer";
+import AsideContainer from "../../components/molecules/AsideContainer";
 import { Space } from "../../assets/SvgIcons";
 import ThreadContainer from "../../components/organisms/ThreadContainer";
 import UserSummary from "../../components/molecules/UserSummary";
