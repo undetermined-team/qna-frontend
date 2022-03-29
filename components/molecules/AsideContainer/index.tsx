@@ -1,47 +1,33 @@
 import React from "react";
-import styled from "styled-components";
 import { FilterButton } from "../../atoms/FilterButton";
-
-const Title = styled.strong`
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 15.23px;
-  height: 15px;
-`;
-
-const AsideSubButtonStyle = {
-  position: "absolute",
-  color: "#FF8F00",
-  height: "15px",
-  right: 0,
-  bottom: 5,
-  padding: 0,
-  lineHeight: "14.06px",
-  fontStyle: "normal",
-  fontWeight: 400,
-  fontSize: 12,
-};
+import {
+  AsideWrapper,
+  AsideHeader,
+  AsideTitle,
+  AsideSubButtonStyle,
+  AsideChildren,
+} from "./styles";
 
 interface AsideProps {
   title: String;
   subButtonText: String;
-  onTextClick: (e: React.MouseEvent<HTMLSpanElement>) => void;
+  onTextClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   children?: React.ReactNode;
 }
 
 const index: React.FC<AsideProps> = (props) => {
   return (
-    <aside style={{ paddingTop: "18px" }}>
-      <div style={{ marginBottom: 9, position: "relative" }}>
-        <Title>{props.title}</Title>
+    <AsideWrapper>
+      <AsideHeader>
+        <AsideTitle>{props.title}</AsideTitle>
 
-        <FilterButton sx={AsideSubButtonStyle} variant="text">
+        <FilterButton sx={AsideSubButtonStyle} variant="text" onClick={props.onTextClick}>
           {props.subButtonText}
         </FilterButton>
-      </div>
-      <div style={{ width: 220 }}>{props.children}</div>
-    </aside>
+      </AsideHeader>
+
+      <AsideChildren>{props.children}</AsideChildren>
+    </AsideWrapper>
   );
 };
 
