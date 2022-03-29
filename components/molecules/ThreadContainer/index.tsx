@@ -1,30 +1,43 @@
 import React from "react";
+import styled from "styled-components";
 import { Tag } from "../../atoms/Tag";
 import UserName from "../../atoms/UserName";
-import ThreadTrend from "../../molecules/ThreadTrend";
+import ThreadTrend from "../ThreadTrend";
 import { ThreadBounty, ThreadContainer, ThreadTime, ThreadTitle } from "./styles";
 
-interface ThreadContainerProps {
+export interface ThreadContainerProps {
   title: String;
-  tags: Array<String>;
+  tags?: Array<String>;
   userName: String;
   bounty: Number;
   trend: Object;
 }
 
+const ThreadHeader = styled.header`
+  margin-bottom: 11px;
+`;
+
+const ThreadInfoWrapper = styled.div`
+  position: absolute;
+  right: 18px;
+  top: 13px;
+`;
+
+const ThreadInfo = styled.div``;
+
 const index: React.FC<ThreadContainerProps> = (props) => {
   return (
     <ThreadContainer>
-      <div style={{ marginBottom: 11 }}>
+      <ThreadHeader>
         <ThreadTitle>{props.title}</ThreadTitle>
         <ThreadBounty>+{props.bounty}</ThreadBounty>
-      </div>
+      </ThreadHeader>
 
       {props.tags.map((tag, i) => (
         <Tag key={i} style={{ marginRight: "8px", fontWeight: 600 }} label={tag} />
       ))}
 
-      <div style={{ position: "absolute", right: 18, top: 13 }}>
+      <ThreadInfoWrapper>
         <div style={{ marginBottom: 8 }}>
           <ThreadTrend label="조회" style={{ marginRight: 18 }} count={props.trend.view} />
           <ThreadTrend label="좋아요" style={{ marginRight: 18 }} count={props.trend.like} />
@@ -35,7 +48,7 @@ const index: React.FC<ThreadContainerProps> = (props) => {
           <UserName url="/" name={props.userName} />
           <ThreadTime>1시간 전</ThreadTime>
         </div>
-      </div>
+      </ThreadInfoWrapper>
     </ThreadContainer>
   );
 };

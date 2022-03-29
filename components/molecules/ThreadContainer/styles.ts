@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const ThreadTitle = styled.span`
+export const ThreadTitle = styled.h3`
+  display: inline;
   ${(props) => props.theme.typography.Heading3};
   margin-right: 12px;
 `;
@@ -16,7 +17,7 @@ export const ThreadBounty = styled.span`
   height: 21px;
 `;
 
-export const ThreadContainer = styled.div`
+export const ThreadContainer = styled.article`
   position: relative;
   padding: 13px 26px;
   border: 1px solid #e0e0e0;
@@ -25,7 +26,7 @@ export const ThreadContainer = styled.div`
   border-left: none;
 `;
 
-export const ThreadTime = styled.span`
+export const ThreadTime = styled.time`
   ${(props) => props.theme.typography.Captions};
   margin-left: 18px;
   color: #9e9e9e;
