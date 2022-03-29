@@ -20,6 +20,7 @@ export interface ThreadContainerProps {
 }
 
 const ThreadHeader = styled.header`
+  max-width: 498px;
   margin-bottom: 11px;
 `;
 
