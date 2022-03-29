@@ -1,38 +1,30 @@
 import React from "react";
-import styled from "styled-components";
 import { EmptyProfile } from "../../../assets/SvgIcons";
 import UserName from "../../atoms/UserName";
+import { UserSummaryContainer, ProfileWrapper, Rank, ProfileInfo, Bounty } from "./styles";
 
 interface UserSummaryProps {
   userName: String;
   bounty: Number;
+  profile?: string;
   index?: Number;
   style?: React.CSSProperties;
 }
 
-const Bounty = styled.p`
-  ${(props) => props.theme.typography.Captions};
-  color: #616161;
-  margin-top: 3px;
-`;
-
-const Rank = styled.span`
-  ${(props) => props.theme.typography.Captions};
-  margin-right: 9px;
-`;
-
 const index: React.FC<UserSummaryProps> = (props) => {
   return (
-    <div style={{ display: "flex", height: 36, ...props.style }}>
-      <p style={{ marginRight: 8 }}>{EmptyProfile}</p>
+    <UserSummaryContainer style={props.style}>
+      <ProfileWrapper>
+        {props.profile ? <img width={36} height={36} src={props.profile} /> : EmptyProfile}
+      </ProfileWrapper>
 
       <Rank>{props.index}</Rank>
 
-      <div style={{ lineHeight: "15.23px" }}>
+      <ProfileInfo>
         <UserName name={props.userName} url="/" />
         <Bounty>{props.bounty.toString().replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,")}</Bounty>
-      </div>
-    </div>
+      </ProfileInfo>
+    </UserSummaryContainer>
   );
 };
 
