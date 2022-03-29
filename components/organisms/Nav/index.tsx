@@ -38,31 +38,33 @@ const Nav: React.FC = () => {
           </IconButton>
         </SearchContainer>
 
-        <NavUl>
-          <li>
-            <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-              {HomeIcon}
-            </IconButton>
-          </li>
+        <nav>
+          <NavUl>
+            <li>
+              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
+                {HomeIcon}
+              </IconButton>
+            </li>
 
-          <li>
-            <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-              {NetWorkIcon}
-            </IconButton>
-          </li>
+            <li>
+              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
+                {NetWorkIcon}
+              </IconButton>
+            </li>
 
-          <li>
-            <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-              {MessageIcon}
-            </IconButton>
-          </li>
+            <li>
+              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
+                {MessageIcon}
+              </IconButton>
+            </li>
 
-          <li>
-            <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-              {ProfileIcon}
-            </IconButton>
-          </li>
-        </NavUl>
+            <li>
+              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
+                {ProfileIcon}
+              </IconButton>
+            </li>
+          </NavUl>
+        </nav>
       </NavContent>
     </NavContainer>
   );

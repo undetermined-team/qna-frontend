@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavContainer = styled.nav`
+export const NavContainer = styled.header`
   display: flex;
   background-color: white;
   border: 1px solid #eeeeee;
