@@ -20,6 +20,7 @@ export interface ThreadContainerProps {
 }
 
 const ThreadHeader = styled.header`
+  max-width: 498px;
   margin-bottom: 11px;
 `;
 
@@ -28,8 +29,6 @@ const ThreadInfoWrapper = styled.div`
   right: 18px;
   top: 13px;
 `;
-
-const ThreadInfo = styled.div``;
 
 const index: React.FC<ThreadContainerProps> = (props) => {
   return (

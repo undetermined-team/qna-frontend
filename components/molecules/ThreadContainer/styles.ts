@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
 export const ThreadTitle = styled.h3`
-  display: inline;
+  display: inline-flex;
   ${(props) => props.theme.typography.Heading3};
+  line-height: 19px;
   margin-right: 12px;
+  max-width: 470px;
+  max-height: 58px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
 `;
 
 export const ThreadBounty = styled.span`
