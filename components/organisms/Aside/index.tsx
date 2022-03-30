@@ -1,9 +1,10 @@
 import React from "react";
-import { Space } from "../../../assets/SvgIcons";
+import { DeleteIcon, Space } from "../../../assets/SvgIcons";
 import { Tag } from "../../atoms/Tag";
 import styled from "styled-components";
 import AsideContainer from "../../molecules/AsideContainer";
 import UserSummary from "../../molecules/UserSummary";
+import RecentQuestion from "../../molecules/RecentQuestion";
 
 const AsideLayout = styled.aside`
   border-right: 1px solid #d6d6d6;
@@ -14,8 +15,6 @@ const exmapleBountyRank = [
   {
     userName: "jojorabbit21",
     bounty: 8750,
-    profileImage:
-      "https://icons.iconarchive.com/icons/custom-icon-design/pretty-office-8/48/User-blue-icon.png",
   },
   {
     userName: "naerkf0123",
@@ -35,7 +34,15 @@ const exmapleBountyRank = [
   },
 ];
 
+const RecentQuestionWrapper = styled.ol`
+  padding: 10px 9px;
+  background-color: #eceff1;
+  max-height: 96px;
+  border-radius: 3px;
+`;
+
 const onTextButton = (e) => {};
+const onDelete = () => {};
 
 const index = () => {
   return (
@@ -52,11 +59,27 @@ const index = () => {
 
       {Space}
 
-      <AsideContainer
-        title="최근에 본 질문"
-        subButtonText="전체보기"
-        onTextClick={onTextButton}
-      ></AsideContainer>
+      <AsideContainer title="최근에 본 질문" subButtonText="전체보기" onTextClick={onTextButton}>
+        <RecentQuestionWrapper>
+          <RecentQuestion
+            title="위도/경도 불러오는 함수 질문드립니다."
+            link="/"
+            onDelete={onDelete}
+          />
+
+          <RecentQuestion
+            title="위도/경도 불러오는 함수 질문드립니다."
+            link="/"
+            onDelete={onDelete}
+          />
+
+          <RecentQuestion
+            title="위도/경도 불러오는 함수 질문드립니다."
+            link="/"
+            onDelete={onDelete}
+          />
+        </RecentQuestionWrapper>
+      </AsideContainer>
 
       {Space}
 
@@ -65,7 +88,6 @@ const index = () => {
           <UserSummary
             userName={profile.userName}
             bounty={profile.bounty}
-            profile={profile.profileImage}
             index={i + 1}
             key={i}
             style={{ marginBottom: 14 }}
