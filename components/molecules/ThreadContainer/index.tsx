@@ -30,8 +30,6 @@ const ThreadInfoWrapper = styled.div`
   top: 13px;
 `;
 
-const ThreadInfo = styled.div``;
-
 const index: React.FC<ThreadContainerProps> = (props) => {
   return (
     <ThreadContainer>
