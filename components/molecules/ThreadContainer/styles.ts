@@ -38,3 +38,47 @@ export const ThreadTime = styled.time`
   color: #9e9e9e;
   text-align: right;
 `;
+
+export const ThreadHeader = styled.header`
+  max-width: 498px;
+  margin-bottom: 11px;
+`;
+
+export const ThreadInfoWrapper = styled.div`
+  position: absolute;
+  right: 18px;
+  top: 13px;
+`;
+
+export const TagWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  position: relative;
+  max-width: 30rem;
+  height: 24px;
+  overflow-y: hidden;
+  white-space: nowrap;
+`;
+
+export const TagShowMore = styled.button`
+  position: absolute;
+  right: 0;
+  width: 31px;
+  height: 21px;
+  background-color: #ffffff;
+  border: 1px solid ${(props) => props.theme.palette.BlueGray200};
+  padding: 5px 9px;
+  text-align: center;
+  color: ${(props) => props.theme.palette.BlueGray500};
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid ${(props) => props.theme.palette.BlueGray400};
+    color: ${(props) => props.theme.palette.BlueGray800};
+  }
+  &:active {
+    border: 1px solid ${(props) => props.theme.palette.BlueGray400};
+    color: ${(props) => props.theme.palette.BlueGray800};
+  }
+`;

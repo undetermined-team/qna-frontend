@@ -17,9 +17,28 @@ const ThreadSection = styled.section`
 
 const exampleThreadList = [
   {
-    title:
-      "고결하고 아름다운 사랑의 형태이다. 사랑이 없는 사람은 쉽게 용서하지 못한다. 용서는 평화와 행복을 그 보답으로 준다. 그대, 용서함으로써 행복 하라! 용감한 자만이 용서할 줄 알고 비겁한 자는 용서하지 않는다. 용서는 남에게는 자주 베풀지만 자신에게는 베풀지 마라.고결하고 아름다운 사랑의 형태이다. 사랑이 없는 사람은 쉽게 용서하지 못한다. 용서는 평화와 행복을 그 보답으로 준다. 그대, 용서함으로써 행복 하라! 용감한 자만이 용서할 줄 알고 비겁한 자는 용서하지 않는다. 용서는 남에게는 자주 베풀지만 자신에게는 베풀지 마라.고결하고 아름다운 사랑의 형태이다. 사랑이 없는 사람은 쉽게 용서하지 못한다. 용서는 평화와 행복을 그 보답으로 준다. 그대, 용서함으로써 행복 하라! 용감한 자만이 용서할 줄 알고 비겁한 자는 용서하지 않는다. 용서는 남에게는 자주 베풀지만 자신에게는 베풀지 마라.고결하고 아름다운 사랑의 형태이다. 사랑이 없는 사람은 쉽게 용서하지 못한다. 용서는 평화와 행복을 그 보답으로 준다. 그대, 용서함으로써 행복 하라! 용감한 자만이 용서할 줄 알고 비겁한 자는 용서하지 않는다. 용서는 남에게는 자주 베풀지만 자신에게는 베풀지 마라.",
-    tags: ["javascript", "react", "typescript"],
+    title: "Title Here",
+    tags: [
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+      "next.js",
+    ],
+    userName: "Jojorabbit21",
+    bounty: 75,
+    trend: { view: 87, like: 13, answerCount: 3 },
+  },
+  {
+    title: "Title Here",
+    tags: ["next.js", "next.js", "next.js", "next.js"],
     userName: "Jojorabbit21",
     bounty: 75,
     trend: { view: 87, like: 13, answerCount: 3 },
