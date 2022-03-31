@@ -17,11 +17,12 @@ export const ThreadBounty = styled.span`
   ${(props) => props.theme.typography.Captions};
   padding: 3px;
   background-color: #69f0ae;
-  color: "#004D40";
+  color: #004d40;
   border-radius: 2px;
   width: 29px;
-  text-align: "center";
+  text-align: center;
   height: 21px;
+  cursor: default;
 `;
 
 export const ThreadContainer = styled.article`
