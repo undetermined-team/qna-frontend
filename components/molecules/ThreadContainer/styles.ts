@@ -10,6 +10,7 @@ export const ThreadTitle = styled.h3`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: normal;
+  cursor: pointer;
 `;
 
 export const ThreadBounty = styled.span`
@@ -76,9 +77,21 @@ export const TagShowMore = styled.button`
   &:hover {
     border: 1px solid ${(props) => props.theme.palette.BlueGray400};
     color: ${(props) => props.theme.palette.BlueGray800};
+
+    svg {
+      path {
+        fill: ${(props) => props.theme.palette.BlueGray800};
+      }
+    }
   }
-  &:active {
+  &:focus {
     border: 1px solid ${(props) => props.theme.palette.BlueGray400};
     color: ${(props) => props.theme.palette.BlueGray800};
+
+    svg {
+      path {
+        fill: ${(props) => props.theme.palette.BlueGray800};
+      }
+    }
   }
 `;

@@ -9,10 +9,6 @@ export const RecentQuestionTitle = styled.h4`
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export const RecentQuestionList = styled.li`
