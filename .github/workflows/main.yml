@@ -25,4 +25,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            /home/runner/work/Lumiere/Lumiere/client/build out s3://qna-github-action
+            out s3://qna-github-action
