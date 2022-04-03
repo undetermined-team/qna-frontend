@@ -26,3 +26,4 @@ jobs:
             --recursive \
             --region ap-northeast-2 \
             out s3://qna-github-action
+            pwd
