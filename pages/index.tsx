@@ -1,8 +1,8 @@
 import React from "react";
-import FilterArea from "../components/organisms/FilterArea";
+import FilterArea from "../components/organisms/Main/FilterArea";
 import styled from "styled-components";
 import Aside from "../components/organisms/Aside";
-import ThreadList from "../components/organisms/ThreadList";
+import ThreadList from "../components/organisms/Main/ThreadList";
 
 const SearchResult = styled.h4`
   ${(props) => props.theme.typography.Footnote};
