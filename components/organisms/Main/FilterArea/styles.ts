@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FilterLayout = styled.section`
-  min-width: 705px;
+  width: 708px;
   padding: 23px 26px 25px 26px;
   border-bottom: 6px solid #f5f5f5;
 `;

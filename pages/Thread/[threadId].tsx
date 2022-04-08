@@ -21,7 +21,7 @@ const QuestionArticle = styled.article`
 const ThreadPostSection = styled.section`
   border: 1px solid #d6d6d6;
   border-top: none;
-  width: 705px;
+  width: 708px;
 `;
 
 const AnswerSection = styled.section`
