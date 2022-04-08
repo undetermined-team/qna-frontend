@@ -343,7 +343,7 @@ export const theme = {
       font-style: normal;
       font-weight: 600;
       font-size: 11px;
-      line-height: 20px;
+      line-height: 13px;
       `,
     Button: `
       font-style: normal;

@@ -48,8 +48,9 @@ const FilterArea = () => {
             border: "1px solid #E0E0E0",
             height: 36,
             marginRight: "4px",
+
             "&:hover": {
-              borderColor: "#E0E0E0",
+              borderColor: "#BDBDBD",
             },
           }}
           variant="outlined"
@@ -64,7 +65,7 @@ const FilterArea = () => {
             height: 36,
             marginRight: "4px",
             "&:hover": {
-              borderColor: "#E0E0E0",
+              borderColor: "#BDBDBD",
             },
           }}
           variant="outlined"
@@ -79,7 +80,7 @@ const FilterArea = () => {
             height: 36,
             marginRight: "4px",
             "&:hover": {
-              borderColor: "#E0E0E0",
+              borderColor: "#BDBDBD",
             },
           }}
           variant="outlined"
@@ -105,7 +106,11 @@ const FilterArea = () => {
             right: 0,
 
             "&:hover": {
-              backgroundColor: "#00B0FF",
+              backgroundColor: "#0091EA",
+            },
+            "&:active": {
+              background: "#0091EA",
+              boxShadow: "inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
             },
           }}
           variant="contained"

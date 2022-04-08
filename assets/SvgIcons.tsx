@@ -134,6 +134,15 @@ export const EmptyProfile = (
   </svg>
 );
 
+export const VectorIcon = (
+  <svg width="13" height="4" viewBox="0 0 13 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M2 0.5C1.175 0.5 0.5 1.175 0.5 2C0.5 2.825 1.175 3.5 2 3.5C2.825 3.5 3.5 2.825 3.5 2C3.5 1.175 2.825 0.5 2 0.5ZM11 0.5C10.175 0.5 9.5 1.175 9.5 2C9.5 2.825 10.175 3.5 11 3.5C11.825 3.5 12.5 2.825 12.5 2C12.5 1.175 11.825 0.5 11 0.5ZM6.5 0.5C5.675 0.5 5 1.175 5 2C5 2.825 5.675 3.5 6.5 3.5C7.325 3.5 8 2.825 8 2C8 1.175 7.325 0.5 6.5 0.5Z"
+      fill="#607D8B"
+    />
+  </svg>
+);
+
 export const VerifiedIcon = (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path

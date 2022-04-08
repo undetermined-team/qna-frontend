@@ -1,9 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { VectorIcon } from "../../../assets/SvgIcons";
 import { Tag } from "../../atoms/Tag";
 import UserName from "../../atoms/UserName";
 import ThreadTrend from "../ThreadTrend";
-import { ThreadBounty, ThreadContainer, ThreadTime, ThreadTitle } from "./styles";
+import {
+  TagShowMore,
+  TagWrapper,
+  ThreadBounty,
+  ThreadContainer,
+  ThreadHeader,
+  ThreadInfoWrapper,
+  ThreadTime,
+  ThreadTitle,
+} from "./styles";
 
 interface ITrend {
   view: Number;
@@ -19,18 +28,26 @@ export interface ThreadContainerProps {
   trend: ITrend;
 }
 
-const ThreadHeader = styled.header`
-  max-width: 498px;
-  margin-bottom: 11px;
-`;
-
-const ThreadInfoWrapper = styled.div`
-  position: absolute;
-  right: 18px;
-  top: 13px;
-`;
-
 const index: React.FC<ThreadContainerProps> = (props) => {
+  const [overflowActive, setOverflowActive] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+  const tagWrapperRef = useRef<HTMLDivElement | null>(null);
+
+  const isOverflowActive = (event: HTMLDivElement | null) => {
+    return event.clientHeight > 24 || event.clientWidth > 479;
+  };
+
+  useLayoutEffect(() => {
+    if (isOverflowActive(tagWrapperRef.current)) {
+      setOverflowActive(true);
+    }
+  }, [tagWrapperRef]);
+
+  const tagShowMoreHandler = () => {
+    tagWrapperRef.current.style.height = `${(tagWrapperRef.current.clientHeight * 2).toString()}px`;
+    setOpen(true);
+  };
+
   return (
     <ThreadContainer>
       <ThreadHeader>
@@ -38,9 +55,15 @@ const index: React.FC<ThreadContainerProps> = (props) => {
         <ThreadBounty>+{props.bounty}</ThreadBounty>
       </ThreadHeader>
 
-      {props.tags.map((tag, i) => (
-        <Tag key={i} style={{ marginRight: "8px", fontWeight: 600 }} label={tag} />
-      ))}
+      <TagWrapper ref={tagWrapperRef}>
+        {props.tags.map((tag, i) => (
+          <Tag key={i} style={{ marginRight: 8, marginBottom: 4, fontWeight: 600 }} label={tag} />
+        ))}
+
+        {!isOpen && overflowActive && (
+          <TagShowMore onClick={tagShowMoreHandler}>{VectorIcon}</TagShowMore>
+        )}
+      </TagWrapper>
 
       <ThreadInfoWrapper>
         <div style={{ marginBottom: 8 }}>
