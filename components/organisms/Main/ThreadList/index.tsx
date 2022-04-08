@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ThreadContainer, { ThreadContainerProps } from "../../molecules/ThreadContainer";
+import ThreadContainer, { ThreadContainerProps } from "../../../molecules/ThreadContainer";
 
 interface ThreadListProps {
   threadList: Array<ThreadContainerProps>;
