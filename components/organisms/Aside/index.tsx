@@ -9,6 +9,7 @@ import RecentQuestion from "../../molecules/RecentQuestion";
 const AsideLayout = styled.aside`
   border-right: 1px solid #d6d6d6;
   padding: 0px 16px;
+  height: 100vh;
 `;
 
 const exmapleBountyRank = [
