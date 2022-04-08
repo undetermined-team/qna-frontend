@@ -1,7 +1,7 @@
 import React from "react";
-import { SearchInput } from "../../atoms/SearchInput";
-import Tag from "../../molecules/DeleteTag";
-import { FilterButton } from "../../atoms/FilterButton";
+import { SearchInput } from "../../../atoms/SearchInput";
+import Tag from "../../../molecules/DeleteTag";
+import { FilterButton } from "../../../atoms/FilterButton";
 import {
   FilterLayout,
   ServiceAbout,

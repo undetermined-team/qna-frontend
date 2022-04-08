@@ -1,9 +1,9 @@
 import GlobalStyle from "../styles/globalStyles";
-import Layout from '../components/Layout';
+import Layout from "../components/Layout";
 import { ThemeProvider } from "styled-components";
-import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import { muiTheme, theme } from "../styles/theme";
-import { RecoilRoot } from 'recoil';
+import { RecoilRoot } from "recoil";
 import CssBaseline from "@mui/material/CssBaseline";
 
 function MyApp({ Component, pageProps }) {
