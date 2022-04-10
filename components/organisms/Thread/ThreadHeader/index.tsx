@@ -1,6 +1,8 @@
 import React from "react";
 import { Tag } from "../../../atoms/Tag";
 import { ThreadButton } from "../../../atoms/ThreadButton";
+import Popover from "../../../molecules/Popover";
+import ShareBox from "../../../molecules/ShareBox";
 import ThreadTrend from "../../../molecules/ThreadTrend";
 import UserSummary from "../../../molecules/UserSummary";
 import {
@@ -31,7 +33,9 @@ const index = () => {
           </ThreadTrendWrapper>
 
           <div>
-            <ThreadButton>공유</ThreadButton>
+            <Popover contents={<ShareBox link="/" />}>
+              <ThreadButton>공유</ThreadButton>
+            </Popover>
             <ThreadButton>좋아요</ThreadButton>
             <ThreadButton>신고</ThreadButton>
           </div>
