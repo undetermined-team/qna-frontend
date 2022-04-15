@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { VectorIcon } from "../../../assets/SvgIcons";
 import { Tag } from "../../atoms/Tag";
@@ -37,7 +38,7 @@ const index: React.FC<ThreadContainerProps> = (props) => {
     return event.clientHeight > 24 || event.clientWidth > 479;
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (isOverflowActive(tagWrapperRef.current)) {
       setOverflowActive(true);
     }
@@ -51,7 +52,9 @@ const index: React.FC<ThreadContainerProps> = (props) => {
   return (
     <ThreadContainer>
       <ThreadHeader>
-        <ThreadTitle>{props.title}</ThreadTitle>
+        <Link href="/Thread/1">
+          <ThreadTitle>{props.title}</ThreadTitle>
+        </Link>
         <ThreadBounty>+{props.bounty}</ThreadBounty>
       </ThreadHeader>
 

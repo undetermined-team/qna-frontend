@@ -15,7 +15,7 @@ interface UserSummaryProps {
 const index: React.FC<UserSummaryProps> = (props) => {
   return (
     <div style={{ cursor: "pointer" }}>
-      <Link href="/">
+      <Link href="/Profile/1">
         <UserSummaryContainer style={props.style}>
           <ProfileWrapper>
             {props.profile ? <img width={36} height={36} src={props.profile} /> : EmptyProfile}
@@ -24,7 +24,7 @@ const index: React.FC<UserSummaryProps> = (props) => {
           <Rank>{props.index}</Rank>
 
           <ProfileInfo>
-            <UserName name={props.userName} url="/" />
+            <UserName name={props.userName} url="/Profile/1" />
             <Bounty>{props.bounty.toString().replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,")}</Bounty>
           </ProfileInfo>
         </UserSummaryContainer>
