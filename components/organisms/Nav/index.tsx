@@ -7,14 +7,17 @@ import {
   SearchIcon,
   ProfileIcon,
 } from "../../../assets/SvgIcons";
-import IconButton from "@mui/material/IconButton";
+import IconButton from "../../atoms/IconButton";
 import { SearchInput } from "../../atoms/SearchInput";
+import Link from "next/link";
 
 const Nav: React.FC = () => {
   return (
     <NavContainer>
       <NavContent>
-        <LogoExample>Logo Here</LogoExample>
+        <Link href="/">
+          <LogoExample>Logo Here</LogoExample>
+        </Link>
 
         <SearchContainer>
           <SearchInput
@@ -27,9 +30,9 @@ const Nav: React.FC = () => {
           />
 
           <IconButton
-            sx={{
+            style={{
               position: "absolute",
-              p: "10px",
+              padding: 10,
               right: 10,
             }}
             aria-label="search"
@@ -41,27 +44,19 @@ const Nav: React.FC = () => {
         <nav>
           <NavUl>
             <li>
-              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-                {HomeIcon}
-              </IconButton>
+              <IconButton style={{ padding: 10 }}>{HomeIcon}</IconButton>
             </li>
 
             <li>
-              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-                {NetWorkIcon}
-              </IconButton>
+              <IconButton style={{ padding: 10 }}>{NetWorkIcon}</IconButton>
             </li>
 
             <li>
-              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-                {MessageIcon}
-              </IconButton>
+              <IconButton style={{ padding: 10 }}>{MessageIcon}</IconButton>
             </li>
 
             <li>
-              <IconButton sx={{ p: "10px" }} disableFocusRipple disableTouchRipple disableRipple>
-                {ProfileIcon}
-              </IconButton>
+              <IconButton style={{ padding: 10 }}>{ProfileIcon}</IconButton>
             </li>
           </NavUl>
         </nav>

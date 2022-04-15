@@ -24,6 +24,7 @@ export const NavUl = styled.ul`
 `;
 
 export const LogoExample = styled.p`
+  cursor: pointer;
   font-style: normal;
   font-weight: 700;
   font-size: 17px;
