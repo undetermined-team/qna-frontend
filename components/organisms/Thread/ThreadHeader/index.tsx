@@ -1,10 +1,8 @@
 import React from "react";
 import { Tag } from "../../../atoms/Tag";
-import { ThreadButton } from "../../../atoms/ThreadButton";
-import Popover from "../../../molecules/Popover";
-import ShareBox from "../../../molecules/ShareBox";
 import ThreadTrend from "../../../molecules/ThreadTrend";
 import UserSummary from "../../../molecules/UserSummary";
+import QuestionButtonPack from "../../../molecules/QuestionButtonPack";
 import {
   ThreadHeader,
   ThreadTitle,
@@ -32,13 +30,7 @@ const index = () => {
             <ThreadTrend label="답변" count={3} />
           </ThreadTrendWrapper>
 
-          <div>
-            <Popover contents={<ShareBox link="/" />}>
-              <ThreadButton>공유</ThreadButton>
-            </Popover>
-            <ThreadButton>좋아요</ThreadButton>
-            <ThreadButton>신고</ThreadButton>
-          </div>
+          <QuestionButtonPack />
         </div>
 
         <div>

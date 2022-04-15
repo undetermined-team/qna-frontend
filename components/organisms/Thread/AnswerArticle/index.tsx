@@ -7,6 +7,7 @@ import Verified from "../../../molecules/Verified";
 import { AnswerArticle, AnswerContent, ArticleInfoContainer, ThreadCreateAt } from "./styles";
 import Popover from "../../../molecules/Popover";
 import ShareBox from "../../../molecules/ShareBox";
+import QuestionButtonPack from "../../../molecules/QuestionButtonPack";
 
 interface AnswerArticleProps {}
 
@@ -28,15 +29,7 @@ const index: React.FC<AnswerArticleProps> = (props) => {
             <ThreadTrend label="좋아요" count={13} />
 
             <div style={{ marginTop: 10 }}>
-              <Popover
-                contents={
-                  <ShareBox link="https://velog.io/@recordboy/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8TypeScript-%ED%83%80%EC%9E%85-%EC%84%A0%EC%96%B8" />
-                }
-              >
-                <ThreadButton>공유</ThreadButton>
-              </Popover>
-              <ThreadButton>좋아요</ThreadButton>
-              <ThreadButton>신고</ThreadButton>
+              <QuestionButtonPack />
             </div>
           </div>
         </div>
