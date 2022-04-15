@@ -11,12 +11,7 @@ const index: React.FC<PopoverProps> = (props) => {
 
   return (
     <PopoverWrapper>
-      {isVisible && (
-        <>
-          <ArrowUp />
-          {props.contents}
-        </>
-      )}
+      {isVisible && <>{props.contents}</>}
       <span onClick={() => setIsVisible(!isVisible)}>{props.children}</span>
     </PopoverWrapper>
   );
