@@ -42,6 +42,14 @@ const RecentQuestionWrapper = styled.ol`
   border-radius: 3px;
 `;
 
+const BountyRankWrapper = styled.div`
+  padding: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 254px;
+`;
+
 const onTextButton = (e) => {};
 const onDelete = () => {};
 
@@ -85,15 +93,16 @@ const index = () => {
       {Space}
 
       <AsideContainer title="명성 순위" subButtonText="모두 보기" onTextClick={onTextButton}>
-        {exmapleBountyRank.map((profile, i) => (
-          <UserSummary
-            userName={profile.userName}
-            bounty={profile.bounty}
-            index={i + 1}
-            key={i}
-            style={{ marginBottom: 14 }}
-          />
-        ))}
+        <BountyRankWrapper>
+          {exmapleBountyRank.map((profile, i) => (
+            <UserSummary
+              userName={profile.userName}
+              bounty={profile.bounty}
+              index={i + 1}
+              key={i}
+            />
+          ))}
+        </BountyRankWrapper>
       </AsideContainer>
     </AsideLayout>
   );
