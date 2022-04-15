@@ -1,7 +1,23 @@
 import React from "react";
-import { FilterButton } from "../../atoms/FilterButton";
+import styled from "styled-components";
 import { SearchInput } from "../../atoms/SearchInput";
 import { CommentWriteContainer } from "./styles";
+
+const WriteButton = styled.button`
+  ${(props) => props.theme.typography.Captions};
+  border: 1px solid ${(props) => props.theme.palette.BlueGray200};
+  width: 55px;
+  height: 33px;
+  color: #fff;
+  padding: 8.5px 13px;
+  margin-left: 12px;
+  border-radius: 2px;
+  background-color: ${(props) => props.theme.palette.BlueGray300};
+
+  &:hover {
+    border-color: ${(props) => props.theme.palette.BlueGray400};
+  }
+`;
 
 const index = () => {
   return (
@@ -9,19 +25,13 @@ const index = () => {
       <SearchInput
         placeholder="댓글을 입력해 주세요"
         sx={{
-          ".MuiInputBase-input": { borderRadius: "2px", padding: "9px 16px" },
           width: 590,
           height: 33,
-          marginRight: "12px",
+          ".MuiInputBase-input": { padding: "5px 16px", borderRadius: "2px" },
         }}
       />
 
-      <FilterButton
-        variant="contained"
-        style={{ width: 52, height: 33, color: "#fff", backgroundColor: "#37474F" }}
-      >
-        작성
-      </FilterButton>
+      <WriteButton>작성</WriteButton>
     </CommentWriteContainer>
   );
 };
