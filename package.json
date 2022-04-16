@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "serverless"
+    "deploy": "serverless",
+    "vercel-deploy": "next build && next export"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
