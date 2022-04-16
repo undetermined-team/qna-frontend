@@ -19,30 +19,3 @@ export default function _Document() {
     </Html>
   );
 }
-
-Document.getInitialProps = async (ctx) => {
-  const sheet = new ServerStyleSheet();
-  const materialSheets = new ServerStyleSheets();
-  const originalRenderPage = ctx.renderPage;
-
-  try {
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: (App) => (props) =>
-          sheet.collectStyles(materialSheets.collect(<App {...props} />)),
-      });
-
-    const initialProps = await Document.getInitialProps(ctx);
-    return {
-      ...initialProps,
-      styles: (
-        <>
-          {initialProps.styles}
-          {sheet.getStyleElement()}
-        </>
-      ),
-    };
-  } finally {
-    sheet.seal();
-  }
-};
