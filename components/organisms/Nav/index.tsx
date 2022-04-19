@@ -6,7 +6,7 @@ import {
   NetWorkIcon,
   SearchIcon,
   ProfileIcon,
-} from "../../../assets/SvgIcons";
+} from "../../../public/assets/SvgIcons";
 import IconButton from "../../atoms/IconButton";
 import { SearchInput } from "../../atoms/SearchInput";
 import Link from "next/link";

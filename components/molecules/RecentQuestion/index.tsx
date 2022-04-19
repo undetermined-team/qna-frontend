@@ -1,5 +1,5 @@
 import React from "react";
-import { DeleteIcon } from "../../../assets/SvgIcons";
+import { DeleteIcon } from "../../../public/assets/SvgIcons";
 import { RecentQuestionList, RecentQuestionTitle, RecentQuestionDeleteButton } from "./styles";
 import Link from "next/link";
 

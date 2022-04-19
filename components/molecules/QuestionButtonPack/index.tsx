@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ShareIcon, LikeIcon, ReportIcon } from "../../../assets/SvgIcons";
+import { ShareIcon, LikeIcon, ReportIcon } from "../../../public/assets/SvgIcons";
 import { ThreadButton } from "../../atoms/ThreadButton";
 import Popover from "../Popover";
 import ShareBox from "../ShareBox";

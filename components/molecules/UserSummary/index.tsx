@@ -1,5 +1,5 @@
 import React from "react";
-import { EmptyProfile } from "../../../assets/SvgIcons";
+import { EmptyProfile } from "../../../public/assets/SvgIcons";
 import UserName from "../../atoms/UserName";
 import { UserSummaryContainer, ProfileWrapper, Rank, ProfileInfo, Bounty } from "./styles";
 import Link from "next/link";

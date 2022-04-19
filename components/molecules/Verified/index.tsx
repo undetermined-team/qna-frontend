@@ -1,5 +1,5 @@
 import React from "react";
-import { VerifiedIcon } from "../../../assets/SvgIcons";
+import { VerifiedIcon } from "../../../public/assets/SvgIcons";
 import { Verified, VerifiedContainer } from "./styles";
 
 const index = () => {

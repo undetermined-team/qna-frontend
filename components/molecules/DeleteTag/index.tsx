@@ -1,6 +1,6 @@
 import React from "react";
 import { Tag } from "../../atoms/Tag";
-import { DeleteIcon } from "../../../assets/SvgIcons";
+import { DeleteIcon } from "../../../public/assets/SvgIcons";
 
 interface DeleteTagProps {
   label: String;
