@@ -8,11 +8,11 @@ const WriteButton = styled.button`
   border: 1px solid ${(props) => props.theme.palette.BlueGray200};
   width: 55px;
   height: 33px;
-  color: #fff;
+  color: ${(props) => props.theme.palette.BlueGray700};
   padding: 8.5px 13px;
   margin-left: 12px;
   border-radius: 2px;
-  background-color: ${(props) => props.theme.palette.BlueGray300};
+  background-color: ${(props) => props.theme.palette.Gray200};
 
   &:hover {
     border-color: ${(props) => props.theme.palette.BlueGray400};
