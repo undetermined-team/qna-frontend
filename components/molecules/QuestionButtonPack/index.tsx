@@ -8,7 +8,7 @@ import ShareBox from "../ShareBox";
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 240px;
+  width: 221px;
 `;
 
 const index = () => {
