@@ -6,7 +6,8 @@ export const AsideTitle = styled.h4`
 `;
 
 export const AsideHeader = styled.header`
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 9px;
 `;
 
@@ -19,11 +20,8 @@ export const AsideWrapper = styled.article`
 `;
 
 export const AsideSubButtonStyle = {
-  position: "absolute",
   color: "#FF8F00",
   height: "15px",
-  right: 0,
-  bottom: 5,
   padding: 0,
   lineHeight: "14.06px",
   fontStyle: "normal",
