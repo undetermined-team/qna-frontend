@@ -11,6 +11,7 @@ const SearchResult = styled.h4`
 `;
 
 const ThreadSection = styled.section`
+  width: 708px;
   border: 1px solid #d6d6d6;
   border-top: none;
 `;
