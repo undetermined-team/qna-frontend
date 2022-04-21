@@ -1,7 +1,6 @@
 import React from "react";
 import { Input } from "../../../atoms/Input";
 import Tag from "../../../molecules/DeleteTag";
-import { FilterButton } from "../../../atoms/FilterButton";
 import {
   FilterLayout,
   ServiceAbout,
@@ -9,7 +8,9 @@ import {
   QuestionDescription,
   QuestionCount,
   ButtonGroup,
+  AskQuestionButton,
 } from "./styles";
+import ToggleButton from "../../../atoms/ToggleButton";
 
 const FilterArea = () => {
   const onDelete = (e) => {};
@@ -26,67 +27,18 @@ const FilterArea = () => {
       </ServiceAbout>
 
       <ButtonGroup>
-        <FilterButton
-          sx={{
-            color: "#fff",
-            backgroundColor: "#00B0FF",
-            height: 36,
-            marginRight: "4px",
-
-            "&:hover": {
-              backgroundColor: "#00B0FF",
-            },
-          }}
-          variant="contained"
-        >
+        <ToggleButton style={{ marginRight: 4 }} variant="selected">
           최신
-        </FilterButton>
-
-        <FilterButton
-          sx={{
-            color: "#757575",
-            border: "1px solid #E0E0E0",
-            height: 36,
-            marginRight: "4px",
-
-            "&:hover": {
-              borderColor: "#BDBDBD",
-            },
-          }}
-          variant="outlined"
-        >
+        </ToggleButton>
+        <ToggleButton style={{ marginRight: 4 }} variant="normal">
           인기
-        </FilterButton>
-
-        <FilterButton
-          sx={{
-            color: "#757575",
-            border: "1px solid #E0E0E0",
-            height: 36,
-            marginRight: "4px",
-            "&:hover": {
-              borderColor: "#BDBDBD",
-            },
-          }}
-          variant="outlined"
-        >
+        </ToggleButton>
+        <ToggleButton style={{ marginRight: 4 }} variant="normal">
           답변 필요
-        </FilterButton>
-
-        <FilterButton
-          sx={{
-            color: "#757575",
-            border: "1px solid #E0E0E0",
-            height: 36,
-            marginRight: "4px",
-            "&:hover": {
-              borderColor: "#BDBDBD",
-            },
-          }}
-          variant="outlined"
-        >
+        </ToggleButton>
+        <ToggleButton style={{ marginRight: 4 }} variant="normal">
           리워드
-        </FilterButton>
+        </ToggleButton>
 
         <Input
           type="text"
@@ -95,30 +47,11 @@ const FilterArea = () => {
             borderRadius: 2,
             padding: "6px 10px",
             width: 204,
-            height: 35,
+            height: 36,
           }}
         />
 
-        <FilterButton
-          sx={{
-            position: "absolute",
-            color: "#fff",
-            backgroundColor: "#00B0FF",
-            height: 36,
-            right: 0,
-
-            "&:hover": {
-              backgroundColor: "#0091EA",
-            },
-            "&:active": {
-              background: "#0091EA",
-              boxShadow: "inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
-            },
-          }}
-          variant="contained"
-        >
-          질문하기
-        </FilterButton>
+        <AskQuestionButton>질문하기</AskQuestionButton>
       </ButtonGroup>
 
       <div style={{ position: "relative" }}>
@@ -135,18 +68,18 @@ const FilterArea = () => {
         />
         <Tag label="react-js" onDelete={onDelete} style={{ fontWeight: 600, marginRight: "8px" }} />
 
-        <FilterButton
-          sx={{
+        <ToggleButton
+          variant="text"
+          style={{
             position: "absolute",
             height: 36,
             color: "#FF8F00",
             right: 0,
             padding: 0,
           }}
-          variant="text"
         >
           모두 삭제
-        </FilterButton>
+        </ToggleButton>
       </div>
     </FilterLayout>
   );

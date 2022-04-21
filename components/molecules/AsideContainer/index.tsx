@@ -1,12 +1,6 @@
 import React from "react";
-import { FilterButton } from "../../atoms/FilterButton";
-import {
-  AsideWrapper,
-  AsideHeader,
-  AsideTitle,
-  AsideSubButtonStyle,
-  AsideChildren,
-} from "./styles";
+import ToggleButton from "../../atoms/ToggleButton";
+import { AsideWrapper, AsideHeader, AsideTitle, AsideChildren } from "./styles";
 
 interface AsideProps {
   title: String;
@@ -21,9 +15,21 @@ const index: React.FC<AsideProps> = (props) => {
       <AsideHeader>
         <AsideTitle>{props.title}</AsideTitle>
 
-        <FilterButton sx={AsideSubButtonStyle} variant="text" onClick={props.onTextClick}>
+        <ToggleButton
+          variant="text"
+          style={{
+            color: "#FF8F00",
+            height: "15px",
+            padding: 0,
+            lineHeight: "14.06px",
+            fontStyle: "normal",
+            fontWeight: 400,
+            fontSize: 12,
+          }}
+          onClick={props.onTextClick}
+        >
           {props.subButtonText}
-        </FilterButton>
+        </ToggleButton>
       </AsideHeader>
 
       <AsideChildren>{props.children}</AsideChildren>
