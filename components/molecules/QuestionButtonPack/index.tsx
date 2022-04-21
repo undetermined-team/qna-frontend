@@ -21,7 +21,7 @@ const index = () => {
         </ThreadButton>
       </Popover>
 
-      <ThreadButton>
+      <ThreadButton isLike>
         {LikeIcon}
         <span>좋아요</span>
       </ThreadButton>
