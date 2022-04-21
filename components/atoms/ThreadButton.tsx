@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ThreadButton = styled.button`
+interface ThreadButtonProps {
+  readonly isLike?: boolean;
+}
+
+export const ThreadButton = styled.button<ThreadButtonProps>`
   display: flex;
   align-items: flex-start;
   ${(props) => props.theme.typography.Footnote2};
@@ -20,7 +24,14 @@ export const ThreadButton = styled.button`
 
     svg {
       path {
-        fill: ${(props) => props.theme.palette.Gray600};
+        ${(props) =>
+          props.isLike
+            ? css`
+                stroke: ${(props) => props.theme.palette.Gray600};
+              `
+            : css`
+                fill: ${(props) => props.theme.palette.Gray600};
+              `}
       }
     }
   }
@@ -28,4 +39,19 @@ export const ThreadButton = styled.button`
   &:active {
     border-color: ${(props) => props.theme.palette.Gray900};
   }
+
+  ${(props) =>
+    props.isLike &&
+    css`
+      &:focus {
+        border-color: ${(props) => props.theme.palette.Gray600};
+
+        svg {
+          path {
+            stroke: ${(props) => props.theme.palette.PinkA400};
+            fill: ${(props) => props.theme.palette.PinkA400};
+          }
+        }
+      }
+    `}
 `;
