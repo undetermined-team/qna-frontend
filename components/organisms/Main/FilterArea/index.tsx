@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchInput } from "../../../atoms/SearchInput";
+import { Input } from "../../../atoms/Input";
 import Tag from "../../../molecules/DeleteTag";
 import { FilterButton } from "../../../atoms/FilterButton";
 import {
@@ -88,10 +88,12 @@ const FilterArea = () => {
           리워드
         </FilterButton>
 
-        <SearchInput
+        <Input
+          type="text"
           placeholder="태그명으로 검색"
-          sx={{
-            "& .MuiInputBase-input": { borderRadius: "2px", padding: "6px 10px" },
+          style={{
+            borderRadius: 2,
+            padding: "6px 10px",
             width: 204,
             height: 35,
           }}

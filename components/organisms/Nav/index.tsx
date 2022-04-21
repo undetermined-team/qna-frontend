@@ -8,8 +8,8 @@ import {
   ProfileIcon,
 } from "../../../public/assets/SvgIcons";
 import IconButton from "../../atoms/IconButton";
-import { SearchInput } from "../../atoms/SearchInput";
 import Link from "next/link";
+import { Input } from "../../atoms/Input";
 
 const Nav: React.FC = () => {
   return (
@@ -20,9 +20,12 @@ const Nav: React.FC = () => {
         </Link>
 
         <SearchContainer>
-          <SearchInput
-            sx={{
-              ".MuiInputBase-input": { borderRadius: "8px", padding: "11px 18px" },
+          <Input
+            type="search"
+            style={{
+              borderRadius: 8,
+              padding: "9px 16px",
+              paddingRight: "45px",
               width: 562,
               height: 40,
             }}
@@ -35,7 +38,6 @@ const Nav: React.FC = () => {
               padding: 10,
               right: 10,
             }}
-            aria-label="search"
           >
             {SearchIcon}
           </IconButton>
