@@ -49,7 +49,7 @@ export const HomeIcon = (
   </svg>
 );
 
-export const NetWorkIcon = (
+export const PeopleButton = (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="40" height="40" fill="white" />
     <path
@@ -78,7 +78,7 @@ export const NetWorkIcon = (
   </svg>
 );
 
-export const MessageIcon = (
+export const CommunityButton = (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="40" height="40" fill="white" />
     <path

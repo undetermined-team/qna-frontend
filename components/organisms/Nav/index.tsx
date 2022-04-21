@@ -2,8 +2,8 @@ import React from "react";
 import { NavContainer, NavContent, LogoExample, NavUl, SearchContainer } from "./styles";
 import {
   HomeIcon,
-  MessageIcon,
-  NetWorkIcon,
+  CommunityButton,
+  PeopleButton,
   SearchIcon,
   ProfileIcon,
 } from "../../../public/assets/SvgIcons";
@@ -50,11 +50,11 @@ const Nav: React.FC = () => {
             </li>
 
             <li>
-              <IconButton style={{ padding: 10 }}>{NetWorkIcon}</IconButton>
+              <IconButton style={{ padding: 10 }}>{PeopleButton}</IconButton>
             </li>
 
             <li>
-              <IconButton style={{ padding: 10 }}>{MessageIcon}</IconButton>
+              <IconButton style={{ padding: 10 }}>{CommunityButton}</IconButton>
             </li>
 
             <li>
