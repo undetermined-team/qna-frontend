@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { ShareIcon, LikeIcon, ReportIcon } from "../../../public/assets/SvgIcons";
 import { ThreadButton } from "../../atoms/ThreadButton";
-import Popover from "../Popover";
-import ShareBox from "../ShareBox";
+
+interface QuestionButtonPackProps {
+  shareLink?: string;
+}
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -11,15 +13,17 @@ const ButtonWrapper = styled.div`
   width: 221px;
 `;
 
-const index = () => {
+const index: React.FC<QuestionButtonPackProps> = (props) => {
+  const shareButtonClickHandler = () => {
+    navigator.clipboard.writeText(props.shareLink);
+  };
+
   return (
     <ButtonWrapper>
-      <Popover contents={<ShareBox link="/" />}>
-        <ThreadButton>
-          {ShareIcon}
-          <span>링크 복사</span>
-        </ThreadButton>
-      </Popover>
+      <ThreadButton onClick={shareButtonClickHandler}>
+        {ShareIcon}
+        <span>링크 복사</span>
+      </ThreadButton>
 
       <ThreadButton isLike>
         {LikeIcon}

@@ -1,12 +1,9 @@
 import React from "react";
-import { ThreadButton } from "../../../atoms/ThreadButton";
 import CommentContainer from "../CommentContainer";
 import ThreadTrend from "../../../molecules/ThreadTrend";
 import UserSummary from "../../../molecules/UserSummary";
 import Verified from "../../../molecules/Verified";
 import { AnswerArticle, AnswerContent, ArticleInfoContainer, ThreadCreateAt } from "./styles";
-import Popover from "../../../molecules/Popover";
-import ShareBox from "../../../molecules/ShareBox";
 import QuestionButtonPack from "../../../molecules/QuestionButtonPack";
 
 interface AnswerArticleProps {}
@@ -29,7 +26,7 @@ const index: React.FC<AnswerArticleProps> = (props) => {
             <ThreadTrend label="좋아요" count={13} />
 
             <div style={{ marginTop: 10 }}>
-              <QuestionButtonPack />
+              <QuestionButtonPack shareLink="naver.com" />
             </div>
           </div>
         </div>

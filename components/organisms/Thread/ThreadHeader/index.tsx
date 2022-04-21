@@ -30,7 +30,7 @@ const index = () => {
             <ThreadTrend label="답변" count={3} />
           </ThreadTrendWrapper>
 
-          <QuestionButtonPack />
+          <QuestionButtonPack shareLink="google.com" />
         </div>
 
         <div>
