@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SearchInput } from "../../atoms/SearchInput";
+import { Input } from "../../atoms/Input";
 import { CommentWriteContainer } from "./styles";
 
 const WriteButton = styled.button`
@@ -22,12 +22,15 @@ const WriteButton = styled.button`
 const index = () => {
   return (
     <CommentWriteContainer>
-      <SearchInput
+      <Input
+        as="textarea"
         placeholder="댓글을 입력해 주세요"
-        sx={{
+        style={{
           width: 590,
           height: 33,
-          ".MuiInputBase-input": { padding: "5px 16px", borderRadius: "2px" },
+          padding: "5px 16px",
+          borderRadius: 2,
+          resize: "none",
         }}
       />
 
