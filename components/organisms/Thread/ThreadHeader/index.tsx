@@ -1,5 +1,5 @@
 import React from "react";
-import { Tag } from "../../../atoms/Tag";
+import Tag from "../../../atoms/Tag";
 import ThreadTrend from "../../../molecules/ThreadTrend";
 import UserSummary from "../../../molecules/UserSummary";
 import QuestionButtonPack from "../../../molecules/QuestionButtonPack";

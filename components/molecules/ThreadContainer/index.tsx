@@ -1,7 +1,7 @@
 import Link from "next/link";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { VectorIcon } from "../../../public/assets/SvgIcons";
-import { Tag } from "../../atoms/Tag";
+import Tag from "../../atoms/Tag";
 import UserName from "../../atoms/UserName";
 import ThreadTrend from "../ThreadTrend";
 import {

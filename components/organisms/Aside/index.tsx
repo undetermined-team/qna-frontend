@@ -1,6 +1,6 @@
 import React from "react";
-import { DeleteIcon, Space } from "../../../public/assets/SvgIcons";
-import { Tag } from "../../atoms/Tag";
+import { Space } from "../../../public/assets/SvgIcons";
+import Tag from "../../atoms/Tag";
 import styled from "styled-components";
 import AsideContainer from "../../molecules/AsideContainer";
 import UserSummary from "../../molecules/UserSummary";

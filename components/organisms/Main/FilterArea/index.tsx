@@ -55,18 +55,10 @@ const FilterArea = () => {
       </ButtonGroup>
 
       <div style={{ position: "relative" }}>
-        <Tag
-          label="javascript"
-          onDelete={onDelete}
-          style={{ fontWeight: 600, marginRight: "8px" }}
-        />
-        <Tag label="vue.js" onDelete={onDelete} style={{ fontWeight: 600, marginRight: "8px" }} />
-        <Tag
-          label="react-native"
-          onDelete={onDelete}
-          style={{ fontWeight: 600, marginRight: "8px" }}
-        />
-        <Tag label="react-js" onDelete={onDelete} style={{ fontWeight: 600, marginRight: "8px" }} />
+        <Tag label="javascript" style={{ fontWeight: 600, marginRight: "8px" }} />
+        <Tag label="vue.js" style={{ fontWeight: 600, marginRight: "8px" }} />
+        <Tag label="react-native" style={{ fontWeight: 600, marginRight: "8px" }} />
+        <Tag label="react-js" style={{ fontWeight: 600, marginRight: "8px" }} />
 
         <ToggleButton
           variant="text"
