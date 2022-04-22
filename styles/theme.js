@@ -1,5 +1,3 @@
-import { createTheme } from "@mui/material/styles";
-
 export const theme = {
   palette: {
     Red50: "#FFEBEE",
@@ -353,5 +351,3 @@ export const theme = {
       `,
   },
 };
-
-export const muiTheme = createTheme(theme);

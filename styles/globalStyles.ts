@@ -1,11 +1,20 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  * {  
+  *, *::before, *::after{  
     font-family : 'Roboto', 'Pretendard';
+    box-sizing: border-box
+  }
+  
+  html{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+    letter-spacing: 0.00938em;
   }
 
-  html,
   body {
     padding: 0;
     margin: 0;
