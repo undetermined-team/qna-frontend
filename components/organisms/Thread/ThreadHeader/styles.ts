@@ -22,7 +22,7 @@ export const ThreadHeader = styled.header`
 
 export const ThreadTrendWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 163px;
   padding: 0;
   margin-top: 29px;
