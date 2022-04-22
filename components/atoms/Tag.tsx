@@ -1,47 +1,80 @@
-import { styled as muiStyled } from "@mui/system";
-import { Chip, ChipProps } from "@mui/material";
+import styled from "styled-components";
 
-export const Tag = muiStyled(Chip)<ChipProps>(({ theme }) => ({
-  borderRadius: 2,
-  height: 22,
-  backgroundColor: theme.palette.BlueGray50,
+const StyledTag = styled.div`
+  display: inline-flex;
+  align-items: center;
+  border-radius: 2px;
+  height: 22px;
+  vertical-align: middle;
+  background-color: ${(props) => props.theme.palette.BlueGray50};
+  transition: background-color 300ms;
+  box-sizing: border-box;
+  outline: none;
 
-  "&:hover": {
-    backgroundColor: theme.palette.BlueGray100,
-  },
-  "&:foucus": {
-    backgroundColor: theme.palette.BlueGray100,
-  },
+  &:hover {
+    background-color: ${(props) => props.theme.palette.BlueGray100};
+  }
 
-  ".MuiChip-label": {
-    fontStyle: "normal",
-    fontSize: 11,
-    color: theme.palette.BlueGray600,
-    textAlign: "center",
-    padding: "4px 10px",
-    lineHeight: "13px",
+  &:focus {
+    background-color: ${(props) => props.theme.palette.BlueGray100};
+  }
 
-    "&:hover": {
-      color: theme.palette.BlueGray800,
-    },
-    "&:foucus": {
-      color: theme.palette.BlueGray800,
-    },
-  },
+  span {
+    ${(props) => props.theme.typography.Tags};
+    color: ${(props) => props.theme.palette.BlueGray600};
+    text-align: center;
+    padding: 4px 10px;
 
-  ".MuiChip-deleteIcon": {
-    marginLeft: "-4px",
-    cursor: "pointer",
+    &:hover {
+      color: ${(props) => props.theme.palette.BlueGray800};
+    }
 
-    "&:hover": {
-      path: {
-        stroke: theme.palette.BlueGray800,
-      },
-    },
-    "&:foucus": {
-      path: {
-        stroke: theme.palette.BlueGray800,
-      },
-    },
-  },
-}));
+    &:focus {
+      color: ${(props) => props.theme.palette.BlueGray800};
+    }
+  }
+
+  button {
+    display: inline-flex;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+
+    svg {
+      margin-left: -4px;
+      margin-right: 5px;
+      cursor: pointer;
+
+      &:hover {
+        path {
+          stroke: ${(props) => props.theme.palette.BlueGray800};
+        }
+      }
+
+      &:focus {
+        path {
+          stroke: ${(props) => props.theme.palette.BlueGray800};
+        }
+      }
+    }
+  }
+`;
+
+interface TagProps {
+  label: String;
+  style?: React.CSSProperties;
+  deleteIcon?: React.ReactNode;
+  onDelete?: (e: React.MouseEvent<HTMLSpanElement>) => void;
+}
+
+const Tag: React.FC<TagProps> = (props) => {
+  return (
+    <StyledTag style={props.style}>
+      <span>{props.label}</span>
+      <button onClick={props.onDelete}>{props.deleteIcon}</button>
+    </StyledTag>
+  );
+};
+
+export default Tag;
