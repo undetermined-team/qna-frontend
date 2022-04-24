@@ -16,6 +16,7 @@ export default function _Document() {
       </Head>
       <body>
         <Main />
+        <div id="message" />
         <NextScript />
       </body>
     </Html>

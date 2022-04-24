@@ -5,6 +5,10 @@ import { CheckCircleIcon } from "../../../public/assets/SvgIcons";
 const MessageBox = styled.div`
   display: flex;
   position: fixed;
+  min-width: 204px;
+  right: 50%;
+  left: 50%;
+  top: 55px;
   align-items: center;
   height: 46px;
   background-color: #fff;
@@ -22,17 +26,11 @@ const MessageContent = styled.span`
   text-align: center;
 `;
 
-interface MessageProps {
-  content?: React.ReactNode;
-}
-
-const index: React.FC<MessageProps> = (props) => {
-  return (
-    <MessageBox>
-      {CheckCircleIcon}
-      <MessageContent>{props.content}</MessageContent>
-    </MessageBox>
-  );
-};
+const index = (
+  <MessageBox>
+    {CheckCircleIcon}
+    <MessageContent>링크 복사가되었습니다.</MessageContent>
+  </MessageBox>
+);
 
 export default index;

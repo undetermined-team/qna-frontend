@@ -1,6 +1,8 @@
 import React from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { ShareIcon, LikeIcon, ReportIcon } from "../../../public/assets/SvgIcons";
+import { messageSetter } from "../../../state/modal";
 import { ThreadButton } from "../../atoms/ThreadButton";
 
 interface QuestionButtonPackProps {
@@ -14,7 +16,10 @@ const ButtonWrapper = styled.div`
 `;
 
 const index: React.FC<QuestionButtonPackProps> = (props) => {
+  const [isMessageRender, setIsMessageRender] = useRecoilState(messageSetter);
+
   const shareButtonClickHandler = () => {
+    setIsMessageRender(true);
     navigator.clipboard.writeText(props.shareLink);
   };
 
@@ -39,3 +44,6 @@ const index: React.FC<QuestionButtonPackProps> = (props) => {
 };
 
 export default index;
+function useSetRecoilValue(messageRenderer: any) {
+  throw new Error("Function not implemented.");
+}
