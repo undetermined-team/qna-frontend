@@ -1,6 +1,8 @@
 import React from "react";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { ShareIcon, LikeIcon, ReportIcon } from "../../../public/assets/SvgIcons";
+import { messageRenderer, useSetWithDelayedReset } from "../../../state/modal";
 import { ThreadButton } from "../../atoms/ThreadButton";
 
 interface QuestionButtonPackProps {
@@ -14,7 +16,10 @@ const ButtonWrapper = styled.div`
 `;
 
 const index: React.FC<QuestionButtonPackProps> = (props) => {
+  const setWithDelayedReset = useSetWithDelayedReset();
+
   const shareButtonClickHandler = () => {
+    setWithDelayedReset({ message: "링크가 복사되었습니다.", duration: 1500 });
     navigator.clipboard.writeText(props.shareLink);
   };
 
