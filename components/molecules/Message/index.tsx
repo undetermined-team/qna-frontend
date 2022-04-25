@@ -8,7 +8,7 @@ const MessageBox = styled.div`
   min-width: 204px;
   right: 50%;
   left: 50%;
-  top: 55px;
+  top: 65px;
   align-items: center;
   height: 46px;
   background-color: #fff;
@@ -18,6 +18,21 @@ const MessageBox = styled.div`
   border-radius: 4px;
   z-index: 1100;
   transform: translate(-50%, -50%);
+
+  animation-name: MessageMoveOut;
+  animation-duration: 0.2s;
+
+  @keyframes MessageMoveOut {
+    0% {
+      top: 0px;
+      opacity: 0.7;
+    }
+
+    100% {
+      top: 65px;
+      opacity: 1;
+    }
+  }
 `;
 
 const MessageContent = styled.span`
