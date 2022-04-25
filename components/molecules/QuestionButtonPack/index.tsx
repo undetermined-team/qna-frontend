@@ -1,8 +1,8 @@
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { ShareIcon, LikeIcon, ReportIcon } from "../../../public/assets/SvgIcons";
-import { messageSetter } from "../../../state/modal";
+import { messageRenderer, useSetWithDelayedReset } from "../../../state/modal";
 import { ThreadButton } from "../../atoms/ThreadButton";
 
 interface QuestionButtonPackProps {
@@ -16,10 +16,10 @@ const ButtonWrapper = styled.div`
 `;
 
 const index: React.FC<QuestionButtonPackProps> = (props) => {
-  const [isMessageRender, setIsMessageRender] = useRecoilState(messageSetter);
+  const setWithDelayedReset = useSetWithDelayedReset();
 
   const shareButtonClickHandler = () => {
-    setIsMessageRender(true);
+    setWithDelayedReset({ message: "링크가 복사되었습니다.", duration: 1500 });
     navigator.clipboard.writeText(props.shareLink);
   };
 
@@ -44,6 +44,3 @@ const index: React.FC<QuestionButtonPackProps> = (props) => {
 };
 
 export default index;
-function useSetRecoilValue(messageRenderer: any) {
-  throw new Error("Function not implemented.");
-}
