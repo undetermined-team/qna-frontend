@@ -26,10 +26,14 @@ const MessageContent = styled.span`
   text-align: center;
 `;
 
-const index = (
+interface MessageProps {
+  message: string;
+}
+
+const index = (props: MessageProps) => (
   <MessageBox>
     {CheckCircleIcon}
-    <MessageContent>링크 복사가되었습니다.</MessageContent>
+    <MessageContent>{props.message}</MessageContent>
   </MessageBox>
 );
 

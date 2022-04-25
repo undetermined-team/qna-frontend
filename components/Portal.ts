@@ -12,8 +12,10 @@ const Portal = ({}) => {
     setMounted(true);
   }, []);
 
+  const message = Message({ message: isMessageRender.message });
+
   return mounted
-    ? createPortal(isMessageRender && Message, document.getElementById("message"))
+    ? createPortal(isMessageRender.visible && message, document.getElementById("message"))
     : null;
 };
 
