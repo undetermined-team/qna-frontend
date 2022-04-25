@@ -1,4 +1,4 @@
-import { atom, useResetRecoilState, useSetRecoilState } from "recoil";
+import { atom, useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
 
 interface MessageProps {
   visible?: boolean;
@@ -17,8 +17,11 @@ export const messageRenderer = atom({
 export const useSetWithDelayedReset = () => {
   const setMessageRender = useSetRecoilState(messageRenderer);
   const resetMessageRender = useResetRecoilState(messageRenderer);
+  const isMessageRender = useRecoilValue(messageRenderer);
 
   return (newValue: MessageProps) => {
+    if (isMessageRender.visible) return;
+
     setMessageRender({ visible: true, message: newValue.message });
     setTimeout(() => resetMessageRender(), newValue.duration ? newValue.duration : 2000);
   };
