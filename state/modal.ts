@@ -1,20 +1,24 @@
-import { atom, selector, useRecoilCallback } from "recoil";
+import { atom, useResetRecoilState, useSetRecoilState } from "recoil";
+
+interface MessageProps {
+  visible?: boolean;
+  message: string;
+}
 
 export const messageRenderer = atom({
   key: "messageRenderer",
-  default: false,
+  default: {
+    visible: false,
+    message: "",
+  },
 });
 
-export const messageSetter = selector({
-  key: "messageRenderer/set",
-  get: ({ get }) => {
-    return get(messageRenderer);
-  },
-  set: ({ set }) => {
-    set(messageRenderer, true);
-    useRecoilCallback(
-      setTimeout(() => set(messageRenderer, false), 3000),
-      []
-    );
-  },
-});
+export const useSetWithDelayedReset = () => {
+  const setMessageRender = useSetRecoilState(messageRenderer);
+  const resetMessageRender = useResetRecoilState(messageRenderer);
+
+  return (newValue: MessageProps) => {
+    setMessageRender({ visible: true, message: newValue.message });
+    setTimeout(() => resetMessageRender(), 1500);
+  };
+};
