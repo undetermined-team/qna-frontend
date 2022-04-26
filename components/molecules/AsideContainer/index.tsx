@@ -1,5 +1,5 @@
 import React from "react";
-import ToggleButton from "../../atoms/ToggleButton";
+import Button from "../../atoms/Button";
 import { AsideWrapper, AsideHeader, AsideTitle, AsideChildren } from "./styles";
 
 interface AsideProps {
@@ -15,7 +15,7 @@ const index: React.FC<AsideProps> = (props) => {
       <AsideHeader>
         <AsideTitle>{props.title}</AsideTitle>
 
-        <ToggleButton
+        <Button
           variant="text"
           style={{
             color: "#FF8F00",
@@ -29,7 +29,7 @@ const index: React.FC<AsideProps> = (props) => {
           onClick={props.onTextClick}
         >
           {props.subButtonText}
-        </ToggleButton>
+        </Button>
       </AsideHeader>
 
       <AsideChildren>{props.children}</AsideChildren>

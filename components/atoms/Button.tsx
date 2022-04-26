@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
-interface ToggleButtonProps {
+interface Button {
   variant?: "selected" | "normal" | "text" | undefined;
 }
 
-const ToggleButton = styled.button<ToggleButtonProps>`
+const Button = styled.button<Button>`
   cursor: pointer;
   ${(props) => props.theme.typography.Button};
   color: ${(props) =>
@@ -43,4 +43,4 @@ const ToggleButton = styled.button<ToggleButtonProps>`
   }
 `;
 
-export default ToggleButton;
+export default Button;
