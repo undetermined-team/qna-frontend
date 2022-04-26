@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "../../../atoms/Input";
 import Tag from "../../../molecules/DeleteTag";
 import {
@@ -10,10 +10,14 @@ import {
   ButtonGroup,
   AskQuestionButton,
 } from "./styles";
-import ToggleButton from "../../../atoms/ToggleButton";
+import Button from "../../../atoms/Button";
 
 const FilterArea = () => {
-  const onDelete = (e) => {};
+  const [toggle, setToggle] = useState("");
+
+  const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setToggle(e.currentTarget.id);
+  };
 
   return (
     <FilterLayout>
@@ -27,18 +31,38 @@ const FilterArea = () => {
       </ServiceAbout>
 
       <ButtonGroup>
-        <ToggleButton style={{ marginRight: 4 }} variant="selected">
+        <Button
+          id="newest"
+          onClick={toggleClickHandler}
+          variant={toggle === "newest" ? "selected" : "normal"}
+          style={{ marginRight: 4 }}
+        >
           최신
-        </ToggleButton>
-        <ToggleButton style={{ marginRight: 4 }} variant="normal">
+        </Button>
+        <Button
+          id="popular"
+          onClick={toggleClickHandler}
+          variant={toggle === "popular" ? "selected" : "normal"}
+          style={{ marginRight: 4 }}
+        >
           인기
-        </ToggleButton>
-        <ToggleButton style={{ marginRight: 4 }} variant="normal">
+        </Button>
+        <Button
+          id="unanswered"
+          onClick={toggleClickHandler}
+          variant={toggle === "unanswered" ? "selected" : "normal"}
+          style={{ marginRight: 4 }}
+        >
           답변 필요
-        </ToggleButton>
-        <ToggleButton style={{ marginRight: 4 }} variant="normal">
+        </Button>
+        <Button
+          id="reward"
+          onClick={toggleClickHandler}
+          variant={toggle === "reward" ? "selected" : "normal"}
+          style={{ marginRight: 4 }}
+        >
           리워드
-        </ToggleButton>
+        </Button>
 
         <Input
           type="text"
@@ -60,7 +84,7 @@ const FilterArea = () => {
         <Tag label="react-native" style={{ fontWeight: 600, marginRight: "8px" }} />
         <Tag label="react-js" style={{ fontWeight: 600, marginRight: "8px" }} />
 
-        <ToggleButton
+        <Button
           variant="text"
           style={{
             position: "absolute",
@@ -71,7 +95,7 @@ const FilterArea = () => {
           }}
         >
           모두 삭제
-        </ToggleButton>
+        </Button>
       </div>
     </FilterLayout>
   );
