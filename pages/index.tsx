@@ -36,6 +36,7 @@ const exampleThreadList = [
     userName: "Jojorabbit21",
     bounty: 75,
     trend: { view: 87, like: 13, answerCount: 3 },
+    createAt: "2022-03-03 18:47",
   },
   {
     title: "Title Here",
@@ -43,6 +44,7 @@ const exampleThreadList = [
     userName: "Jojorabbit21",
     bounty: 75,
     trend: { view: 87, like: 13, answerCount: 3 },
+    createAt: "2022-04-29 10:55:22",
   },
 ];
 

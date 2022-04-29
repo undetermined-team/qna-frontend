@@ -27,6 +27,7 @@ export interface ThreadContainerProps {
   userName: String;
   bounty: Number;
   trend: ITrend;
+  createAt: string;
 }
 
 const index: React.FC<ThreadContainerProps> = (props) => {
@@ -47,6 +48,20 @@ const index: React.FC<ThreadContainerProps> = (props) => {
   const tagShowMoreHandler = () => {
     tagWrapperRef.current.style.height = `${(tagWrapperRef.current.clientHeight * 2).toString()}px`;
     setOpen(true);
+  };
+
+  const ThreadDateRender = ({ date }: { date: string }) => {
+    const craeteAtToDate = new Date(date);
+
+    if (craeteAtToDate.toDateString() === new Date().toDateString()) {
+      return (
+        <span>
+          {craeteAtToDate.getHours()}:{craeteAtToDate.getMinutes()}
+        </span>
+      );
+    } else {
+      return <span>{craeteAtToDate.toISOString().substring(2, 10)}</span>;
+    }
   };
 
   return (
@@ -77,7 +92,9 @@ const index: React.FC<ThreadContainerProps> = (props) => {
 
         <div style={{ textAlign: "right" }}>
           <UserName url="/" name={props.userName} />
-          <ThreadTime>1시간 전</ThreadTime>
+          <ThreadTime>
+            <ThreadDateRender date={props.createAt} />
+          </ThreadTime>
         </div>
       </ThreadInfoWrapper>
     </ThreadContainer>

@@ -21,6 +21,7 @@ const index: React.FC<ThreadListProps> = (props) => {
           userName={thread.userName}
           trend={thread.trend}
           bounty={thread.bounty}
+          createAt={thread.createAt}
           key={index}
         />
       ))}
