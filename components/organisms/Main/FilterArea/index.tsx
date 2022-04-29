@@ -13,7 +13,7 @@ import {
 import Button from "../../../atoms/Button";
 
 const FilterArea = () => {
-  const [toggle, setToggle] = useState("");
+  const [toggle, setToggle] = useState("newest");
 
   const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setToggle(e.currentTarget.id);
