@@ -55,12 +55,16 @@ const index: React.FC<ThreadContainerProps> = (props) => {
 
     if (craeteAtToDate.toDateString() === new Date().toDateString()) {
       return (
-        <span>
+        <ThreadTime dateTime={craeteAtToDate.toISOString()}>
           {craeteAtToDate.getHours()}:{craeteAtToDate.getMinutes()}
-        </span>
+        </ThreadTime>
       );
     } else {
-      return <span>{craeteAtToDate.toISOString().substring(2, 10)}</span>;
+      return (
+        <ThreadTime dateTime={craeteAtToDate.toISOString()}>
+          {craeteAtToDate.toISOString().substring(2, 10)}
+        </ThreadTime>
+      );
     }
   };
 
@@ -92,9 +96,7 @@ const index: React.FC<ThreadContainerProps> = (props) => {
 
         <div style={{ textAlign: "right" }}>
           <UserName url="/" name={props.userName} />
-          <ThreadTime>
-            <ThreadDateRender date={props.createAt} />
-          </ThreadTime>
+          <ThreadDateRender date={props.createAt} />
         </div>
       </ThreadInfoWrapper>
     </ThreadContainer>
