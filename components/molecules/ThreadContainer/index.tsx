@@ -5,12 +5,12 @@ import Tag from "../../atoms/Tag";
 import UserName from "../../atoms/UserName";
 import ThreadTrend from "../ThreadTrend";
 import {
+  TagAndInfoContainer,
   TagShowMore,
   TagWrapper,
   ThreadBounty,
   ThreadContainer,
   ThreadHeader,
-  ThreadInfoWrapper,
   ThreadTime,
   ThreadTitle,
 } from "./styles";
@@ -67,36 +67,38 @@ const index: React.FC<ThreadContainerProps> = (props) => {
   return (
     <ThreadContainer>
       <ThreadHeader>
-        <Link href="/Thread/1">
-          <ThreadTitle>{props.title}</ThreadTitle>
-        </Link>
-        <ThreadBounty>+{props.bounty}</ThreadBounty>
-      </ThreadHeader>
+        <div>
+          <Link href="/Thread/1">
+            <ThreadTitle>{props.title}</ThreadTitle>
+          </Link>
+          <ThreadBounty>+{props.bounty}</ThreadBounty>
+        </div>
 
-      <TagWrapper ref={tagWrapperRef}>
-        {props.tags.map((tag, i) => (
-          <Tag key={i} style={{ marginRight: 8, marginBottom: 4, fontWeight: 600 }} label={tag} />
-        ))}
-
-        {!isOpen && overflowActive && (
-          <TagShowMore onClick={tagShowMoreHandler}>{VectorIcon}</TagShowMore>
-        )}
-      </TagWrapper>
-
-      <ThreadInfoWrapper>
-        <div style={{ marginBottom: 8 }}>
+        <div>
           <ThreadTrend label="조회" style={{ marginRight: 18 }} count={props.trend.view} />
           <ThreadTrend label="좋아요" style={{ marginRight: 18 }} count={props.trend.like} />
           <ThreadTrend label="답변" count={props.trend.answerCount} />
         </div>
+      </ThreadHeader>
 
-        <div style={{ textAlign: "right" }}>
+      <TagAndInfoContainer>
+        <TagWrapper ref={tagWrapperRef}>
+          {props.tags.map((tag, i) => (
+            <Tag key={i} style={{ marginRight: 8, marginBottom: 4, fontWeight: 600 }} label={tag} />
+          ))}
+
+          {!isOpen && overflowActive && (
+            <TagShowMore onClick={tagShowMoreHandler}>{VectorIcon}</TagShowMore>
+          )}
+        </TagWrapper>
+
+        <div>
           <UserName url="/" name={props.userName} />
           <ThreadTime>
             <ThreadDateRender date={props.createAt} />
           </ThreadTime>
         </div>
-      </ThreadInfoWrapper>
+      </TagAndInfoContainer>
     </ThreadContainer>
   );
 };

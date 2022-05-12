@@ -27,7 +27,7 @@ export const ThreadBounty = styled.span`
 
 export const ThreadContainer = styled.article`
   position: relative;
-  padding: 13px 26px;
+  padding: 13px 18px 14px 25px;
   border: 1px solid #e0e0e0;
   background-color: white;
   border-right: none;
@@ -36,20 +36,15 @@ export const ThreadContainer = styled.article`
 
 export const ThreadTime = styled.time`
   ${(props) => props.theme.typography.Captions};
-  margin-left: 18px;
+  margin-left: 6px;
   color: #9e9e9e;
   text-align: right;
 `;
 
 export const ThreadHeader = styled.header`
-  max-width: 498px;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 11px;
-`;
-
-export const ThreadInfoWrapper = styled.div`
-  position: absolute;
-  right: 18px;
-  top: 13px;
 `;
 
 export const TagWrapper = styled.div`
@@ -57,10 +52,14 @@ export const TagWrapper = styled.div`
   flex-wrap: wrap;
   width: fit-content;
   position: relative;
-  max-width: 30rem;
+  max-width: 31.6rem;
   height: 24px;
   overflow-y: hidden;
   white-space: nowrap;
+
+  svg {
+    display: flex;
+  }
 `;
 
 export const TagShowMore = styled.button`
@@ -74,6 +73,7 @@ export const TagShowMore = styled.button`
   text-align: center;
   color: ${(props) => props.theme.palette.BlueGray500};
   cursor: pointer;
+  border-radius: 2px;
 
   &:hover {
     border: 1px solid ${(props) => props.theme.palette.BlueGray400};
@@ -95,4 +95,9 @@ export const TagShowMore = styled.button`
       }
     }
   }
+`;
+
+export const TagAndInfoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
