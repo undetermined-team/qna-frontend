@@ -298,13 +298,13 @@ export const theme = {
       font-style: normal;
       font-weight: 400;
       font-size: 15px;
-      line-height: 28px;
+      line-height: 27px;
     `,
     Body2: `
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
-      line-height: 16px;
+      line-height: 27px;
     `,
     Captions: `
       font-style: normal;
@@ -334,8 +334,8 @@ export const theme = {
     Body3: `
       font-style: normal;
       font-weight: 400;
-      font-size: 11px;
-      line-height: 13px;
+      font-size: 12px;
+      line-height: 27px;
     `,
     Tags: `
       font-style: normal;
