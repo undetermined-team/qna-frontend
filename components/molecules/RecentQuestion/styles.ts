@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const RecentQuestionTitle = styled.h4`
   ${(props) => props.theme.typography.Body3};
   color: ${(props) => props.theme.palette.Gray800};
+  line-height: normal;
   max-width: 179px;
   height: 13px;
   overflow: hidden;
@@ -14,8 +15,7 @@ export const RecentQuestionTitle = styled.h4`
 export const RecentQuestionList = styled.li`
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 `;
 
 export const RecentQuestionDeleteButton = styled.button`
