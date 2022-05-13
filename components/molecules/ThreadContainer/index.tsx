@@ -42,6 +42,7 @@ const index: React.FC<ThreadContainerProps> = (props) => {
   useEffect(() => {
     if (isOverflowActive(tagWrapperRef.current)) {
       setOverflowActive(true);
+      tagWrapperRef.current.style.width = `${(tagWrapperRef.current.clientWidth * 88) / 100}px`;
     }
   }, [tagWrapperRef]);
 
@@ -84,7 +85,7 @@ const index: React.FC<ThreadContainerProps> = (props) => {
       <TagAndInfoContainer>
         <TagWrapper ref={tagWrapperRef}>
           {props.tags.map((tag, i) => (
-            <Tag key={i} style={{ marginRight: 8, marginBottom: 4, fontWeight: 600 }} label={tag} />
+            <Tag key={i} style={{ marginRight: 4, marginBottom: 4, fontWeight: 600 }} label={tag} />
           ))}
 
           {!isOpen && overflowActive && (

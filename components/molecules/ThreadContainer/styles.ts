@@ -50,22 +50,17 @@ export const ThreadHeader = styled.header`
 export const TagWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: fit-content;
   position: relative;
-  max-width: 31.6rem;
   height: 24px;
+  max-width: 480px;
   overflow-y: hidden;
-  white-space: nowrap;
-
-  svg {
-    display: flex;
-  }
 `;
 
 export const TagShowMore = styled.button`
   position: absolute;
   right: 0;
   width: 31px;
+  right: 10px;
   height: 21px;
   background-color: #ffffff;
   border: 1px solid ${(props) => props.theme.palette.BlueGray200};
@@ -74,6 +69,10 @@ export const TagShowMore = styled.button`
   color: ${(props) => props.theme.palette.BlueGray500};
   cursor: pointer;
   border-radius: 2px;
+
+  svg {
+    display: flex;
+  }
 
   &:hover {
     border: 1px solid ${(props) => props.theme.palette.BlueGray400};
