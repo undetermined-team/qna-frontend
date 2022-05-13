@@ -48,19 +48,14 @@ export const ThreadHeader = styled.header`
 `;
 
 export const TagWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
   height: 24px;
-  max-width: 480px;
+  max-width: 500px;
+  width: fit-content;
   overflow-y: hidden;
 `;
 
 export const TagShowMore = styled.button`
-  position: absolute;
-  right: 0;
   width: 31px;
-  right: 10px;
   height: 21px;
   background-color: #ffffff;
   border: 1px solid ${(props) => props.theme.palette.BlueGray200};
