@@ -11,7 +11,9 @@ export const ThreadCreateAt = styled.time`
 `;
 
 export const TagWrapper = styled.div`
-  margin-top: 10px;
+  height: 21px;
+  margin: 10px 0 5px 0;
+  overflow-y: hidden;
 `;
 
 export const ThreadHeader = styled.header`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Tag from "../../../atoms/Tag";
 import ThreadTrend from "../../../molecules/ThreadTrend";
 import UserSummary from "../../../molecules/UserSummary";
@@ -11,16 +11,63 @@ import {
   ThreadTrendWrapper,
   ThreadCreateAt,
 } from "./styles";
+import { TagShowMore } from "../../../molecules/ThreadContainer/styles";
+import { VectorIcon } from "../../../../public/assets/SvgIcons";
 
 const index = () => {
+  const [overflowActive, setOverflowActive] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+  const tagWrapperRef = useRef<HTMLDivElement | null>(null);
+
+  const isOverflowActive = (event: HTMLDivElement | null) => {
+    return event.clientWidth > 653;
+  };
+
+  useEffect(() => {
+    if (isOverflowActive(tagWrapperRef.current)) {
+      setOverflowActive(true);
+    }
+  }, [tagWrapperRef]);
+
+  const tagShowMoreHandler = () => {
+    tagWrapperRef.current.style.height = `auto`;
+    setOpen(true);
+  };
+
+  const tags = [
+    "android-studio",
+    "node.js",
+    "next.js",
+    "React",
+    "Vue",
+    "React-Native",
+    "Javascript",
+    "Typescript",
+    "Typescript",
+    "Typescript",
+    "Typescript",
+    "Typescript",
+  ];
+
   return (
     <ThreadHeader>
       <ThreadTitle>정적 클랙스의 static 변수값은 왜 변하지 않을까요?</ThreadTitle>
 
-      <TagWrapper>
-        <Tag label="android-studio" style={{ marginRight: "4px", fontWeight: 600 }} />
-        <Tag label="java" style={{ marginRight: "4px", fontWeight: 600 }} />
-      </TagWrapper>
+      <div>
+        <TagWrapper ref={tagWrapperRef}>
+          {tags.map((tag, i) => (
+            <Tag
+              label={tag}
+              style={{ marginRight: "4px", marginBottom: 5, fontWeight: 600 }}
+              key={i}
+            />
+          ))}
+        </TagWrapper>
+
+        {!isOpen && overflowActive && (
+          <TagShowMore onClick={tagShowMoreHandler}>{VectorIcon}</TagShowMore>
+        )}
+      </div>
 
       <ThreadInfoContainer>
         <div>
