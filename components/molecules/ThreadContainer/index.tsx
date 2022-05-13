@@ -1,12 +1,10 @@
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import { VectorIcon } from "../../../public/assets/SvgIcons";
+import React from "react";
 import Tag from "../../atoms/Tag";
 import UserName from "../../atoms/UserName";
 import ThreadTrend from "../ThreadTrend";
 import {
   TagAndInfoContainer,
-  TagShowMore,
   TagWrapper,
   ThreadBounty,
   ThreadContainer,
@@ -31,26 +29,6 @@ export interface ThreadContainerProps {
 }
 
 const index: React.FC<ThreadContainerProps> = (props) => {
-  const [overflowActive, setOverflowActive] = useState(false);
-  const [isOpen, setOpen] = useState(false);
-  const tagWrapperRef = useRef<HTMLDivElement | null>(null);
-
-  const isOverflowActive = (event: HTMLDivElement | null) => {
-    return event.clientHeight > 24 || event.clientWidth > 479;
-  };
-
-  useEffect(() => {
-    if (isOverflowActive(tagWrapperRef.current)) {
-      setOverflowActive(true);
-      tagWrapperRef.current.style.width = `${(tagWrapperRef.current.clientWidth * 88) / 100}px`;
-    }
-  }, [tagWrapperRef]);
-
-  const tagShowMoreHandler = () => {
-    tagWrapperRef.current.style.height = `${(tagWrapperRef.current.clientHeight * 2).toString()}px`;
-    setOpen(true);
-  };
-
   const ThreadDateRender = ({ date }: { date: string }) => {
     const craeteAtToDate = new Date(date);
 
@@ -83,14 +61,10 @@ const index: React.FC<ThreadContainerProps> = (props) => {
       </ThreadHeader>
 
       <TagAndInfoContainer>
-        <TagWrapper ref={tagWrapperRef}>
+        <TagWrapper>
           {props.tags.map((tag, i) => (
             <Tag key={i} style={{ marginRight: 4, marginBottom: 4, fontWeight: 600 }} label={tag} />
           ))}
-
-          {!isOpen && overflowActive && (
-            <TagShowMore onClick={tagShowMoreHandler}>{VectorIcon}</TagShowMore>
-          )}
         </TagWrapper>
 
         <div>
