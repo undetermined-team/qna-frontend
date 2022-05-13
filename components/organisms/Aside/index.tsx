@@ -36,9 +36,12 @@ const exmapleBountyRank = [
 ];
 
 const RecentQuestionWrapper = styled.ol`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 110px;
   padding: 10px 9px;
   background-color: #eceff1;
-  max-height: 96px;
   border-radius: 3px;
 `;
 
@@ -70,6 +73,12 @@ const index = () => {
 
       <AsideContainer title="최근에 본 질문" subButtonText="전체보기" onTextClick={onTextButton}>
         <RecentQuestionWrapper>
+          <RecentQuestion
+            title="위도/경도 불러오는 함수 질문드립니다."
+            link="/"
+            onDelete={onDelete}
+          />
+
           <RecentQuestion
             title="위도/경도 불러오는 함수 질문드립니다."
             link="/"
