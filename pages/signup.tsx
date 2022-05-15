@@ -1,12 +1,20 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
 import Button from "../components/atoms/Button";
 import { Input } from "../components/atoms/Input";
 import Link from "next/link";
-import { GithubIcon } from "../public/assets/SvgIcons";
+import { GithubIcon, HideEye, ShowEye } from "../public/assets/SvgIcons";
 import { useFormik } from "formik";
+import * as Yup from "yup";
+import IconButton from "../components/atoms/IconButton";
 
-const SignUpInput = styled(Input)`
+interface SignupInputProps {
+  isError?: boolean | string | number;
+}
+
+const SignUpInput = styled(Input)<SignupInputProps>`
+  border-color: ${(props) => props.isError && props.theme.palette.RedA400};
+  box-shadow: ${(props) => props.isError && "0px 0px 0px 3px rgba(255, 138, 128, 0.25);"};
   ${(props) => props.theme.typography.Body};
   width: 310px;
   height: 38px;
@@ -14,16 +22,19 @@ const SignUpInput = styled(Input)`
   border-radius: 4px;
 
   & :hover {
-    border: 1px solid ${(props) => props.theme.palette.GreenA400};
+    border: 1px solid
+      ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.GreenA400)};
   }
 
   & :active {
-    border: 1px solid ${(props) => props.theme.palette.GreenA400};
+    border: 1px solid
+      ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.GreenA400)};
     box-shadow: 0px 0px 0px 3px rgba(0, 230, 118, 0.25);
   }
 
   &:focus {
-    border: 1px solid ${(props) => props.theme.palette.GreenA400};
+    border: 1px solid
+      ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.GreenA400)};
   }
 `;
 
@@ -80,7 +91,7 @@ const ConsentWrapper = styled.div`
 `;
 
 const SignUpContainer = styled.div`
-  margin-top: 113px;
+  margin-top: 65px;
 `;
 
 const SignUpHeading = styled.h2`
@@ -97,9 +108,13 @@ const SignUpButtonContainer = styled.div`
   text-align: center;
 `;
 
-const ValidityGuidelines = styled.p`
+interface ValidityGuidelinesProps {
+  isError?: boolean | string | number;
+}
+
+const ValidityGuidelines = styled.p<ValidityGuidelinesProps>`
   ${(props) => props.theme.typography.Body3};
-  color: ${(props) => props.theme.palette.Gray600};
+  color: ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.Gray600)};
   width: 305px;
   margin-top: 7px;
 `;
@@ -111,7 +126,19 @@ const GoSignIn = styled.a`
   margin-top: 33px;
 `;
 
+const PasswordShowButton = styled(IconButton)`
+  position: absolute;
+  right: 16px;
+  top: 7px;
+`;
+
+const PasswordInputWrapper = styled.div`
+  position: relative;
+`;
+
 const Signup = () => {
+  const [isPasswordShow, setIsPasswordShow] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -121,6 +148,16 @@ const Signup = () => {
       usingAgreements: false,
       marketingAgreements: false,
     },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .min(1, "1~32자 사이로 입력해 주세요.")
+        .max(32, "1~32자 사이로 입력해 주세요."),
+      email: Yup.string()
+        .email("이메일 형식으로 입력해야 합니다.")
+        .min(1, "1~32자 사이로 입력해 주세요.")
+        .max(32, "1~32자 사이로 입력해 주세요."),
+      password: Yup.string().min(6).max(20),
+    }),
     onSubmit: (values) => {
       console.log(values);
     },
@@ -128,6 +165,11 @@ const Signup = () => {
 
   const onGithubClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
+  };
+
+  const handleShowPassword: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.preventDefault();
+    setIsPasswordShow(!isPasswordShow);
   };
 
   return (
@@ -138,6 +180,7 @@ const Signup = () => {
         <FormInputWrapper>
           <FormLabel>이름</FormLabel>
           <SignUpInput
+            isError={formik.getFieldMeta("name").error}
             required
             placeholder="김엘리자베스"
             id="name"
@@ -145,29 +188,46 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
           />
+
+          <ValidityGuidelines isError>{formik.getFieldMeta("name").error}</ValidityGuidelines>
         </FormInputWrapper>
 
         <FormInputWrapper>
           <FormLabel>이메일</FormLabel>
           <SignUpInput
+            isError={formik.getFieldMeta("email").error}
             type="email"
             placeholder="name@address.com"
             name="email"
             onChange={formik.handleChange}
             value={formik.values.email}
           />
+
+          <ValidityGuidelines isError>{formik.getFieldMeta("email").error}</ValidityGuidelines>
         </FormInputWrapper>
 
         <FormInputWrapper>
           <FormLabel>비밀번호</FormLabel>
-          <SignUpInput
-            type="password"
-            required
-            name="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-          />
-          <ValidityGuidelines>
+          <PasswordInputWrapper>
+            <SignUpInput
+              style={{ paddingRight: 52 }}
+              isError={formik.getFieldMeta("password").error}
+              type={isPasswordShow ? "text" : "password"}
+              required
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+            />
+
+            <PasswordShowButton
+              style={{ position: "absolute", right: 12, top: 7 }}
+              onClick={handleShowPassword}
+            >
+              {isPasswordShow ? HideEye : ShowEye}
+            </PasswordShowButton>
+          </PasswordInputWrapper>
+
+          <ValidityGuidelines isError={formik.getFieldMeta("password").error}>
             6-20자 이내의 대문자, 소문자, 숫자, 특수문자가 각 1개 이상 포함된 비밀번호를 만들어
             주세요.
           </ValidityGuidelines>
@@ -176,12 +236,17 @@ const Signup = () => {
         <FormInputWrapper>
           <FormLabel>비밀번호 확인</FormLabel>
           <SignUpInput
+            isError={formik.getFieldMeta("confirmPassword").error}
             type="password"
             required
             name="confirmPassword"
             onChange={formik.handleChange}
             value={formik.values.confirmPassword}
           />
+
+          <ValidityGuidelines isError>
+            {formik.getFieldMeta("confirmPassword").error}
+          </ValidityGuidelines>
         </FormInputWrapper>
 
         <FormInputWrapper>
