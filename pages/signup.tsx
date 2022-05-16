@@ -156,7 +156,13 @@ const Signup = () => {
         .email("이메일 형식으로 입력해야 합니다.")
         .min(1, "1~32자 사이로 입력해 주세요.")
         .max(32, "1~32자 사이로 입력해 주세요."),
-      password: Yup.string().min(6).max(20),
+
+      password: Yup.string()
+        .min(6)
+        .max(20)
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]/, {
+          excludeEmptyString: true,
+        }),
     }),
     onSubmit: (values) => {
       console.log(values);
