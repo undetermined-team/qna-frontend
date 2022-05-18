@@ -4,25 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import SignSubmit from "../components/molecules/SignSubmit";
 import FormInput from "../components/molecules/FormInput";
-
-const ConsentContents = styled.span`
-  ${(props) => props.theme.typography.Footnote};
-  color: ${(props) => props.theme.palette.Gray800};
-`;
-
-const ConsentCheckBox = styled.input`
-  width: 18px;
-  height: 18px;
-  border: 1px solid #bdbdbd;
-  margin-right: 10px;
-  border-radius: 4px;
-`;
-
-const ConsentWrapper = styled.div`
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-`;
+import TermsCheck from "../components/molecules/termsCheck";
 
 const SignContainer = styled.div`
   margin-top: 65px;
@@ -45,8 +27,8 @@ const SignUp = () => {
       email: "",
       password: "",
       confirmPassword: "",
-      usingAgreements: false,
-      marketingAgreements: false,
+      usingTerms: false,
+      marketingTerms: false,
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -106,24 +88,17 @@ const SignUp = () => {
         />
 
         <FormInputWrapper>
-          <ConsentWrapper>
-            <ConsentCheckBox
-              type="checkbox"
-              required
-              name="usingAgreements"
-              {...formik.getFieldProps("usingAgreements")}
-            />
-            <ConsentContents>이용약관 및 개인정보 처리방침에 동의합니다.</ConsentContents>
-          </ConsentWrapper>
+          <TermsCheck
+            name="usingTerms"
+            formik={formik}
+            contents="이용약관 및 개인정보 처리방침에 동의합니다."
+          />
 
-          <ConsentWrapper>
-            <ConsentCheckBox
-              type="checkbox"
-              name="marketingAgreements"
-              {...formik.getFieldProps("marketingAgreements")}
-            />
-            <ConsentContents>마케팅 활용 동의 및 광고 수신에 동의합니다. (선택)</ConsentContents>
-          </ConsentWrapper>
+          <TermsCheck
+            name="marketingTerms"
+            formik={formik}
+            contents="마케팅 활용 동의 및 광고 수신에 동의합니다. (선택)"
+          />
         </FormInputWrapper>
 
         <SignSubmit currentPageName="SignUp" />
