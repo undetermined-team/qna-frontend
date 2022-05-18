@@ -207,9 +207,8 @@ const Signup = () => {
             isError={formik.getFieldMeta("email").error}
             type="email"
             placeholder="name@address.com"
-            name="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
+            required
+            {...formik.getFieldProps("email")}
           />
 
           <ValidityGuidelines isError>{formik.getFieldMeta("email").error}</ValidityGuidelines>
@@ -224,8 +223,7 @@ const Signup = () => {
               type={isPasswordShow ? "text" : "password"}
               required
               name="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
+              {...formik.getFieldProps("password")}
             />
 
             <PasswordShowButton
@@ -248,9 +246,7 @@ const Signup = () => {
             isError={formik.getFieldMeta("confirmPassword").error}
             type="password"
             required
-            name="confirmPassword"
-            onChange={formik.handleChange}
-            value={formik.values.confirmPassword}
+            {...formik.getFieldProps("confirmPassword")}
           />
 
           <ValidityGuidelines isError>
@@ -264,8 +260,7 @@ const Signup = () => {
               type="checkbox"
               required
               name="usingAgreements"
-              onChange={formik.handleChange}
-              checked={formik.values.usingAgreements}
+              {...formik.getFieldProps("usingAgreements")}
             />
             <ConsentContents>이용약관 및 개인정보 처리방침에 동의합니다.</ConsentContents>
           </ConsentWrapper>
@@ -274,8 +269,7 @@ const Signup = () => {
             <ConsentCheckBox
               type="checkbox"
               name="marketingAgreements"
-              onChange={formik.handleChange}
-              checked={formik.values.marketingAgreements}
+              {...formik.getFieldProps("marketingAgreements")}
             />
             <ConsentContents>마케팅 활용 동의 및 광고 수신에 동의합니다. (선택)</ConsentContents>
           </ConsentWrapper>
