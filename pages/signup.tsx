@@ -1,79 +1,9 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
-import Button from "../components/atoms/Button";
-import { Input } from "../components/atoms/Input";
-import Link from "next/link";
-import { GithubIcon, HideEye, ShowEye } from "../public/assets/SvgIcons";
+import React from "react";
+import styled from "styled-components";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import IconButton from "../components/atoms/IconButton";
-
-interface SignInputProps {
-  isError?: boolean | string | number;
-}
-
-interface ValidityGuidelinesProps {
-  isError?: boolean | string | number;
-}
-
-const SignInput = styled(Input)<SignInputProps>`
-  border-color: ${(props) => props.isError && props.theme.palette.RedA400};
-  box-shadow: ${(props) => props.isError && "0px 0px 0px 3px rgba(255, 138, 128, 0.25);"};
-  ${(props) => props.theme.typography.Body};
-  width: 310px;
-  height: 38px;
-  padding: 10px;
-  border-radius: 4px;
-
-  & :hover {
-    border: 1px solid
-      ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.GreenA400)};
-  }
-
-  & :active {
-    border: 1px solid
-      ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.GreenA400)};
-    box-shadow: 0px 0px 0px 3px rgba(0, 230, 118, 0.25);
-  }
-
-  &:focus {
-    border: 1px solid
-      ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.GreenA400)};
-  }
-`;
-
-const FormLabel = styled.p`
-  ${(props) => props.theme.typography.Footnote};
-  color: #000000;
-`;
-
-const SignButton = styled(Button)`
-  ${(props) => props.theme.typography.Body};
-  line-height: normal;
-  width: 310px;
-  height: 38px;
-  background-color: ${(props) => props.theme.palette.LightBlueA700};
-  border: ${(props) => props.theme.palette.LightBlueA700};
-  border-radius: 2px;
-  margin-bottom: 16px;
-`;
-
-const GithubSignButton = styled(Button)`
-  ${(props) => props.theme.typography.Body};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 310px;
-  height: 38px;
-  background-color: ${(props) => props.theme.palette.Gray900};
-  border-color: ${(props) => props.theme.palette.Gray900};
-  border-radius: 2px;
-  margin: 16px 0;
-
-  svg {
-    margin-right: 19px;
-  }
-`;
+import SignSubmit from "../components/molecules/SignSubmit";
+import FormInput from "../components/molecules/FormInput";
 
 const ConsentContents = styled.span`
   ${(props) => props.theme.typography.Footnote};
@@ -108,37 +38,7 @@ const FormInputWrapper = styled.div`
   margin-bottom: 24px;
 `;
 
-const SignButtonContainer = styled.div`
-  text-align: center;
-`;
-
-const ValidityGuidelines = styled.p<ValidityGuidelinesProps>`
-  ${(props) => props.theme.typography.Body3};
-  color: ${(props) => (props.isError ? props.theme.palette.RedA400 : props.theme.palette.Gray600)};
-  width: 305px;
-  margin-top: 7px;
-`;
-
-const GoSignIn = styled.a`
-  ${(props) => props.theme.typography.Body};
-  color: ${(props) => props.theme.palette.LightBlueA700};
-  cursor: pointer;
-  margin-top: 33px;
-`;
-
-const PasswordShowButton = styled(IconButton)`
-  position: absolute;
-  right: 16px;
-  top: 7px;
-`;
-
-const PasswordInputWrapper = styled.div`
-  position: relative;
-`;
-
-const Sign = () => {
-  const [isPasswordShow, setIsPasswordShow] = useState(false);
-
+const SignUp = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -172,85 +72,38 @@ const Sign = () => {
     },
   });
 
-  const onGithubClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault();
-  };
-
-  const handleShowPassword: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault();
-    setIsPasswordShow(!isPasswordShow);
-  };
-
   return (
     <SignContainer>
       <SignHeading>계정 만들기</SignHeading>
 
       <form onSubmit={formik.handleSubmit}>
-        <FormInputWrapper>
-          <FormLabel>이름</FormLabel>
-          <SignInput
-            isError={formik.getFieldMeta("name").error}
-            required
-            placeholder="김엘리자베스"
-            name="name"
-            {...formik.getFieldProps("name")}
-          />
+        <FormInput label="이름" name="name" formik={formik} placeholder="김엘리자베스" required />
 
-          <ValidityGuidelines isError>{formik.getFieldMeta("name").error}</ValidityGuidelines>
-        </FormInputWrapper>
+        <FormInput
+          label="이메일"
+          type="email"
+          name="email"
+          formik={formik}
+          placeholder="name@address.com"
+          required
+        />
 
-        <FormInputWrapper>
-          <FormLabel>이메일</FormLabel>
-          <SignInput
-            isError={formik.getFieldMeta("email").error}
-            type="email"
-            placeholder="name@address.com"
-            required
-            {...formik.getFieldProps("email")}
-          />
+        <FormInput
+          label="비밀번호"
+          name="password"
+          type="password"
+          formik={formik}
+          required
+          variant="password"
+        />
 
-          <ValidityGuidelines isError>{formik.getFieldMeta("email").error}</ValidityGuidelines>
-        </FormInputWrapper>
-
-        <FormInputWrapper>
-          <FormLabel>비밀번호</FormLabel>
-          <PasswordInputWrapper>
-            <SignInput
-              style={{ paddingRight: 52 }}
-              isError={formik.getFieldMeta("password").error}
-              type={isPasswordShow ? "text" : "password"}
-              required
-              name="password"
-              {...formik.getFieldProps("password")}
-            />
-
-            <PasswordShowButton
-              style={{ position: "absolute", right: 12, top: 7 }}
-              onClick={handleShowPassword}
-            >
-              {isPasswordShow ? HideEye : ShowEye}
-            </PasswordShowButton>
-          </PasswordInputWrapper>
-
-          <ValidityGuidelines isError={formik.getFieldMeta("password").error}>
-            6-20자 이내의 대문자, 소문자, 숫자, 특수문자가 각 1개 이상 포함된 비밀번호를 만들어
-            주세요.
-          </ValidityGuidelines>
-        </FormInputWrapper>
-
-        <FormInputWrapper>
-          <FormLabel>비밀번호 확인</FormLabel>
-          <SignInput
-            isError={formik.getFieldMeta("confirmPassword").error}
-            type="password"
-            required
-            {...formik.getFieldProps("confirmPassword")}
-          />
-
-          <ValidityGuidelines isError>
-            {formik.getFieldMeta("confirmPassword").error}
-          </ValidityGuidelines>
-        </FormInputWrapper>
+        <FormInput
+          label="비밀번호 확인"
+          type="password"
+          name="confirmPassword"
+          formik={formik}
+          required
+        />
 
         <FormInputWrapper>
           <ConsentWrapper>
@@ -273,23 +126,10 @@ const Sign = () => {
           </ConsentWrapper>
         </FormInputWrapper>
 
-        <SignButtonContainer>
-          <SignButton type="submit">가입하기</SignButton>
-
-          <p>또는</p>
-
-          <GithubSignButton onClick={onGithubClick}>
-            {GithubIcon}
-            <span>GitHub 계정으로 가입하기</span>
-          </GithubSignButton>
-
-          <Link href="/login">
-            <GoSignIn>이미 계정이 있으신가요?</GoSignIn>
-          </Link>
-        </SignButtonContainer>
+        <SignSubmit currentPageName="SignUp" />
       </form>
     </SignContainer>
   );
 };
 
-export default Sign;
+export default SignUp;
