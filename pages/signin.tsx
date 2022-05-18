@@ -40,7 +40,7 @@ const SignIn = () => {
 
   return (
     <SignContainer>
-      <SignHeading>로그인</SignHeading>
+      <SignHeading>로그인하기</SignHeading>
 
       <form onSubmit={formik.handleSubmit}>
         <FormInput
