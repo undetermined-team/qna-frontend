@@ -8,11 +8,15 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import IconButton from "../components/atoms/IconButton";
 
-interface SignupInputProps {
+interface SignInputProps {
   isError?: boolean | string | number;
 }
 
-const SignUpInput = styled(Input)<SignupInputProps>`
+interface ValidityGuidelinesProps {
+  isError?: boolean | string | number;
+}
+
+const SignInput = styled(Input)<SignInputProps>`
   border-color: ${(props) => props.isError && props.theme.palette.RedA400};
   box-shadow: ${(props) => props.isError && "0px 0px 0px 3px rgba(255, 138, 128, 0.25);"};
   ${(props) => props.theme.typography.Body};
@@ -43,7 +47,7 @@ const FormLabel = styled.p`
   color: #000000;
 `;
 
-const SignUpButton = styled(Button)`
+const SignButton = styled(Button)`
   ${(props) => props.theme.typography.Body};
   line-height: normal;
   width: 310px;
@@ -54,7 +58,7 @@ const SignUpButton = styled(Button)`
   margin-bottom: 16px;
 `;
 
-const GithubSignUpButton = styled(Button)`
+const GithubSignButton = styled(Button)`
   ${(props) => props.theme.typography.Body};
   display: flex;
   justify-content: center;
@@ -90,11 +94,11 @@ const ConsentWrapper = styled.div`
   align-items: center;
 `;
 
-const SignUpContainer = styled.div`
+const SignContainer = styled.div`
   margin-top: 65px;
 `;
 
-const SignUpHeading = styled.h2`
+const SignHeading = styled.h2`
   ${(props) => props.theme.typography.Heading1};
   margin-bottom: 41px;
   text-align: center;
@@ -104,13 +108,9 @@ const FormInputWrapper = styled.div`
   margin-bottom: 24px;
 `;
 
-const SignUpButtonContainer = styled.div`
+const SignButtonContainer = styled.div`
   text-align: center;
 `;
-
-interface ValidityGuidelinesProps {
-  isError?: boolean | string | number;
-}
 
 const ValidityGuidelines = styled.p<ValidityGuidelinesProps>`
   ${(props) => props.theme.typography.Body3};
@@ -136,7 +136,7 @@ const PasswordInputWrapper = styled.div`
   position: relative;
 `;
 
-const Signup = () => {
+const Sign = () => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
 
   const formik = useFormik({
@@ -182,20 +182,18 @@ const Signup = () => {
   };
 
   return (
-    <SignUpContainer>
-      <SignUpHeading>계정 만들기</SignUpHeading>
+    <SignContainer>
+      <SignHeading>계정 만들기</SignHeading>
 
       <form onSubmit={formik.handleSubmit}>
         <FormInputWrapper>
           <FormLabel>이름</FormLabel>
-          <SignUpInput
+          <SignInput
             isError={formik.getFieldMeta("name").error}
             required
             placeholder="김엘리자베스"
-            id="name"
             name="name"
-            onChange={formik.handleChange}
-            value={formik.values.name}
+            {...formik.getFieldProps("name")}
           />
 
           <ValidityGuidelines isError>{formik.getFieldMeta("name").error}</ValidityGuidelines>
@@ -203,7 +201,7 @@ const Signup = () => {
 
         <FormInputWrapper>
           <FormLabel>이메일</FormLabel>
-          <SignUpInput
+          <SignInput
             isError={formik.getFieldMeta("email").error}
             type="email"
             placeholder="name@address.com"
@@ -217,7 +215,7 @@ const Signup = () => {
         <FormInputWrapper>
           <FormLabel>비밀번호</FormLabel>
           <PasswordInputWrapper>
-            <SignUpInput
+            <SignInput
               style={{ paddingRight: 52 }}
               isError={formik.getFieldMeta("password").error}
               type={isPasswordShow ? "text" : "password"}
@@ -242,7 +240,7 @@ const Signup = () => {
 
         <FormInputWrapper>
           <FormLabel>비밀번호 확인</FormLabel>
-          <SignUpInput
+          <SignInput
             isError={formik.getFieldMeta("confirmPassword").error}
             type="password"
             required
@@ -275,23 +273,23 @@ const Signup = () => {
           </ConsentWrapper>
         </FormInputWrapper>
 
-        <SignUpButtonContainer>
-          <SignUpButton type="submit">가입하기</SignUpButton>
+        <SignButtonContainer>
+          <SignButton type="submit">가입하기</SignButton>
 
           <p>또는</p>
 
-          <GithubSignUpButton onClick={onGithubClick}>
+          <GithubSignButton onClick={onGithubClick}>
             {GithubIcon}
             <span>GitHub 계정으로 가입하기</span>
-          </GithubSignUpButton>
+          </GithubSignButton>
 
           <Link href="/login">
             <GoSignIn>이미 계정이 있으신가요?</GoSignIn>
           </Link>
-        </SignUpButtonContainer>
+        </SignButtonContainer>
       </form>
-    </SignUpContainer>
+    </SignContainer>
   );
 };
 
-export default Signup;
+export default Sign;
