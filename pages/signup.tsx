@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import SignSubmit from "../components/molecules/SignSubmit";
 import FormInput from "../components/molecules/FormInput";
-import TermsCheck from "../components/molecules/termsCheck";
+import TermsCheck from "../components/molecules/TermsCheck";
 
 const SignContainer = styled.div`
   margin-top: 65px;
