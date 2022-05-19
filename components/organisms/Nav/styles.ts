@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.header`
-  position: fixed;
+  position: sticky;
   display: flex;
   background-color: white;
   border: 1px solid #eeeeee;
   padding: 10px;
   height: 60px;
-  width: 100%;
+  top: 0;
   z-index: 500;
 `;
 
