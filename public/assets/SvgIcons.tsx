@@ -81,12 +81,12 @@ export const PeopleButton = (
 export const CommunityButton = (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M20.4286 11C15.6971 11 11.8571 14.84 11.8571 19.5714C11.8571 20.8914 12.1657 22.1257 12.6886 23.2486L11 29L16.7514 27.3114C17.8743 27.8343 19.1086 28.1429 20.4286 28.1429C25.16 28.1429 29 24.3029 29 19.5714C29 14.84 25.16 11 20.4286 11Z"
       stroke="#BDBDBD"
-      stroke-width="2"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -190,8 +190,8 @@ export const CheckCircleIcon = (
 export const GithubIcon = (
   <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M11.5 0C5.1492 0 0 5.05035 0 11.2792C0 16.2623 3.29442 20.4909 7.86471 21.9813C8.43981 22.0859 8.65118 21.7367 8.65118 21.4378C8.65118 21.1689 8.63976 20.2798 8.63595 19.3385C5.43484 20.0202 4.76072 18.0087 4.76072 18.0087C4.23704 16.705 3.48485 16.3576 3.48485 16.3576C2.4413 15.6572 3.56292 15.6721 3.56292 15.6721C4.71692 15.7524 5.3263 16.8339 5.3263 16.8339C6.35271 18.5578 8.01706 18.0591 8.67213 17.7715C8.77496 17.043 9.07394 16.5444 9.40147 16.2623C6.84782 15.9766 4.16278 15.0091 4.16278 10.689C4.16278 9.45819 4.61219 8.45148 5.34724 7.66143C5.22727 7.37754 4.83499 6.23075 5.45769 4.6768C5.45769 4.6768 6.42317 4.37423 8.62072 5.83292C9.53858 5.58265 10.5212 5.45751 11.5 5.45378C12.4769 5.45751 13.4614 5.58265 14.3812 5.83292C16.5768 4.37423 17.5404 4.6768 17.5404 4.6768C18.1669 6.23075 17.7727 7.37754 17.6528 7.66143C18.3897 8.45148 18.8353 9.45819 18.8353 10.689C18.8353 15.0203 16.1446 15.9747 13.5852 16.2549C13.9984 16.6041 14.366 17.2915 14.366 18.343C14.366 19.8521 14.3526 21.0661 14.3526 21.4378C14.3526 21.7385 14.5602 22.0897 15.1429 21.9795C19.7094 20.4871 23 16.2605 23 11.2792C23 5.05035 17.8508 0 11.5 0Z"
       fill="white"
     />
@@ -231,16 +231,16 @@ export const ShowEye = (
     <path
       d="M12 18C17.5228 18 22 12 22 12C22 12 17.5228 6 12 6C6.47715 6 2 12 2 12C2 12 6.47715 18 12 18Z"
       stroke="#BDBDBD"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"
       stroke="#BDBDBD"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -250,23 +250,23 @@ export const HideEye = (
     <path
       d="M4 4L20 20"
       stroke="#BDBDBD"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M16.5 16.756C15.1474 17.4846 13.6186 18 12 18C6.47715 18 2 12 2 12C2 12 4.08842 9.20123 7.17205 7.4267M19.5 14.6337C21.0559 13.2652 22 12 22 12C22 12 17.5228 6 12 6C11.6625 6 11.3289 6.02241 11 6.06448"
       stroke="#BDBDBD"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M13.3229 13.5C12.9703 13.8112 12.5072 14 12 14C10.8954 14 10 13.1046 10 12C10 11.4605 10.2136 10.9709 10.5609 10.6111"
       stroke="#BDBDBD"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
