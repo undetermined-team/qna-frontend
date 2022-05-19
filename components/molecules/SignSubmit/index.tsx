@@ -23,7 +23,7 @@ const index: React.FC<SignButtonContainerProps> = (props) => {
         <span>GitHub 계정으로 가입하기</span>
       </GithubSignButton>
 
-      <Link href="/login">
+      <Link href="/signin">
         <GoSign>이미 계정이 있으신가요?</GoSign>
       </Link>
     </SignButtonContainer>
@@ -38,7 +38,7 @@ const index: React.FC<SignButtonContainerProps> = (props) => {
         <span>GitHub 계정으로 로그인하기</span>
       </GithubSignButton>
 
-      <Link href="/login">
+      <Link href="/signup">
         <GoSign>아직 계정이 없으신가요?</GoSign>
       </Link>
     </SignButtonContainer>
