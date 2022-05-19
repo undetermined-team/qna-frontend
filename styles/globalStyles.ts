@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     width: 100vw;
+    overflow-x: hidden;
     font-size: 16px;
   }
 
