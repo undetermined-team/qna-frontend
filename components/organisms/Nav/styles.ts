@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.header`
+  position: fixed;
   display: flex;
   background-color: white;
   border: 1px solid #eeeeee;
   padding: 10px;
   height: 60px;
+  width: 100%;
+  z-index: 500;
 `;
 
 export const NavContent = styled.div`
