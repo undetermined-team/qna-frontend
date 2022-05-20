@@ -1,6 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 import Button from "../../atoms/Button";
-import { AsideWrapper, AsideHeader, AsideTitle, AsideChildren } from "./styles";
+import { AsideWrapper, AsideHeader, AsideTitle, AsideChildren, AsideMoreButton } from "./styles";
 
 interface AsideProps {
   title: String;
@@ -15,21 +16,9 @@ const index: React.FC<AsideProps> = (props) => {
       <AsideHeader>
         <AsideTitle>{props.title}</AsideTitle>
 
-        <Button
-          variant="text"
-          style={{
-            color: "#FF8F00",
-            height: "15px",
-            padding: 0,
-            lineHeight: "14.06px",
-            fontStyle: "normal",
-            fontWeight: 400,
-            fontSize: 12,
-          }}
-          onClick={props.onTextClick}
-        >
+        <AsideMoreButton variant="text" onClick={props.onTextClick}>
           {props.subButtonText}
-        </Button>
+        </AsideMoreButton>
       </AsideHeader>
 
       <AsideChildren>{props.children}</AsideChildren>

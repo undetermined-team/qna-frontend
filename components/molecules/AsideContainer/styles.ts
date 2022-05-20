@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../../atoms/Button";
 
 export const AsideTitle = styled.h4`
   ${(props) => props.theme.typography.Captions};
@@ -28,3 +29,10 @@ export const AsideSubButtonStyle = {
   fontWeight: 400,
   fontSize: 12,
 };
+
+export const AsideMoreButton = styled(Button)`
+  ${(props) => props.theme.typography.Footnote2};
+  color: #ff8f00;
+  height: 15px;
+  padding: 0;
+`;
