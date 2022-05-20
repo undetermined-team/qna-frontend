@@ -1,5 +1,14 @@
 import React from "react";
-import { NavContainer, NavContent, LogoExample, NavUl, SearchInputWrapper } from "./styles";
+import {
+  NavContainer,
+  NavContent,
+  LogoExample,
+  NavUl,
+  SearchInputWrapper,
+  NavIconButton,
+  SearchIconButton,
+  SearchInput,
+} from "./styles";
 import {
   HomeIcon,
   CommunityButton,
@@ -7,28 +16,7 @@ import {
   SearchIcon,
   ProfileIcon,
 } from "../../../public/assets/SvgIcons";
-import IconButton from "../../atoms/IconButton";
 import Link from "next/link";
-import { Input } from "../../atoms/Input";
-import styled from "styled-components";
-
-const SearchInput = styled(Input)`
-  border-radius: 8px;
-  padding: 9px 16px;
-  padding-right: 45px;
-  width: 562px;
-  height: 40px;
-`;
-
-const SearchIconButton = styled(IconButton)`
-  position: absolute;
-  padding: 10px;
-  right: 10px;
-`;
-
-const NavIconButton = styled(IconButton)`
-  padding: 10px;
-`;
 
 const Nav: React.FC = () => {
   return (

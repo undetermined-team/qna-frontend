@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import IconButton from "../../atoms/IconButton";
+import { Input } from "../../atoms/Input";
 
 export const NavContainer = styled.header`
   position: sticky;
@@ -39,4 +41,22 @@ export const LogoExample = styled.p`
 
 export const SearchInputWrapper = styled.div`
   position: relative;
+`;
+
+export const SearchInput = styled(Input)`
+  border-radius: 8px;
+  padding: 9px 16px;
+  padding-right: 45px;
+  width: 562px;
+  height: 40px;
+`;
+
+export const SearchIconButton = styled(IconButton)`
+  position: absolute;
+  padding: 10px;
+  right: 10px;
+`;
+
+export const NavIconButton = styled(IconButton)`
+  padding: 10px;
 `;
