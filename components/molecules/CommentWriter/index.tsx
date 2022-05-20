@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Input } from "../../atoms/Input";
-import { CommentWriteContainer } from "./styles";
+import { CommentInput, CommentWriteContainer } from "./styles";
 
 const WriteButton = styled.button`
   ${(props) => props.theme.typography.Captions};
@@ -22,18 +21,7 @@ const WriteButton = styled.button`
 const index = () => {
   return (
     <CommentWriteContainer>
-      <Input
-        as="textarea"
-        placeholder="댓글을 입력해 주세요"
-        style={{
-          width: 590,
-          height: 33,
-          padding: "5px 16px",
-          borderRadius: 2,
-          resize: "none",
-        }}
-      />
-
+      <CommentInput as="textarea" placeholder="댓글을 입력해 주세요" />
       <WriteButton>작성</WriteButton>
     </CommentWriteContainer>
   );
