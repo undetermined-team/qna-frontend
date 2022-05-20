@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import IconButton from "../../atoms/IconButton";
 import { Input } from "../../atoms/Input";
 
 interface SignInputProps {
   isError?: boolean | string | number;
+  name: string;
 }
 
 interface ValidityGuidelinesProps {
@@ -17,6 +18,11 @@ export const SignInput = styled(Input)<SignInputProps>`
   width: 310px;
   height: 38px;
   padding: 10px;
+  ${(props) =>
+    props.name === "password" &&
+    css`
+      padding-right: 52px;
+    `}
   border-radius: 4px;
 
   & :hover {

@@ -33,7 +33,6 @@ const index: React.FC<FormInputProps> = (props) => {
       <FormLabel>{props.label}</FormLabel>
       <PasswordInputWrapper>
         <SignInput
-          style={{ paddingRight: 52 }}
           isError={props.formik.getFieldMeta(props.name).error}
           type={isPasswordShow ? "text" : "password"}
           required
@@ -42,10 +41,7 @@ const index: React.FC<FormInputProps> = (props) => {
           autoComplete="on"
         />
 
-        <PasswordShowButton
-          style={{ position: "absolute", right: 12, top: 7 }}
-          onClick={handleShowPassword}
-        >
+        <PasswordShowButton onClick={handleShowPassword}>
           {isPasswordShow ? HideEye : ShowEye}
         </PasswordShowButton>
       </PasswordInputWrapper>
