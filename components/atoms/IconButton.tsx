@@ -1,13 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-interface IconButtonProps {
-  children: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  style?: React.CSSProperties;
-}
-
-const StyledButton = styled.button`
+const IconButton = styled.button`
   height: 24px;
   cursor: pointer;
   border: none;
@@ -29,13 +23,5 @@ const StyledButton = styled.button`
     }
   }
 `;
-
-const IconButton: React.FC<IconButtonProps> = (props) => {
-  return (
-    <StyledButton onClick={props.onClick} style={props.style}>
-      {props.children}
-    </StyledButton>
-  );
-};
 
 export default IconButton;

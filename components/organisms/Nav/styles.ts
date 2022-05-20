@@ -37,6 +37,6 @@ export const LogoExample = styled.p`
   color: #00e676;
 `;
 
-export const SearchContainer = styled.div`
+export const SearchInputWrapper = styled.div`
   position: relative;
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavContainer, NavContent, LogoExample, NavUl, SearchContainer } from "./styles";
+import { NavContainer, NavContent, LogoExample, NavUl, SearchInputWrapper } from "./styles";
 import {
   HomeIcon,
   CommunityButton,
@@ -10,6 +10,25 @@ import {
 import IconButton from "../../atoms/IconButton";
 import Link from "next/link";
 import { Input } from "../../atoms/Input";
+import styled from "styled-components";
+
+const SearchInput = styled(Input)`
+  border-radius: 8px;
+  padding: 9px 16px;
+  padding-right: 45px;
+  width: 562px;
+  height: 40px;
+`;
+
+const SearchIconButton = styled(IconButton)`
+  position: absolute;
+  padding: 10px;
+  right: 10px;
+`;
+
+const NavIconButton = styled(IconButton)`
+  padding: 10px;
+`;
 
 const Nav: React.FC = () => {
   return (
@@ -19,46 +38,27 @@ const Nav: React.FC = () => {
           <LogoExample>Logo Here</LogoExample>
         </Link>
 
-        <SearchContainer>
-          <Input
-            type="search"
-            style={{
-              borderRadius: 8,
-              padding: "9px 16px",
-              paddingRight: "45px",
-              width: 562,
-              height: 40,
-            }}
-            placeholder="궁금한게 있다면 검색해보세요."
-          />
-
-          <IconButton
-            style={{
-              position: "absolute",
-              padding: 10,
-              right: 10,
-            }}
-          >
-            {SearchIcon}
-          </IconButton>
-        </SearchContainer>
+        <SearchInputWrapper>
+          <SearchInput type="search" placeholder="궁금한게 있다면 검색해보세요." />
+          <SearchIconButton>{SearchIcon}</SearchIconButton>
+        </SearchInputWrapper>
 
         <nav>
           <NavUl>
             <li>
-              <IconButton style={{ padding: 10 }}>{HomeIcon}</IconButton>
+              <NavIconButton>{HomeIcon}</NavIconButton>
             </li>
 
             <li>
-              <IconButton style={{ padding: 10 }}>{PeopleButton}</IconButton>
+              <NavIconButton>{PeopleButton}</NavIconButton>
             </li>
 
             <li>
-              <IconButton style={{ padding: 10 }}>{CommunityButton}</IconButton>
+              <NavIconButton>{CommunityButton}</NavIconButton>
             </li>
 
             <li>
-              <IconButton style={{ padding: 10 }}>{ProfileIcon}</IconButton>
+              <NavIconButton>{ProfileIcon}</NavIconButton>
             </li>
           </NavUl>
         </nav>
