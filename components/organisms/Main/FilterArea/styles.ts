@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Button from "../../../atoms/Button";
+import { Input } from "../../../atoms/Input";
 
 export const FilterLayout = styled.section`
   padding: 23px 26px 25px 26px;
@@ -50,4 +52,27 @@ export const AskQuestionButton = styled.button`
     background: ${(props) => props.theme.palette.LightBlueA700};
     box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   }
+`;
+
+export const ToggleButton = styled(Button)`
+  margin-right: 4px;
+`;
+
+export const TagSearchInput = styled(Input)`
+  border-radius: 2px;
+  padding: 6px 10px;
+  width: 204px;
+  height: 36px;
+`;
+
+export const DeleteAllButton = styled(Button)`
+  position: absolute;
+  height: 36px;
+  color: #ff8f00;
+  right: 0;
+  padding: 0;
+`;
+
+export const TagsContainer = styled.div`
+  position: relative;
 `;

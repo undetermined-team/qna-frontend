@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Input } from "../../../atoms/Input";
 import Tag from "../../../molecules/DeleteTag";
 import {
   FilterLayout,
@@ -9,8 +8,11 @@ import {
   QuestionCount,
   ButtonGroup,
   AskQuestionButton,
+  ToggleButton,
+  TagSearchInput,
+  DeleteAllButton,
+  TagsContainer,
 } from "./styles";
-import Button from "../../../atoms/Button";
 
 const FilterArea = () => {
   const [toggle, setToggle] = useState("newest");
@@ -31,72 +33,48 @@ const FilterArea = () => {
       </ServiceAbout>
 
       <ButtonGroup>
-        <Button
+        <ToggleButton
           id="newest"
           onClick={toggleClickHandler}
           variant={toggle === "newest" ? "selected" : "normal"}
-          style={{ marginRight: 4 }}
         >
           최신
-        </Button>
-        <Button
+        </ToggleButton>
+        <ToggleButton
           id="popular"
           onClick={toggleClickHandler}
           variant={toggle === "popular" ? "selected" : "normal"}
-          style={{ marginRight: 4 }}
         >
           인기
-        </Button>
-        <Button
+        </ToggleButton>
+        <ToggleButton
           id="unanswered"
           onClick={toggleClickHandler}
           variant={toggle === "unanswered" ? "selected" : "normal"}
-          style={{ marginRight: 4 }}
         >
           답변 필요
-        </Button>
-        <Button
+        </ToggleButton>
+        <ToggleButton
           id="reward"
           onClick={toggleClickHandler}
           variant={toggle === "reward" ? "selected" : "normal"}
-          style={{ marginRight: 4 }}
         >
           리워드
-        </Button>
+        </ToggleButton>
 
-        <Input
-          type="text"
-          placeholder="태그명으로 검색"
-          style={{
-            borderRadius: 2,
-            padding: "6px 10px",
-            width: 204,
-            height: 36,
-          }}
-        />
+        <TagSearchInput type="text" placeholder="태그명으로 검색" />
 
         <AskQuestionButton>질문하기</AskQuestionButton>
       </ButtonGroup>
 
-      <div style={{ position: "relative" }}>
+      <TagsContainer>
         <Tag label="javascript" style={{ fontWeight: 600, marginRight: "8px" }} />
         <Tag label="vue.js" style={{ fontWeight: 600, marginRight: "8px" }} />
         <Tag label="react-native" style={{ fontWeight: 600, marginRight: "8px" }} />
         <Tag label="react-js" style={{ fontWeight: 600, marginRight: "8px" }} />
 
-        <Button
-          variant="text"
-          style={{
-            position: "absolute",
-            height: 36,
-            color: "#FF8F00",
-            right: 0,
-            padding: 0,
-          }}
-        >
-          모두 삭제
-        </Button>
-      </div>
+        <DeleteAllButton variant="text">모두 삭제</DeleteAllButton>
+      </TagsContainer>
     </FilterLayout>
   );
 };
