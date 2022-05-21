@@ -4,6 +4,7 @@ import Aside from "../../components/organisms/Aside";
 import styled from "styled-components";
 import AnswerArticle from "../../components/organisms/Thread/AnswerArticle";
 import ThreadHeader from "../../components/organisms/Thread/ThreadHeader";
+import { DivideContainer } from "../../components/atoms/DivideContainer";
 
 const AnswerCount = styled.h3`
   ${(props) => props.theme.typography.Heading3};
@@ -30,7 +31,7 @@ const AnswerSection = styled.section`
 
 const Thread = () => {
   return (
-    <div style={{ display: "inline-flex" }}>
+    <DivideContainer>
       <ThreadPostSection>
         <ThreadHeader />
 
@@ -53,7 +54,7 @@ const Thread = () => {
       </ThreadPostSection>
 
       <Aside />
-    </div>
+    </DivideContainer>
   );
 };
 

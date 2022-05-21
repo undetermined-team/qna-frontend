@@ -3,6 +3,7 @@ import FilterArea from "../components/organisms/Main/FilterArea";
 import styled from "styled-components";
 import Aside from "../components/organisms/Aside";
 import ThreadList from "../components/organisms/Main/ThreadList";
+import { DivideContainer } from "../components/atoms/DivideContainer";
 
 const SearchResult = styled.h4`
   ${(props) => props.theme.typography.Footnote};
@@ -51,7 +52,7 @@ const exampleThreadList = [
 
 const Thread = () => {
   return (
-    <div style={{ display: "inline-flex" }}>
+    <DivideContainer>
       <ThreadSection>
         <FilterArea />
         <SearchResult>57개의 검색 결과가 있습니다.</SearchResult>
@@ -60,7 +61,7 @@ const Thread = () => {
       </ThreadSection>
 
       <Aside />
-    </div>
+    </DivideContainer>
   );
 };
 
