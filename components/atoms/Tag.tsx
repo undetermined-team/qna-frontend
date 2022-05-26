@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DeleteIcon } from "../../public/assets/SvgIcons";
 
 const StyledTag = styled.div`
   display: inline-flex;
@@ -10,6 +11,7 @@ const StyledTag = styled.div`
   transition: background-color 300ms;
   box-sizing: border-box;
   outline: none;
+  font-weight: 600;
 
   &:hover {
     background-color: ${(props) => props.theme.palette.BlueGray100};
@@ -63,16 +65,15 @@ const StyledTag = styled.div`
 
 interface TagProps {
   label: String;
-  style?: React.CSSProperties;
-  deleteIcon?: React.ReactNode;
   onDelete?: (e: React.MouseEvent<HTMLSpanElement>) => void;
+  className?: string;
 }
 
 const Tag: React.FC<TagProps> = (props) => {
   return (
-    <StyledTag style={props.style}>
+    <StyledTag className={props.className}>
       <span>{props.label}</span>
-      <button onClick={props.onDelete}>{props.deleteIcon}</button>
+      {props.onDelete && <button onClick={props.onDelete}>{DeleteIcon}</button>}
     </StyledTag>
   );
 };
