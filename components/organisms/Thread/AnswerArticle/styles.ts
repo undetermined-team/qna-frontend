@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import UserSummary from "../../../molecules/UserSummary";
 
 export const ThreadCreateAt = styled.time`
   ${(props) => props.theme.typography.Footnote2};
@@ -20,4 +21,12 @@ export const ArticleInfoContainer = styled.div`
 
 export const AnswerContent = styled.p`
   margin-bottom: 48px;
+`;
+
+export const UserRank = styled(UserSummary)`
+  margin-bottom: 10px;
+`;
+
+export const QuestionButtonPackContainer = styled.div`
+  margin-top: 10px;
 `;

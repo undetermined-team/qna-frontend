@@ -11,6 +11,7 @@ import {
   ThreadTrendWrapper,
   ThreadCreateAt,
   ThreadHeaderTag,
+  ThreadUserSummary,
 } from "./styles";
 import { TagShowMore } from "../../../molecules/ThreadContainer/styles";
 import { VectorIcon } from "../../../../public/assets/SvgIcons";
@@ -78,11 +79,7 @@ const index = () => {
         </div>
 
         <div>
-          <UserSummary
-            userName="jojorabbit21"
-            bounty={8750}
-            style={{ marginBottom: 10, marginTop: 15 }}
-          />
+          <ThreadUserSummary userName="jojorabbit21" bounty={8750} />
           <ThreadCreateAt>2022-03-03 18:47 에 작성됨</ThreadCreateAt>
         </div>
       </ThreadInfoContainer>

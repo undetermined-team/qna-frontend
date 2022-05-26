@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const UserSummaryContainer = styled.div`
+export const UserSummaryWrapper = styled.div`
   display: flex;
   height: 36;
 `;
@@ -22,4 +22,8 @@ export const ProfileWrapper = styled.p`
 
 export const ProfileInfo = styled.div`
   line-height: 15.23px;
+`;
+
+export const UserSummaryContainer = styled.div`
+  cursor: pointer;
 `;

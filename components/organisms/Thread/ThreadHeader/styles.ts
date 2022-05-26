@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Tag from "../../../atoms/Tag";
+import UserSummary from "../../../molecules/UserSummary";
 
 export const ThreadTitle = styled.h1`
   ${(props) => props.theme.typography.Heading1};
@@ -40,4 +41,9 @@ export const ThreadInfoContainer = styled.div`
 export const ThreadHeaderTag = styled(Tag)`
   margin-right: 4px;
   margin-bottom: 5px;
+`;
+
+export const ThreadUserSummary = styled(UserSummary)`
+  margin-bottom: 10px;
+  margin-top: 15;
 `;

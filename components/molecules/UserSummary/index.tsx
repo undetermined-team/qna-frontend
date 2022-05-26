@@ -1,7 +1,14 @@
 import React from "react";
 import { EmptyProfile } from "../../../public/assets/SvgIcons";
 import UserName from "../../atoms/UserName";
-import { UserSummaryContainer, ProfileWrapper, Rank, ProfileInfo, Bounty } from "./styles";
+import {
+  UserSummaryWrapper,
+  ProfileWrapper,
+  Rank,
+  ProfileInfo,
+  Bounty,
+  UserSummaryContainer,
+} from "./styles";
 import Link from "next/link";
 
 interface UserSummaryProps {
@@ -9,14 +16,14 @@ interface UserSummaryProps {
   bounty: Number;
   profile?: string;
   index?: Number;
-  style?: React.CSSProperties;
+  className?: string;
 }
 
 const index: React.FC<UserSummaryProps> = (props) => {
   return (
-    <div style={{ cursor: "pointer" }}>
+    <UserSummaryContainer>
       <Link href="/Profile/1">
-        <UserSummaryContainer style={props.style}>
+        <UserSummaryWrapper className={props.className}>
           <ProfileWrapper>
             {props.profile ? <img width={36} height={36} src={props.profile} /> : EmptyProfile}
           </ProfileWrapper>
@@ -27,9 +34,9 @@ const index: React.FC<UserSummaryProps> = (props) => {
             <UserName name={props.userName} url="/Profile/1" />
             <Bounty>{props.bounty.toString().replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,")}</Bounty>
           </ProfileInfo>
-        </UserSummaryContainer>
+        </UserSummaryWrapper>
       </Link>
-    </div>
+    </UserSummaryContainer>
   );
 };
 

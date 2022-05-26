@@ -1,10 +1,16 @@
 import React from "react";
 import CommentContainer from "../CommentContainer";
-import ThreadTrend from "../../../molecules/ThreadTrend";
-import UserSummary from "../../../molecules/UserSummary";
 import Verified from "../../../molecules/Verified";
-import { AnswerArticle, AnswerContent, ArticleInfoContainer, ThreadCreateAt } from "./styles";
+import {
+  AnswerArticle,
+  AnswerContent,
+  ArticleInfoContainer,
+  QuestionButtonPackContainer,
+  ThreadCreateAt,
+  UserRank,
+} from "./styles";
 import QuestionButtonPack from "../../../molecules/QuestionButtonPack";
+import { ThreadTrends } from "../../../molecules/ThreadContainer/styles";
 
 interface AnswerArticleProps {}
 
@@ -22,17 +28,17 @@ const index: React.FC<AnswerArticleProps> = (props) => {
           <Verified />
 
           <div>
-            <ThreadTrend label="댓글" count={4} style={{ marginRight: 18 }} />
-            <ThreadTrend label="좋아요" count={13} />
+            <ThreadTrends label="댓글" count={4} />
+            <ThreadTrends label="좋아요" count={13} />
 
-            <div style={{ marginTop: 10 }}>
+            <QuestionButtonPackContainer>
               <QuestionButtonPack shareLink="naver.com" />
-            </div>
+            </QuestionButtonPackContainer>
           </div>
         </div>
 
         <div>
-          <UserSummary userName="jojorabbit21" bounty={8750} style={{ marginBottom: 10 }} />
+          <UserRank userName="jojorabbit21" bounty={8750} />
           <ThreadCreateAt>2022-03-03 18:47 에 작성됨</ThreadCreateAt>
         </div>
       </ArticleInfoContainer>

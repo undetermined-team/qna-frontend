@@ -24,12 +24,12 @@ const Count = styled.span`
 interface TrendProps {
   label: String;
   count: Number;
-  style?: React.CSSProperties;
+  className?: string;
 }
 
 const index: React.FC<TrendProps> = (props) => {
   return (
-    <span style={props.style}>
+    <span className={props.className}>
       <Label>{props.label}</Label>
       <Count>{props.count}</Count>
     </span>

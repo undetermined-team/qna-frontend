@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Tag from "../../atoms/Tag";
+import ThreadTrend from "../ThreadTrend";
 
 export const ThreadTitle = styled.h3`
   display: inline-flex;
@@ -100,4 +101,8 @@ export const TagAndInfoContainer = styled.div`
 export const ThreadTag = styled(Tag)`
   margin-right: 4px;
   margin-bottom: 4px;
+`;
+
+export const ThreadTrends = styled(ThreadTrend)`
+  margin-right: 18px;
 `;
