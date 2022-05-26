@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Tag from "../../../molecules/DeleteTag";
+import styled from "styled-components";
+import Tag from "../../../atoms/Tag";
 import {
   FilterLayout,
   ServiceAbout,
@@ -20,6 +21,12 @@ const FilterArea = () => {
   const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setToggle(e.currentTarget.id);
   };
+
+  const FilterTag = styled(Tag)`
+    margin-right: 8px;
+  `;
+
+  const handleDelete = (e) => {};
 
   return (
     <FilterLayout>
@@ -68,10 +75,10 @@ const FilterArea = () => {
       </ButtonGroup>
 
       <TagsContainer>
-        <Tag label="javascript" style={{ fontWeight: 600, marginRight: "8px" }} />
-        <Tag label="vue.js" style={{ fontWeight: 600, marginRight: "8px" }} />
-        <Tag label="react-native" style={{ fontWeight: 600, marginRight: "8px" }} />
-        <Tag label="react-js" style={{ fontWeight: 600, marginRight: "8px" }} />
+        <FilterTag label="javascript" onDelete={handleDelete} />
+        <FilterTag label="vue.js" onDelete={handleDelete} />
+        <FilterTag label="react-native" onDelete={handleDelete} />
+        <FilterTag label="react-js" onDelete={handleDelete} />
 
         <DeleteAllButton variant="text">모두 삭제</DeleteAllButton>
       </TagsContainer>

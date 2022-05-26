@@ -10,6 +10,7 @@ import {
   ThreadInfoContainer,
   ThreadTrendWrapper,
   ThreadCreateAt,
+  ThreadHeaderTag,
 } from "./styles";
 import { TagShowMore } from "../../../molecules/ThreadContainer/styles";
 import { VectorIcon } from "../../../../public/assets/SvgIcons";
@@ -56,11 +57,7 @@ const index = () => {
       <div>
         <TagWrapper ref={tagWrapperRef}>
           {tags.map((tag, i) => (
-            <Tag
-              label={tag}
-              style={{ marginRight: "4px", marginBottom: 5, fontWeight: 600 }}
-              key={i}
-            />
+            <ThreadHeaderTag label={tag} key={i} />
           ))}
         </TagWrapper>
 

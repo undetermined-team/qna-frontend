@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Tag from "../../../atoms/Tag";
 
 export const ThreadTitle = styled.h1`
   ${(props) => props.theme.typography.Heading1};
@@ -34,4 +35,9 @@ export const ThreadTrendWrapper = styled.div`
 export const ThreadInfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const ThreadHeaderTag = styled(Tag)`
+  margin-right: 4px;
+  margin-bottom: 5px;
 `;

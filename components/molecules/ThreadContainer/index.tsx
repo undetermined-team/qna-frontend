@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Tag from "../../atoms/Tag";
 import UserName from "../../atoms/UserName";
 import ThreadTrend from "../ThreadTrend";
 import {
@@ -9,6 +8,7 @@ import {
   ThreadBounty,
   ThreadContainer,
   ThreadHeader,
+  ThreadTag,
   ThreadTime,
   ThreadTitle,
 } from "./styles";
@@ -67,7 +67,7 @@ const index: React.FC<ThreadContainerProps> = (props) => {
       <TagAndInfoContainer>
         <TagWrapper>
           {props.tags.map((tag, i) => (
-            <Tag key={i} style={{ marginRight: 4, marginBottom: 4, fontWeight: 600 }} label={tag} />
+            <ThreadTag key={i} label={tag} />
           ))}
         </TagWrapper>
 

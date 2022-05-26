@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Tag from "../../atoms/Tag";
 
 export const ThreadTitle = styled.h3`
   display: inline-flex;
@@ -94,4 +95,9 @@ export const TagShowMore = styled.button`
 export const TagAndInfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const ThreadTag = styled(Tag)`
+  margin-right: 4px;
+  margin-bottom: 4px;
 `;

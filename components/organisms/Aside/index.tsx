@@ -1,16 +1,9 @@
 import React from "react";
 import { Space } from "../../../public/assets/SvgIcons";
-import Tag from "../../atoms/Tag";
-import styled from "styled-components";
 import AsideContainer from "../../molecules/AsideContainer";
 import UserSummary from "../../molecules/UserSummary";
 import RecentQuestion from "../../molecules/RecentQuestion";
-
-const AsideLayout = styled.aside`
-  border-right: 1px solid #d6d6d6;
-  padding: 0px 16px;
-  height: 100vh;
-`;
+import { AsideLayout, AsideTag, RecentQuestionWrapper, BountyRankWrapper } from "./styles";
 
 const exmapleBountyRank = [
   {
@@ -35,24 +28,6 @@ const exmapleBountyRank = [
   },
 ];
 
-const RecentQuestionWrapper = styled.ol`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-height: 110px;
-  padding: 10px 9px;
-  background-color: #eceff1;
-  border-radius: 3px;
-`;
-
-const BountyRankWrapper = styled.div`
-  padding: 9px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 254px;
-`;
-
 const onTextButton = (e) => {};
 const onDelete = () => {};
 
@@ -60,13 +35,13 @@ const index = () => {
   return (
     <AsideLayout>
       <AsideContainer title="검색한 태그" subButtonText="수정하기" onTextClick={onTextButton}>
-        <Tag style={{ marginRight: 6, marginBottom: 4, fontWeight: 600 }} label="javascript" />
-        <Tag style={{ marginRight: 6, marginBottom: 4, fontWeight: 600 }} label="node.js" />
-        <Tag style={{ marginRight: 6, marginBottom: 4, fontWeight: 600 }} label="svelte" />
-        <Tag style={{ marginRight: 6, marginBottom: 4, fontWeight: 600 }} label="next.js" />
-        <Tag style={{ marginRight: 6, marginBottom: 4, fontWeight: 600 }} label="java" />
-        <Tag style={{ marginRight: 6, marginBottom: 4, fontWeight: 600 }} label="ruby" />
-        <Tag style={{ marginRight: 6, marginBottom: 4, fontWeight: 600 }} label="react" />
+        <AsideTag label="javascript" />
+        <AsideTag label="node.js" />
+        <AsideTag label="svelte" />
+        <AsideTag label="next.js" />
+        <AsideTag label="java" />
+        <AsideTag label="ruby" />
+        <AsideTag label="react" />
       </AsideContainer>
 
       {Space}
