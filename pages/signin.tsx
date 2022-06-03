@@ -4,6 +4,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import SignSubmit from "../components/molecules/SignSubmit";
 import FormInput from "../components/molecules/FormInput";
+import { useRecoilState } from "recoil";
+import { userState } from "../state/user";
+import { useRouter } from "next/router";
 
 const SignContainer = styled.div`
   margin-top: 65px;
@@ -16,6 +19,9 @@ const SignHeading = styled.h2`
 `;
 
 const SignIn = () => {
+  const router = useRouter();
+  const [signInUser, setSignInUser] = useRecoilState(userState);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -34,7 +40,14 @@ const SignIn = () => {
         }),
     }),
     onSubmit: (values) => {
-      console.log(values);
+      const mockingUserInfo = {
+        email: values.email,
+        nickName: "test",
+        auth_status: "approved",
+      };
+
+      setSignInUser(mockingUserInfo);
+      router.push("/");
     },
   });
 

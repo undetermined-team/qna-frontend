@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../../atoms/Button";
 import IconButton from "../../atoms/IconButton";
 import { Input } from "../../atoms/Input";
 
@@ -59,4 +60,28 @@ export const SearchIconButton = styled(IconButton)`
 
 export const NavIconButton = styled(IconButton)`
   padding: 10px;
+`;
+
+export const SignInButton = styled(Button)`
+  width: 81px;
+  background-color: white;
+  margin-right: 11px;
+  margin-left: 42px;
+  border-color: ${(props) => props.theme.palette.LightBlueA100};
+  color: ${(props) => props.theme.palette.BlueGray700};
+
+  &:hover {
+    border-color: ${(props) => props.theme.palette.LightBlueA100};
+  }
+`;
+
+export const SignUpButton = styled(Button)`
+  width: 101px;
+  background-color: ${(props) => props.theme.palette.LightBlueA400};
+  border-color: ${(props) => props.theme.palette.LightBlueA400};
+  color: white;
+
+  &:hover {
+    border-color: ${(props) => props.theme.palette.LightBlueA400};
+  }
 `;
