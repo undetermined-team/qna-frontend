@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import UserName from "../../atoms/UserName";
+import ThreadTrend from "../ThreadTrend";
 import {
   TagAndInfoContainer,
   TagWrapper,
@@ -10,7 +11,7 @@ import {
   ThreadTag,
   ThreadTime,
   ThreadTitle,
-  ThreadTrends,
+  TrendWrapper,
 } from "./styles";
 
 interface ITrend {
@@ -57,11 +58,11 @@ const index: React.FC<ThreadContainerProps> = (props) => {
           <ThreadBounty>+{props.bounty}</ThreadBounty>
         </div>
 
-        <div>
-          <ThreadTrends label="조회" count={props.trend.view} />
-          <ThreadTrends label="좋아요" count={props.trend.like} />
-          <ThreadTrends label="답변" count={props.trend.answerCount} />
-        </div>
+        <TrendWrapper>
+          <ThreadTrend label="조회" count={props.trend.view} />
+          <ThreadTrend label="좋아요" count={props.trend.like} />
+          <ThreadTrend label="답변" count={props.trend.answerCount} />
+        </TrendWrapper>
       </ThreadHeader>
 
       <TagAndInfoContainer>

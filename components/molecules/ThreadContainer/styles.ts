@@ -103,6 +103,8 @@ export const ThreadTag = styled(Tag)`
   margin-bottom: 4px;
 `;
 
-export const ThreadTrends = styled(ThreadTrend)`
-  margin-right: 18px;
+export const TrendWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 163px;
 `;
