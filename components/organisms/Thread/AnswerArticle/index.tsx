@@ -6,11 +6,12 @@ import {
   AnswerContent,
   ArticleInfoContainer,
   QuestionButtonPackContainer,
+  QuestionTrendWrapper,
   ThreadCreateAt,
   UserRank,
 } from "./styles";
 import QuestionButtonPack from "../../../molecules/QuestionButtonPack";
-import { ThreadTrends } from "../../../molecules/ThreadContainer/styles";
+import ThreadTrend from "../../../molecules/ThreadTrend";
 
 interface AnswerArticleProps {}
 
@@ -28,8 +29,10 @@ const index: React.FC<AnswerArticleProps> = (props) => {
           <Verified />
 
           <div>
-            <ThreadTrends label="댓글" count={4} />
-            <ThreadTrends label="좋아요" count={13} />
+            <QuestionTrendWrapper>
+              <ThreadTrend label="댓글" count={4} />
+              <ThreadTrend label="좋아요" count={13} />
+            </QuestionTrendWrapper>
 
             <QuestionButtonPackContainer>
               <QuestionButtonPack shareLink="naver.com" />

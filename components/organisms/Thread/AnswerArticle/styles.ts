@@ -30,3 +30,9 @@ export const UserRank = styled(UserSummary)`
 export const QuestionButtonPackContainer = styled.div`
   margin-top: 10px;
 `;
+
+export const QuestionTrendWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 104px;
+`;
