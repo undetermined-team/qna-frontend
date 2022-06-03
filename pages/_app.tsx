@@ -3,21 +3,23 @@ import Layout from "../components/Layout";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 import { RecoilRoot } from "recoil";
-import Portal from '../components/Portal';
+import Portal from "../components/Portal";
+
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+  import("../mocks");
+}
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <RecoilRoot>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Layout>
-          <RecoilRoot>
-            <Component {...pageProps} />
-            <Portal />
-          </RecoilRoot>
+          <Component {...pageProps} />
+          <Portal />
         </Layout>
       </ThemeProvider>
-    </>
+    </RecoilRoot>
   );
 }
 
