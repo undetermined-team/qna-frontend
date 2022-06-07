@@ -13,20 +13,34 @@ import {
   TagSearchInput,
   DeleteAllButton,
   TagsContainer,
+  FilterTag,
+  TagSearchDropDownContainer,
+  TagSearchDropDownCount,
+  TagSearchDropDownRow,
+  TagSearchDropDownRowWrapper,
 } from "./styles";
 
 const FilterArea = () => {
   const [toggle, setToggle] = useState("newest");
+  const [tagSearch, setTagSearch] = useState("");
+  const [selectedFilterTags, setSelectedFilterTags] = useState([]);
 
   const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setToggle(e.currentTarget.id);
   };
 
-  const FilterTag = styled(Tag)`
-    margin-right: 8px;
-  `;
+  const tagSearchInputChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setTagSearch(e.currentTarget.value);
+  };
 
-  const handleDelete = (e) => {};
+  const dropDownRowClickHandler = (label: String) => {
+    setSelectedFilterTags([...selectedFilterTags, label]);
+    setTagSearch("");
+  };
+
+  const handleDelete = (label: string) => {
+    setSelectedFilterTags(selectedFilterTags.filter((tag) => tag !== label));
+  };
 
   return (
     <FilterLayout>
@@ -69,18 +83,41 @@ const FilterArea = () => {
           리워드
         </ToggleButton>
 
-        <TagSearchInput type="text" placeholder="태그명으로 검색" />
+        <TagSearchDropDownContainer>
+          <TagSearchInput
+            value={tagSearch}
+            onChange={tagSearchInputChangeHandler}
+            type="text"
+            placeholder="태그명으로 검색"
+          />
+
+          {tagSearch && (
+            <TagSearchDropDownRowWrapper>
+              {[{ label: tagSearch }].map((tag) => (
+                <TagSearchDropDownRow onClick={() => dropDownRowClickHandler(tag.label)}>
+                  <Tag label={tag.label} />
+                  <TagSearchDropDownCount>질문 ?개</TagSearchDropDownCount>
+                </TagSearchDropDownRow>
+              ))}
+            </TagSearchDropDownRowWrapper>
+          )}
+        </TagSearchDropDownContainer>
 
         <AskQuestionButton>질문하기</AskQuestionButton>
       </ButtonGroup>
 
       <TagsContainer>
-        <FilterTag label="javascript" onDelete={handleDelete} />
-        <FilterTag label="vue.js" onDelete={handleDelete} />
-        <FilterTag label="react-native" onDelete={handleDelete} />
-        <FilterTag label="react-js" onDelete={handleDelete} />
+        <div>
+          {selectedFilterTags.map((filterTag, i) => (
+            <FilterTag label={filterTag} onDelete={() => handleDelete(filterTag)} key={i} />
+          ))}
+        </div>
 
-        <DeleteAllButton variant="text">모두 삭제</DeleteAllButton>
+        {selectedFilterTags.length > 0 && (
+          <DeleteAllButton variant="text" onClick={() => setSelectedFilterTags([])}>
+            모두 삭제
+          </DeleteAllButton>
+        )}
       </TagsContainer>
     </FilterLayout>
   );

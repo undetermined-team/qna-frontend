@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Button from "../../../atoms/Button";
 import { Input } from "../../../atoms/Input";
+import Tag from "../../../atoms/Tag";
 
 export const FilterLayout = styled.section`
   padding: 23px 26px 25px 26px;
@@ -66,13 +67,44 @@ export const TagSearchInput = styled(Input)`
 `;
 
 export const DeleteAllButton = styled(Button)`
-  position: absolute;
   height: 36px;
   color: #ff8f00;
-  right: 0;
   padding: 0;
 `;
 
 export const TagsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const FilterTag = styled(Tag)`
+  margin-right: 8px;
+`;
+
+export const TagSearchDropDownCount = styled.span`
+  ${(props) => props.theme.typography.Tags};
+  text-align: right;
+  color: ${(props) => props.theme.palette.Gray600};
+`;
+
+export const TagSearchDropDownContainer = styled.div`
   position: relative;
+  z-index: 10;
+`;
+
+export const TagSearchDropDownRowWrapper = styled.div`
+  position: absolute;
+  padding: 10px;
+  width: 204px;
+  background-color: white;
+  border: 1px soild ${(props) => props.theme.palette.Gray200};
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+`;
+
+export const TagSearchDropDownRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 `;
