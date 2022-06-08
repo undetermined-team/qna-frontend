@@ -340,7 +340,7 @@ export const theme = {
     Tags: `
       font-style: normal;
       font-weight: 600;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 13px;
       `,
     Button: `
