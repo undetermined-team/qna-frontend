@@ -4,7 +4,7 @@ import { Input } from "../../../atoms/Input";
 import Tag from "../../../atoms/Tag";
 
 export const FilterLayout = styled.section`
-  padding: 23px 26px 25px 26px;
+  padding: 23px 26px 0px 26px;
   border-bottom: 6px solid #f5f5f5;
 `;
 
