@@ -18,8 +18,8 @@ export const ThreadTitle = styled.h3`
 export const ThreadBounty = styled.span`
   ${(props) => props.theme.typography.Captions};
   padding: 3px;
-  background-color: #69f0ae;
-  color: #004d40;
+  background-color: ${(props) => props.theme.palette.AmberA700};
+  color: black;
   border-radius: 2px;
   width: 29px;
   text-align: center;
@@ -28,8 +28,12 @@ export const ThreadBounty = styled.span`
 `;
 
 export const ThreadContainer = styled.article`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 17.3px 25px;
+  height: 100px;
   position: relative;
-  padding: 13px 18px 14px 25px;
   border: 1px solid #e0e0e0;
   background-color: white;
   border-right: none;
