@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface Button {
-  variant?: "selected" | "normal" | "text" | undefined;
+  variant?: "normal" | "text" | undefined;
 }
 
 const Button = styled.button<Button>`
@@ -12,18 +12,10 @@ const Button = styled.button<Button>`
       ? css`
           ${(props) => props.theme.palette.Gray700}
         `
-      : "#fff"};
+      : "black"};
 
   min-width: 64px;
-  height: 36px;
-  background-color: ${(props) =>
-    props.variant === "normal" || undefined
-      ? "#fff"
-      : props.variant === "text"
-      ? "transparent"
-      : css`
-          ${(props) => props.theme.palette.LightBlueA400}
-        `};
+  background-color: ${(props) => (props.variant === "text" ? "transparent" : "#fff")};
 
   border: ${(props) =>
     props.variant === "text" ? "none" : css`1px solid ${(props) => props.theme.palette.Gray300};`};
