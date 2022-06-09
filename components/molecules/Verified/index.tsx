@@ -5,7 +5,7 @@ import { Verified, VerifiedContainer } from "./styles";
 const index = () => {
   return (
     <VerifiedContainer>
-      {VerifiedIcon}
+      <VerifiedIcon />
       <Verified>채택됨</Verified>
     </VerifiedContainer>
   );

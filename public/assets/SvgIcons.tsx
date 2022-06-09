@@ -1,4 +1,4 @@
-export const DeleteIcon = (
+export const DeleteIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M9.33331 9.33331L4.66666 4.66666"
@@ -17,7 +17,7 @@ export const DeleteIcon = (
   </svg>
 );
 
-export const SearchIcon = (
+export const SearchIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M8.33333 14.1667C11.555 14.1667 14.1667 11.555 14.1667 8.33333C14.1667 5.11167 11.555 2.5 8.33333 2.5C5.11167 2.5 2.5 5.11167 2.5 8.33333C2.5 11.555 5.11167 14.1667 8.33333 14.1667Z"
@@ -36,7 +36,7 @@ export const SearchIcon = (
   </svg>
 );
 
-export const HomeIcon = (
+export const HomeIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="40" height="40" fill="white" />
     <path
@@ -49,7 +49,7 @@ export const HomeIcon = (
   </svg>
 );
 
-export const PeopleButton = (
+export const PeopleButton = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="40" height="40" fill="white" />
     <path
@@ -78,7 +78,7 @@ export const PeopleButton = (
   </svg>
 );
 
-export const CommunityButton = (
+export const CommunityButton = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
@@ -91,7 +91,7 @@ export const CommunityButton = (
   </svg>
 );
 
-export const ProfileIcon = (
+export const ProfileIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="40" height="40" fill="white" />
     <path
@@ -118,19 +118,19 @@ export const ProfileIcon = (
   </svg>
 );
 
-export const Space = (
+export const Space = () => (
   <svg width="220" height="1" viewBox="0 0 220 1" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="220" height="1" fill="#E0E0E0" />
   </svg>
 );
 
-export const EmptyProfile = (
+export const EmptyProfile = () => (
   <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="36" height="36" rx="3" fill="#CFD8DC" />
   </svg>
 );
 
-export const VectorIcon = (
+export const VectorIcon = () => (
   <svg width="13" height="4" viewBox="0 0 13 4" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M2 0.5C1.175 0.5 0.5 1.175 0.5 2C0.5 2.825 1.175 3.5 2 3.5C2.825 3.5 3.5 2.825 3.5 2C3.5 1.175 2.825 0.5 2 0.5ZM11 0.5C10.175 0.5 9.5 1.175 9.5 2C9.5 2.825 10.175 3.5 11 3.5C11.825 3.5 12.5 2.825 12.5 2C12.5 1.175 11.825 0.5 11 0.5ZM6.5 0.5C5.675 0.5 5 1.175 5 2C5 2.825 5.675 3.5 6.5 3.5C7.325 3.5 8 2.825 8 2C8 1.175 7.325 0.5 6.5 0.5Z"
@@ -139,7 +139,7 @@ export const VectorIcon = (
   </svg>
 );
 
-export const VerifiedIcon = (
+export const VerifiedIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M15.3333 8L13.7067 6.14L13.9333 3.68L11.5267 3.13333L10.2667 1L7.99999 1.97333L5.73332 1L4.47332 3.12667L2.06666 3.66667L2.29332 6.13333L0.666656 8L2.29332 9.86L2.06666 12.3267L4.47332 12.8733L5.73332 15L7.99999 14.02L10.2667 14.9933L11.5267 12.8667L13.9333 12.32L13.7067 9.86L15.3333 8ZM6.72666 11.1467L4.19332 8.60667L5.17999 7.62L6.72666 9.17333L10.6267 5.26L11.6133 6.24667L6.72666 11.1467Z"
@@ -148,7 +148,7 @@ export const VerifiedIcon = (
   </svg>
 );
 
-export const ShareIcon = (
+export const ShareIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M2.27496 6.99992C2.27496 6.00242 3.08579 5.19159 4.08329 5.19159H6.41663V4.08325H4.08329C2.47329 4.08325 1.16663 5.38992 1.16663 6.99992C1.16663 8.60992 2.47329 9.91658 4.08329 9.91658H6.41663V8.80825H4.08329C3.08579 8.80825 2.27496 7.99742 2.27496 6.99992ZM4.66663 7.58325H9.33329V6.41659H4.66663V7.58325ZM9.91663 4.08325H7.58329V5.19159H9.91663C10.9141 5.19159 11.725 6.00242 11.725 6.99992C11.725 7.99742 10.9141 8.80825 9.91663 8.80825H7.58329V9.91658H9.91663C11.5266 9.91658 12.8333 8.60992 12.8333 6.99992C12.8333 5.38992 11.5266 4.08325 9.91663 4.08325Z"
@@ -157,7 +157,7 @@ export const ShareIcon = (
   </svg>
 );
 
-export const LikeIcon = (
+export const LikeIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M6.82731 10.9447L6.82587 10.9434C5.30366 9.56305 4.12151 8.4882 3.30787 7.49344C2.5057 6.51272 2.16663 5.73235 2.16663 4.95833C2.16663 3.71395 3.13058 2.75 4.37496 2.75C5.08717 2.75 5.78637 3.08644 6.23861 3.61751L6.99996 4.51157L7.76131 3.61751C8.21355 3.08644 8.91275 2.75 9.62496 2.75C10.8693 2.75 11.8333 3.71395 11.8333 4.95833C11.8333 5.73236 11.4942 6.51278 10.6918 7.49443C9.87815 8.48992 8.69625 9.56594 7.17433 10.949C7.17397 10.9493 7.17362 10.9496 7.17326 10.9499L7.00251 11.1042L6.82731 10.9447Z"
@@ -167,7 +167,7 @@ export const LikeIcon = (
   </svg>
 );
 
-export const ReportIcon = (
+export const ReportIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M9.17583 1.75H4.82417L1.75 4.82417V9.17583L4.82417 12.25H9.17583L12.25 9.17583V4.82417L9.17583 1.75ZM11.0833 8.69167L8.69167 11.0833H5.30833L2.91667 8.69167V5.30833L5.30833 2.91667H8.69167L11.0833 5.30833V8.69167Z"
@@ -178,7 +178,7 @@ export const ReportIcon = (
   </svg>
 );
 
-export const CheckCircleIcon = (
+export const CheckCircleIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M9.99996 1.66675C5.39996 1.66675 1.66663 5.40008 1.66663 10.0001C1.66663 14.6001 5.39996 18.3334 9.99996 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 9.99996 1.66675ZM8.33329 14.1667L4.16663 10.0001L5.34163 8.82508L8.33329 11.8084L14.6583 5.48341L15.8333 6.66675L8.33329 14.1667Z"
@@ -187,7 +187,7 @@ export const CheckCircleIcon = (
   </svg>
 );
 
-export const GithubIcon = (
+export const GithubIcon = () => (
   <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
@@ -226,7 +226,7 @@ export const GithubIcon = (
   </svg>
 );
 
-export const ShowEye = (
+export const ShowEye = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M12 18C17.5228 18 22 12 22 12C22 12 17.5228 6 12 6C6.47715 6 2 12 2 12C2 12 6.47715 18 12 18Z"
@@ -245,7 +245,7 @@ export const ShowEye = (
   </svg>
 );
 
-export const HideEye = (
+export const HideEye = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M4 4L20 20"
@@ -267,6 +267,65 @@ export const HideEye = (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Logo = () => (
+  <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M11.758 20.8365C11.758 20.8365 25.1591 21.1855 22.6646 10.3495C20.215 -0.288794 11.758 0.0183562 11.758 0.0183562C11.758 0.0183562 3.30108 -0.288793 0.851478 10.3658C-1.64299 21.1902 11.758 20.8365 11.758 20.8365Z"
+      fill="url(#paint0_linear_1226_267)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1226_267"
+        x1="11.758"
+        y1="0.0183561"
+        x2="11.758"
+        y2="20.8411"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FFB300" />
+        <stop offset="1" stopColor="#FF6F00" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export const HayStack = () => (
+  <svg width="97" height="23" viewBox="0 0 97 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M10.8018 17.4239H13.7771V1.9504H10.8018V8.10599H3.59992V1.9504H0.648315V17.4239H3.59992V10.9303H10.8018V17.4239Z"
+      fill="black"
+    />
+    <path
+      d="M24.6858 17.4239H27.5902V5.86101H24.6858V7.01971C23.883 6.07827 22.726 5.52306 21.2384 5.52306C18.0978 5.52306 15.8074 8.15427 15.8074 11.6545C15.8074 15.2513 18.2395 17.7618 21.2384 17.7618C22.7024 17.7618 23.8594 17.1583 24.6858 16.1686V17.4239ZM21.7106 14.9858C19.9633 14.9858 18.6882 13.4891 18.6882 11.6304C18.6882 9.77162 19.9633 8.29911 21.7106 8.29911C23.4344 8.29911 24.6858 9.77162 24.6858 11.6304C24.6858 13.4891 23.4344 14.9858 21.7106 14.9858Z"
+      fill="black"
+    />
+    <path
+      d="M31.9669 5.86101H28.7792L33.9504 17.5928L33.8559 17.8825C33.3837 19.2343 32.8642 19.7171 32.0613 19.7171C31.4238 19.7171 30.7863 19.4757 30.2432 18.9447L28.9444 21.2621C29.6764 21.9621 30.8335 22.4932 32.0377 22.4932C33.9268 22.4932 35.3671 21.431 36.2408 18.8964L40.8689 5.86101H37.9646L35.2491 13.8271L31.9669 5.86101Z"
+      fill="black"
+    />
+    <path
+      d="M44.1378 8.97502C44.1378 8.34739 44.7282 7.88874 45.7199 7.88874C46.8061 7.88874 47.7506 8.25083 48.5062 9.16813L50.1355 7.43008C49.2855 6.22311 47.6798 5.52306 45.6491 5.52306C42.7683 5.52306 41.3043 7.21283 41.3043 8.97502C41.3043 13.127 47.3728 12.1132 47.3728 14.1892C47.3728 14.9134 46.8061 15.3961 45.6963 15.3961C44.3504 15.3961 43.2642 14.9134 42.3905 13.9236L40.7848 15.8065C41.7529 16.9652 43.3822 17.7618 45.531 17.7618C48.6007 17.7618 50.23 16.0962 50.23 14.1409C50.23 9.8199 44.1378 11.0027 44.1378 8.97502Z"
+      fill="black"
+    />
+    <path
+      d="M50.8902 8.46809H52.8737V13.465C52.8737 16.2893 54.3377 17.7618 56.6281 17.7618C58.0213 17.7618 59.0839 17.2308 59.7214 16.6031L58.4227 14.4064C58.1393 14.7444 57.6199 14.9858 57.1004 14.9858C56.2503 14.9858 55.8017 14.4547 55.8017 13.3684V8.46809H58.8477V5.86101H55.7781V2.8677H52.8973V5.86101H50.8902V8.46809Z"
+      fill="black"
+    />
+    <path
+      d="M68.6629 17.4239H71.5673V5.86101H68.6629V7.01971C67.8601 6.07827 66.7031 5.52306 65.2155 5.52306C62.0749 5.52306 59.7845 8.15427 59.7845 11.6545C59.7845 15.2513 62.2166 17.7618 65.2155 17.7618C66.6795 17.7618 67.8365 17.1583 68.6629 16.1686V17.4239ZM65.6877 14.9858C63.9404 14.9858 62.6653 13.4891 62.6653 11.6304C62.6653 9.77162 63.9404 8.29911 65.6877 8.29911C67.4115 8.29911 68.6629 9.77162 68.6629 11.6304C68.6629 13.4891 67.4115 14.9858 65.6877 14.9858Z"
+      fill="black"
+    />
+    <path
+      d="M82.2014 9.36125L83.8543 7.26111C82.8626 6.19897 81.3277 5.52306 79.3915 5.52306C76.0857 5.52306 73.4883 8.27497 73.4883 11.6545C73.4883 15.0099 76.0857 17.7618 79.4387 17.7618C81.2333 17.7618 82.8626 17.0376 83.7599 16.0238L82.2959 13.8512C81.5875 14.5754 80.6666 14.9858 79.5095 14.9858C77.6677 14.9858 76.369 13.4891 76.369 11.6304C76.369 9.77162 77.6441 8.29911 79.5332 8.29911C80.643 8.29911 81.493 8.6612 82.2014 9.36125Z"
+      fill="black"
+    />
+    <path
+      d="M85.2266 17.4239H88.1074V12.7167H89.5242L92.6174 17.4239H96.2302L92.0507 11.22L95.8996 5.86101H92.3813L89.4769 10.0372H88.1074V0.815842H85.2266V17.4239Z"
+      fill="black"
     />
   </svg>
 );

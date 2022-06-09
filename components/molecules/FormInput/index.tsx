@@ -42,7 +42,7 @@ const index: React.FC<FormInputProps> = (props) => {
         />
 
         <PasswordShowButton onClick={handleShowPassword}>
-          {isPasswordShow ? HideEye : ShowEye}
+          {isPasswordShow ? <HideEye /> : <ShowEye />}
         </PasswordShowButton>
       </PasswordInputWrapper>
 

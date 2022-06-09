@@ -47,7 +47,7 @@ interface MessageProps {
 
 const index = (props: MessageProps) => (
   <MessageBox>
-    {CheckCircleIcon}
+    <CheckCircleIcon />
     <MessageContent>{props.message}</MessageContent>
   </MessageBox>
 );

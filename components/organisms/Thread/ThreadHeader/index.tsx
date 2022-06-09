@@ -63,7 +63,9 @@ const index = () => {
         </TagWrapper>
 
         {!isOpen && overflowActive && (
-          <TagShowMore onClick={tagShowMoreHandler}>{VectorIcon}</TagShowMore>
+          <TagShowMore onClick={tagShowMoreHandler}>
+            <VectorIcon />
+          </TagShowMore>
         )}
       </div>
 

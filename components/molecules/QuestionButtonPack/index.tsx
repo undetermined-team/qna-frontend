@@ -25,17 +25,17 @@ const index: React.FC<QuestionButtonPackProps> = (props) => {
   return (
     <ButtonWrapper>
       <ThreadButton onClick={shareButtonClickHandler}>
-        {ShareIcon}
+        <ShareIcon />
         <span>링크 복사</span>
       </ThreadButton>
 
       <ThreadButton isLike>
-        {LikeIcon}
+        <LikeIcon />
         <span>좋아요</span>
       </ThreadButton>
 
       <ThreadButton>
-        {ReportIcon}
+        <ReportIcon />
         <span>신고</span>
       </ThreadButton>
     </ButtonWrapper>

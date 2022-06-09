@@ -2,7 +2,6 @@ import React from "react";
 import {
   NavContainer,
   NavContent,
-  LogoExample,
   NavUl,
   SearchInputWrapper,
   NavIconButton,
@@ -10,6 +9,7 @@ import {
   SearchInput,
   SignInButton,
   SignUpButton,
+  LogoWrapper,
 } from "./styles";
 import {
   HomeIcon,
@@ -17,6 +17,8 @@ import {
   PeopleButton,
   SearchIcon,
   ProfileIcon,
+  HayStack,
+  Logo,
 } from "../../../public/assets/SvgIcons";
 import Link from "next/link";
 import { useRecoilValue } from "recoil";
@@ -29,7 +31,10 @@ const Nav: React.FC = () => {
     <NavContainer>
       <NavContent>
         <Link href="/">
-          <LogoExample>Logo Here</LogoExample>
+          <LogoWrapper>
+            <Logo />
+            <HayStack />
+          </LogoWrapper>
         </Link>
 
         <SearchInputWrapper>
@@ -41,19 +46,27 @@ const Nav: React.FC = () => {
           {isSignedIn ? (
             <NavUl>
               <li>
-                <NavIconButton>{HomeIcon}</NavIconButton>
+                <NavIconButton>
+                  <HomeIcon />
+                </NavIconButton>
               </li>
 
               <li>
-                <NavIconButton>{PeopleButton}</NavIconButton>
+                <NavIconButton>
+                  <PeopleButton />
+                </NavIconButton>
               </li>
 
               <li>
-                <NavIconButton>{CommunityButton}</NavIconButton>
+                <NavIconButton>
+                  <CommunityButton />
+                </NavIconButton>
               </li>
 
               <li>
-                <NavIconButton>{ProfileIcon}</NavIconButton>
+                <NavIconButton>
+                  <ProfileIcon />
+                </NavIconButton>
               </li>
             </NavUl>
           ) : (

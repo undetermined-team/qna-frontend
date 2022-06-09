@@ -15,7 +15,9 @@ const index: React.FC<RecentQuestionProps> = (props) => {
       <Link href={props.link}>
         <RecentQuestionTitle>{props.title}</RecentQuestionTitle>
       </Link>
-      <RecentQuestionDeleteButton>{DeleteIcon}</RecentQuestionDeleteButton>
+      <RecentQuestionDeleteButton>
+        <DeleteIcon />
+      </RecentQuestionDeleteButton>
     </RecentQuestionList>
   );
 };

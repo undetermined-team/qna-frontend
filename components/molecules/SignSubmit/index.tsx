@@ -19,7 +19,7 @@ const index: React.FC<SignButtonContainerProps> = (props) => {
       <p>또는</p>
 
       <GithubSignButton onClick={onGithubClick}>
-        {GithubIcon}
+        <GithubIcon />
         <span>GitHub 계정으로 가입하기</span>
       </GithubSignButton>
 
@@ -34,7 +34,7 @@ const index: React.FC<SignButtonContainerProps> = (props) => {
       <p>또는</p>
 
       <GithubSignButton onClick={onGithubClick}>
-        {GithubIcon}
+        <GithubIcon />
         <span>GitHub 계정으로 로그인하기</span>
       </GithubSignButton>
 

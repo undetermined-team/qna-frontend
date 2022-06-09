@@ -25,7 +25,7 @@ const index: React.FC<UserSummaryProps> = (props) => {
       <Link href="/Profile/1">
         <UserSummaryWrapper className={props.className}>
           <ProfileWrapper>
-            {props.profile ? <img width={36} height={36} src={props.profile} /> : EmptyProfile}
+            {props.profile ? <img width={36} height={36} src={props.profile} /> : <EmptyProfile />}
           </ProfileWrapper>
 
           <Rank>{props.index}</Rank>
