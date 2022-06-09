@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Tag from "../../../atoms/Tag";
 import {
   FilterLayout,
@@ -7,9 +6,7 @@ import {
   ServiceSummary,
   QuestionDescription,
   QuestionCount,
-  ButtonGroup,
   AskQuestionButton,
-  ToggleButton,
   TagSearchInput,
   DeleteAllButton,
   TagsContainer,
@@ -18,16 +15,12 @@ import {
   TagSearchDropDownCount,
   TagSearchDropDownRow,
   TagSearchDropDownRowWrapper,
+  MiddeGroup,
 } from "./styles";
 
 const FilterArea = () => {
-  const [toggle, setToggle] = useState("newest");
   const [tagSearch, setTagSearch] = useState("");
   const [selectedFilterTags, setSelectedFilterTags] = useState([]);
-
-  const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setToggle(e.currentTarget.id);
-  };
 
   const tagSearchInputChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setTagSearch(e.currentTarget.value);
@@ -53,36 +46,7 @@ const FilterArea = () => {
         </QuestionDescription>
       </ServiceAbout>
 
-      <ButtonGroup>
-        <ToggleButton
-          id="newest"
-          onClick={toggleClickHandler}
-          variant={toggle === "newest" ? "selected" : "normal"}
-        >
-          최신
-        </ToggleButton>
-        <ToggleButton
-          id="popular"
-          onClick={toggleClickHandler}
-          variant={toggle === "popular" ? "selected" : "normal"}
-        >
-          인기
-        </ToggleButton>
-        <ToggleButton
-          id="unanswered"
-          onClick={toggleClickHandler}
-          variant={toggle === "unanswered" ? "selected" : "normal"}
-        >
-          답변 필요
-        </ToggleButton>
-        <ToggleButton
-          id="reward"
-          onClick={toggleClickHandler}
-          variant={toggle === "reward" ? "selected" : "normal"}
-        >
-          리워드
-        </ToggleButton>
-
+      <MiddeGroup>
         <TagSearchDropDownContainer>
           <TagSearchInput
             value={tagSearch}
@@ -104,7 +68,7 @@ const FilterArea = () => {
         </TagSearchDropDownContainer>
 
         <AskQuestionButton>질문하기</AskQuestionButton>
-      </ButtonGroup>
+      </MiddeGroup>
 
       <TagsContainer>
         <div>
