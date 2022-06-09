@@ -13,7 +13,7 @@ export const ThreadCreateAt = styled.time`
 `;
 
 export const TagWrapper = styled.div`
-  height: 21px;
+  height: 27px;
   margin: 10px 0 5px 0;
   overflow-y: hidden;
 `;
