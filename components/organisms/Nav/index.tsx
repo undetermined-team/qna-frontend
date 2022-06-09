@@ -10,6 +10,8 @@ import {
   SignInButton,
   SignUpButton,
   LogoWrapper,
+  StyledLogo,
+  StyledHayStack,
 } from "./styles";
 import {
   HomeIcon,
@@ -17,8 +19,6 @@ import {
   PeopleButton,
   SearchIcon,
   ProfileIcon,
-  HayStack,
-  Logo,
 } from "../../../public/assets/SvgIcons";
 import Link from "next/link";
 import { useRecoilValue } from "recoil";
@@ -32,8 +32,8 @@ const Nav: React.FC = () => {
       <NavContent>
         <Link href="/">
           <LogoWrapper>
-            <Logo />
-            <HayStack />
+            <StyledLogo />
+            <StyledHayStack />
           </LogoWrapper>
         </Link>
 

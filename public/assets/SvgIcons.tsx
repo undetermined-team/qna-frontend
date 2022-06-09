@@ -271,8 +271,15 @@ export const HideEye = () => (
   </svg>
 );
 
-export const Logo = () => (
-  <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const Logo = ({ className }: { className?: string }) => (
+  <svg
+    width="23"
+    height="21"
+    viewBox="0 0 23 21"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
     <path
       d="M11.758 20.8365C11.758 20.8365 25.1591 21.1855 22.6646 10.3495C20.215 -0.288794 11.758 0.0183562 11.758 0.0183562C11.758 0.0183562 3.30108 -0.288793 0.851478 10.3658C-1.64299 21.1902 11.758 20.8365 11.758 20.8365Z"
       fill="url(#paint0_linear_1226_267)"
@@ -293,8 +300,15 @@ export const Logo = () => (
   </svg>
 );
 
-export const HayStack = () => (
-  <svg width="97" height="23" viewBox="0 0 97 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const HayStack = ({ className }: { className?: string }) => (
+  <svg
+    width="97"
+    height="23"
+    viewBox="0 0 97 23"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
     <path
       d="M10.8018 17.4239H13.7771V1.9504H10.8018V8.10599H3.59992V1.9504H0.648315V17.4239H3.59992V10.9303H10.8018V17.4239Z"
       fill="black"

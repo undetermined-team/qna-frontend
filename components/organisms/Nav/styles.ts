@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HayStack, Logo } from "../../../public/assets/SvgIcons";
 import Button from "../../atoms/Button";
 import IconButton from "../../atoms/IconButton";
 import { Input } from "../../atoms/Input";
@@ -29,15 +30,9 @@ export const NavUl = styled.ul`
   padding: 0;
 `;
 
-export const LogoExample = styled.p`
+export const LogoWrapper = styled.p`
   cursor: pointer;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 20px;
-  letter-spacing: -0.005em;
-  margin-right: 51px;
-  color: #00e676;
+  display: flex;
 `;
 
 export const SearchInputWrapper = styled.div`
@@ -84,4 +79,12 @@ export const SignUpButton = styled(Button)`
   &:hover {
     border-color: ${(props) => props.theme.palette.LightBlueA400};
   }
+`;
+
+export const StyledLogo = styled(Logo)`
+  margin-right: 7.67px;
+`;
+
+export const StyledHayStack = styled(HayStack)`
+  margin-right: 16.77px;
 `;
