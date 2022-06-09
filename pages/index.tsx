@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import FilterArea from "../components/organisms/Main/FilterArea";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Aside from "../components/organisms/Aside";
 import ThreadList from "../components/organisms/Main/ThreadList";
 import { DivideContainer } from "../components/atoms/DivideContainer";
+import Button from "../components/atoms/Button";
 
 const SearchResult = styled.h4`
   ${(props) => props.theme.typography.Footnote};
   color: #616161;
-  padding: 13px 26px;
 `;
 
 const ThreadSection = styled.section`
@@ -50,12 +50,89 @@ const exampleThreadList = [
   },
 ];
 
+interface ToggleButtonStateType {
+  isSelected: boolean;
+  borderRadius?: boolean;
+}
+
+const ToggleButton = styled(Button)<ToggleButtonStateType>`
+  color: ${(props) => props.theme.palette.Gray500};
+  height: 28px;
+  padding: 6px 17px;
+
+  ${(props) =>
+    props.isSelected &&
+    css`
+      border-color: ${(props) => props.theme.palette.Amber700};
+      color: black;
+    `}
+
+  ${(props) =>
+    props.borderRadius &&
+    css`
+      border-radius: 2px 0px 0px 2px;
+    `}
+
+  :hover {
+    border-color: ${(props) => props.theme.palette.Amber700};
+  }
+`;
+
+const SorterContainer = styled.div`
+  padding: 13px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const Thread = () => {
+  const [toggle, setToggle] = useState("newest");
+
+  const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setToggle(e.currentTarget.id);
+  };
+
   return (
     <DivideContainer>
       <ThreadSection>
         <FilterArea />
-        <SearchResult>57개의 검색 결과가 있습니다.</SearchResult>
+
+        <SorterContainer>
+          <SearchResult>57개의 검색 결과가 있습니다.</SearchResult>
+
+          <div>
+            <ToggleButton
+              isSelected={toggle === "newest"}
+              borderRadius
+              id="newest"
+              onClick={toggleClickHandler}
+            >
+              최신
+            </ToggleButton>
+            <ToggleButton
+              isSelected={toggle === "popular"}
+              id="popular"
+              onClick={toggleClickHandler}
+            >
+              인기
+            </ToggleButton>
+            <ToggleButton
+              isSelected={toggle === "unanswered"}
+              id="unanswered"
+              onClick={toggleClickHandler}
+            >
+              답변 필요
+            </ToggleButton>
+            <ToggleButton
+              isSelected={toggle === "reward"}
+              borderRadius
+              id="reward"
+              onClick={toggleClickHandler}
+            >
+              리워드
+            </ToggleButton>
+          </div>
+        </SorterContainer>
 
         <ThreadList threadList={exampleThreadList} />
       </ThreadSection>
