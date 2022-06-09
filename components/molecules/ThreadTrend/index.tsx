@@ -2,21 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 const Label = styled.span`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
+  ${(props) => props.theme.typography.Footnote2}
   text-align: right;
   margin-right: 4px;
-  line-height: 14.06px;
 
   color: ${(props) => props.theme.palette.Gray600};
 `;
 
 const Count = styled.span`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14.06px;
+  ${(props) => props.theme.typography.Footnote2}
 
   color: ${(props) => props.theme.palette.Gray900};
 `;

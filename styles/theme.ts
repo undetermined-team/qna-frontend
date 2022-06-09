@@ -1,5 +1,13 @@
 export const theme = {
   palette: {
+    colorSystem: {
+      Primary: "#FFB300",
+      Primary2: "#FF6F00",
+      Secondary: "#00BFA5",
+      Secondary2: "#1DE9B6",
+      Gray: "#ECEFF1",
+      Gray2: "#CFD8DC",
+    },
     Red50: "#FFEBEE",
     Red100: "#FFCDD2",
     Red200: "#EF9A9A",
@@ -321,7 +329,7 @@ export const theme = {
     Footnote2: `
       font-style: normal;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 14px;
     `,
     Nickname: `
