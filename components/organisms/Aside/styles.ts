@@ -29,3 +29,10 @@ export const AsideTag = styled(Tag)`
   margin-right: 6px;
   margin-bottom: 4px;
 `;
+
+export const AsideTagWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  height: 60px;
+  overflow-y: hidden;
+`;

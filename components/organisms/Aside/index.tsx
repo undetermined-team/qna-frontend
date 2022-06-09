@@ -3,7 +3,13 @@ import { Space } from "../../../public/assets/SvgIcons";
 import AsideContainer from "../../molecules/AsideContainer";
 import UserSummary from "../../molecules/UserSummary";
 import RecentQuestion from "../../molecules/RecentQuestion";
-import { AsideLayout, AsideTag, RecentQuestionWrapper, BountyRankWrapper } from "./styles";
+import {
+  AsideLayout,
+  AsideTag,
+  RecentQuestionWrapper,
+  BountyRankWrapper,
+  AsideTagWrapper,
+} from "./styles";
 
 const exmapleBountyRank = [
   {
@@ -35,16 +41,18 @@ const index = () => {
   return (
     <AsideLayout>
       <AsideContainer title="검색한 태그" subButtonText="수정하기" onTextClick={onTextButton}>
-        <AsideTag label="javascript" />
-        <AsideTag label="node.js" />
-        <AsideTag label="svelte" />
-        <AsideTag label="next.js" />
-        <AsideTag label="java" />
-        <AsideTag label="ruby" />
-        <AsideTag label="react" />
+        <AsideTagWrapper>
+          <AsideTag label="javascript" />
+          <AsideTag label="node.js" />
+          <AsideTag label="svelte" />
+          <AsideTag label="next.js" />
+          <AsideTag label="java" />
+          <AsideTag label="ruby" />
+          <AsideTag label="react" />
+        </AsideTagWrapper>
       </AsideContainer>
 
-      {Space}
+      <Space />
 
       <AsideContainer title="최근에 본 질문" subButtonText="전체보기" onTextClick={onTextButton}>
         <RecentQuestionWrapper>
@@ -74,7 +82,7 @@ const index = () => {
         </RecentQuestionWrapper>
       </AsideContainer>
 
-      {Space}
+      <Space />
 
       <AsideContainer title="명성 순위" subButtonText="모두 보기" onTextClick={onTextButton}>
         <BountyRankWrapper>
