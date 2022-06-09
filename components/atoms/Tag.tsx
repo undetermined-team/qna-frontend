@@ -5,7 +5,7 @@ const StyledTag = styled.div`
   display: inline-flex;
   align-items: center;
   border-radius: 2px;
-  height: 22px;
+  height: 27px;
   vertical-align: middle;
   background-color: ${(props) => props.theme.palette.BlueGray50};
   transition: background-color 300ms;
@@ -73,7 +73,11 @@ const Tag: React.FC<TagProps> = (props) => {
   return (
     <StyledTag className={props.className}>
       <span>{props.label}</span>
-      {props.onDelete && <button onClick={props.onDelete}>{DeleteIcon}</button>}
+      {props.onDelete && (
+        <button onClick={props.onDelete}>
+          <DeleteIcon />
+        </button>
+      )}
     </StyledTag>
   );
 };
