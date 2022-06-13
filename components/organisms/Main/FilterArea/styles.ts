@@ -22,7 +22,7 @@ export const QuestionCount = styled.span`
 `;
 
 export const QuestionDescription = styled.p`
-  ${(props) => props.theme.typography.Body2};
+  ${(props) => props.theme.typography.Body};
   ${(props) => props.theme.palette.Gray900};
 `;
 
@@ -32,8 +32,9 @@ export const MiddeGroup = styled.div`
   justify-content: space-between;
 `;
 
-export const AskQuestionButton = styled.button`
+export const AskQuestionButton = styled(Button)`
   ${(props) => props.theme.typography.Button};
+  padding: 8px 29px;
   line-height: normal;
   color: black;
   width: 110px;
@@ -44,12 +45,13 @@ export const AskQuestionButton = styled.button`
   border-radius: 4px;
 
   &:hover {
-    background-color: ${(props) => props.theme.palette.AmberA700};
+    border-color: ${(props) => props.theme.palette.AmberA400};
+    background-color: ${(props) => props.theme.palette.AmberA400};
   }
 
   &:active {
-    background: ${(props) => props.theme.palette.AmberA700};
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-color: ${(props) => props.theme.palette.AmberA800};
+    background-color: ${(props) => props.theme.palette.AmberA800};
   }
 `;
 
