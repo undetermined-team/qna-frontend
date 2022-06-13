@@ -7,8 +7,8 @@ import { DivideContainer } from "../components/atoms/DivideContainer";
 import Button from "../components/atoms/Button";
 
 const SearchResult = styled.h4`
-  ${(props) => props.theme.typography.Footnote};
-  color: #616161;
+  ${(props) => props.theme.typography.Body};
+  color: ${(props) => props.theme.palette.Gray700};
 `;
 
 const ThreadSection = styled.section`
@@ -75,6 +75,7 @@ const ToggleButton = styled(Button)<ToggleButtonStateType>`
 
   :hover {
     border-color: ${(props) => props.theme.palette.Amber700};
+    background-color: ${(props) => props.theme.palette.Amber50};
   }
 `;
 
