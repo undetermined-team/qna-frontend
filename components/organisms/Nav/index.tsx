@@ -39,7 +39,9 @@ const Nav: React.FC = () => {
 
         <SearchInputWrapper>
           <SearchInput type="search" placeholder="궁금한게 있다면 검색해보세요." />
-          <SearchIconButton>{SearchIcon}</SearchIconButton>
+          <SearchIconButton>
+            <SearchIcon />
+          </SearchIconButton>
         </SearchInputWrapper>
 
         <nav>
