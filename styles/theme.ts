@@ -196,6 +196,8 @@ export const theme = {
     AmberA200: "#FFD740",
     AmberA400: "#FFC400",
     AmberA700: "#FFAB00",
+    AmberA800: "#FF8F00",
+    AmberA900: "#FF6F00",
     Orange50: "#FFF3E0",
     Orange100: "#FFE0B2",
     Orange200: "#FFCC80",
