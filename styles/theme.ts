@@ -351,5 +351,11 @@ export const theme = {
       font-size: 14px;
       line-height: normal;
       `,
+    Footer: `
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: normal;
+    `,
   },
 };
