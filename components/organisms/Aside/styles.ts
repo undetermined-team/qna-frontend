@@ -2,9 +2,12 @@ import styled from "styled-components";
 import Tag from "../../atoms/Tag";
 
 export const AsideLayout = styled.aside`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-right: 1px solid #d6d6d6;
   padding: 0px 16px;
-  height: 100vh;
+  height: calc(100vh - 60px);
 `;
 
 export const RecentQuestionWrapper = styled.ol`
@@ -35,4 +38,27 @@ export const AsideTagWrapper = styled.div`
   flex-wrap: wrap;
   height: 60px;
   overflow-y: hidden;
+`;
+
+export const AsideFooter = styled.footer`
+  margin: 26px;
+  text-align: left;
+`;
+
+export const FooterWrapper = styled.div`
+  display: flex;
+`;
+
+export const AsideFooterText = styled.p`
+  ${(props) => props.theme.typography.Footer};
+  color: ${(props) => props.theme.palette.BlueGray700};
+  margin-right: 14px;
+  line-height: 22px;
+`;
+
+export const Brand = styled.p`
+  ${(props) => props.theme.typography.Footer};
+  color: ${(props) => props.theme.palette.BlueGray400};
+  margin-top: 9px;
+  line-height: 22px;
 `;
