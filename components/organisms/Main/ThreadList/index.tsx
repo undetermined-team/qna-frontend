@@ -7,7 +7,7 @@ interface ThreadListProps {
 }
 
 const ThreadListWrapper = styled.main`
-  height: 788px;
+  min-height: calc(100vh - 277px);
   background-color: #f5f5f5;
 `;
 
