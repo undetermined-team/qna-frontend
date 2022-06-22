@@ -15,7 +15,7 @@ interface UserSummaryProps {
   userName: String;
   bounty: Number;
   profile?: string;
-  index?: Number;
+  index?: number;
   className?: string;
 }
 
