@@ -37,6 +37,51 @@ const exampleThreadList = [
     trend: { view: 87, like: 13, answerCount: 3 },
     createAt: "2022-04-29 10:55:22",
   },
+  {
+    title: "자바스크립트로 공룡 점프하는 게임을 만드는 방법에 대해서",
+    tags: ["javascript", "node.js", "html", "css", "firebase", "database"],
+
+    userName: "Jojorabbit21",
+    bounty: 75,
+    trend: { view: 87, like: 13, answerCount: 3 },
+    createAt: "2022-03-03 18:47",
+  },
+  {
+    title: "자바스크립트로 공룡 점프하는 게임을 만드는 방법에 대해서",
+    tags: ["javascript", "node.js", "html", "css", "firebase", "database"],
+
+    userName: "Jojorabbit21",
+    bounty: 75,
+    trend: { view: 87, like: 13, answerCount: 3 },
+    createAt: "2022-03-03 18:47",
+  },
+  {
+    title: "자바스크립트로 공룡 점프하는 게임을 만드는 방법에 대해서",
+    tags: ["javascript", "node.js", "html", "css", "firebase", "database"],
+
+    userName: "Jojorabbit21",
+    bounty: 75,
+    trend: { view: 87, like: 13, answerCount: 3 },
+    createAt: "2022-03-03 18:47",
+  },
+  {
+    title: "자바스크립트로 공룡 점프하는 게임을 만드는 방법에 대해서",
+    tags: ["javascript", "node.js", "html", "css", "firebase", "database"],
+
+    userName: "Jojorabbit21",
+    bounty: 75,
+    trend: { view: 87, like: 13, answerCount: 3 },
+    createAt: "2022-03-03 18:47",
+  },
+  {
+    title: "자바스크립트로 공룡 점프하는 게임을 만드는 방법에 대해서",
+    tags: ["javascript", "node.js", "html", "css", "firebase", "database"],
+
+    userName: "Jojorabbit21",
+    bounty: 75,
+    trend: { view: 87, like: 13, answerCount: 3 },
+    createAt: "2022-03-03 18:47",
+  },
 ];
 
 interface ToggleButtonStateType {
