@@ -20,7 +20,7 @@ interface UserSummaryProps {
 }
 
 const index: React.FC<UserSummaryProps> = (props) => {
-  const getRankEmoji = (index) => {
+  const getRankEmoji = (index: number) => {
     const rankEmoji = {
       1: "🥇",
       2: "🥈",
