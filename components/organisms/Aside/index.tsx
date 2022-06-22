@@ -59,26 +59,23 @@ const index = () => {
 
         <Space />
 
-        <AsideContainer title="최근에 본 질문" subButtonText="전체보기" onTextClick={onTextButton}>
+        <AsideContainer title="최근에 본 질문" subButtonText="모두 보기" onTextClick={onTextButton}>
           <RecentQuestionWrapper>
             <RecentQuestion
               title="위도/경도 불러오는 함수 질문드립니다."
               link="/"
               onDelete={onDelete}
             />
-
             <RecentQuestion
               title="위도/경도 불러오는 함수 질문드립니다."
               link="/"
               onDelete={onDelete}
             />
-
             <RecentQuestion
               title="위도/경도 불러오는 함수 질문드립니다."
               link="/"
               onDelete={onDelete}
             />
-
             <RecentQuestion
               title="위도/경도 불러오는 함수 질문드립니다."
               link="/"

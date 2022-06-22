@@ -5,6 +5,8 @@ import Aside from "../components/organisms/Aside";
 import ThreadList from "../components/organisms/Main/ThreadList";
 import { DivideContainer } from "../components/atoms/DivideContainer";
 import Button from "../components/atoms/Button";
+import { GetServerSideProps } from "next";
+import axios from "axios";
 
 const SearchResult = styled.h4`
   ${(props) => props.theme.typography.Body};
@@ -19,21 +21,8 @@ const ThreadSection = styled.section`
 
 const exampleThreadList = [
   {
-    title: "Title Here",
-    tags: [
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-      "React-Native",
-    ],
+    title: "자바스크립트로 공룡 점프하는 게임을 만드는 방법에 대해서",
+    tags: ["javascript", "node.js", "html", "css", "firebase", "database"],
 
     userName: "Jojorabbit21",
     bounty: 75,
@@ -86,7 +75,7 @@ const SorterContainer = styled.div`
   align-items: center;
 `;
 
-const Thread = () => {
+const Thread = ({ thread }) => {
   const [toggle, setToggle] = useState("newest");
 
   const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -142,5 +131,16 @@ const Thread = () => {
     </DivideContainer>
   );
 };
+
+// export async function getServerSideProps() {
+//   const res = await fetch("https://example.com/thread");
+//   const thread = await res.json();
+
+//   return {
+//     props: {
+//       thread,
+//     },
+//   };
+// }
 
 export default Thread;

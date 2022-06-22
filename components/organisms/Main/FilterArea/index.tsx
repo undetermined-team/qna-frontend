@@ -38,12 +38,16 @@ const FilterArea = () => {
   return (
     <FilterLayout>
       <ServiceAbout>
-        <ServiceSummary>여러분의 지식을 나눠주세요.</ServiceSummary>
+        <div>
+          <ServiceSummary>여러분의 지식을 나눠주세요.</ServiceSummary>
 
-        <QuestionDescription>
-          <QuestionCount>1,515,546</QuestionCount>
-          <span>개의 질문이 답변을 기다리고 있습니다.</span>
-        </QuestionDescription>
+          <QuestionDescription>
+            <QuestionCount>1,515,546</QuestionCount>
+            <span>개의 질문이 답변을 기다리고 있습니다.</span>
+          </QuestionDescription>
+        </div>
+
+        <AskQuestionButton>질문하기</AskQuestionButton>
       </ServiceAbout>
 
       <MiddeGroup>
@@ -66,8 +70,6 @@ const FilterArea = () => {
             </TagSearchDropDownRowWrapper>
           )}
         </TagSearchDropDownContainer>
-
-        <AskQuestionButton>질문하기</AskQuestionButton>
       </MiddeGroup>
 
       <TagsContainer>

@@ -9,6 +9,8 @@ export const FilterLayout = styled.section`
 `;
 
 export const ServiceAbout = styled.header`
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 22px;
 `;
 
@@ -33,25 +35,25 @@ export const MiddeGroup = styled.div`
 `;
 
 export const AskQuestionButton = styled(Button)`
-  ${(props) => props.theme.typography.Button};
-  padding: 8px 29px;
+  ${(props) => props.theme.typography.ButtonBold};
+  padding: 12px 29px;
   line-height: normal;
-  color: black;
+  color: white;
   width: 110px;
-  height: 32px;
+  height: 40px;
   cursor: pointer;
-  border: 1px solid ${(props) => props.theme.palette.AmberA700};
-  background-color: ${(props) => props.theme.palette.AmberA700};
-  border-radius: 4px;
+  border: 1px solid ${(props) => props.theme.palette.LightBlue500};
+  background-color: ${(props) => props.theme.palette.LightBlue500};
+  border-radius: 6px;
 
   &:hover {
-    border-color: ${(props) => props.theme.palette.AmberA400};
-    background-color: ${(props) => props.theme.palette.AmberA400};
+    border-color: ${(props) => props.theme.palette.LightBlue700};
+    background-color: ${(props) => props.theme.palette.LightBlue700};
   }
 
   &:active {
-    border-color: ${(props) => props.theme.palette.AmberA800};
-    background-color: ${(props) => props.theme.palette.AmberA800};
+    border-color: ${(props) => props.theme.palette.LightBlue700};
+    background-color: ${(props) => props.theme.palette.LightBlue700};
   }
 `;
 
@@ -64,7 +66,7 @@ export const TagSearchInput = styled(Input)`
 
 export const DeleteAllButton = styled(Button)`
   height: 36px;
-  color: #ff8f00;
+  color: ${(props) => props.theme.palette.BlueGray800};
   padding: 0;
 `;
 

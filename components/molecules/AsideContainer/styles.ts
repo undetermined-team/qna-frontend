@@ -32,7 +32,7 @@ export const AsideSubButtonStyle = {
 
 export const AsideMoreButton = styled(Button)`
   ${(props) => props.theme.typography.Footnote2};
-  color: #ff8f00;
+  color: ${(props) => props.theme.palette.BlueGray800};
   height: 15px;
   padding: 0;
 `;

@@ -323,7 +323,7 @@ export const theme = {
     Footnote2: `
       font-style: normal;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 14px;
     `,
     Nickname: `
@@ -341,7 +341,7 @@ export const theme = {
     `,
     Tags: `
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 13px;
       line-height: 13px;
       `,
@@ -355,6 +355,12 @@ export const theme = {
     font-style: normal;
     font-weight: 600;
     font-size: 11px;
+    line-height: normal;
+    `,
+    ButtonBold: `
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
     line-height: normal;
     `,
   },
