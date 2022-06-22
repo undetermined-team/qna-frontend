@@ -11,7 +11,7 @@ const StyledTag = styled.div`
   transition: background-color 300ms;
   box-sizing: border-box;
   outline: none;
-  font-weight: 600;
+  font-weight: 500;
 
   &:hover {
     background-color: ${(props) => props.theme.palette.BlueGray100};
