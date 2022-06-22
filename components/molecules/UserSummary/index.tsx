@@ -20,6 +20,16 @@ interface UserSummaryProps {
 }
 
 const index: React.FC<UserSummaryProps> = (props) => {
+  const getRankEmoji = (index) => {
+    const rankEmoji = {
+      1: "🥇",
+      2: "🥈",
+      3: "🥉",
+    };
+
+    return rankEmoji[index] || index;
+  };
+
   return (
     <UserSummaryContainer>
       <Link href="/Profile/1">
@@ -28,7 +38,7 @@ const index: React.FC<UserSummaryProps> = (props) => {
             {props.profile ? <img width={36} height={36} src={props.profile} /> : <EmptyProfile />}
           </ProfileWrapper>
 
-          <Rank>{props.index}</Rank>
+          <Rank>{getRankEmoji(props.index)}</Rank>
 
           <ProfileInfo>
             <UserName name={props.userName} url="/Profile/1" />
