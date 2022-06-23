@@ -6,7 +6,7 @@ interface PopoverProps {
   contents: React.ReactNode;
 }
 
-const index: React.FC<PopoverProps> = (props) => {
+const Index: React.FC<PopoverProps> = (props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -17,4 +17,4 @@ const index: React.FC<PopoverProps> = (props) => {
   );
 };
 
-export default index;
+export default Index;

@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Tag from "../../../atoms/Tag";
 import ThreadTrend from "../../../molecules/ThreadTrend";
-import UserSummary from "../../../molecules/UserSummary";
 import QuestionButtonPack from "../../../molecules/QuestionButtonPack";
 import {
   ThreadHeader,
@@ -16,7 +14,7 @@ import {
 import { TagShowMore } from "../../../molecules/ThreadContainer/styles";
 import { VectorIcon } from "../../../../public/assets/SvgIcons";
 
-const index = () => {
+const Index = () => {
   const [overflowActive, setOverflowActive] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const tagWrapperRef = useRef<HTMLDivElement | null>(null);
@@ -89,4 +87,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
