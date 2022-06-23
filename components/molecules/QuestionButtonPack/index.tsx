@@ -11,10 +11,9 @@ interface QuestionButtonPackProps {
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 221px;
 `;
 
-const index: React.FC<QuestionButtonPackProps> = (props) => {
+const Index: React.FC<QuestionButtonPackProps> = (props) => {
   const message = useMessage();
 
   const shareButtonClickHandler = () => {
@@ -42,4 +41,4 @@ const index: React.FC<QuestionButtonPackProps> = (props) => {
   );
 };
 
-export default index;
+export default Index;
