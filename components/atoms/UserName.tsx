@@ -13,7 +13,7 @@ const NickName = styled.a`
   font-weight: 600;
   font-size: 13px;
   cursor: pointer;
-  color: ${(props) => props.theme.palette.LightBlueA700};
+  color: ${(props) => props.theme.palette.Blue500};
 `;
 
 const UserName: React.FC<UserNameProps> = (props) => {

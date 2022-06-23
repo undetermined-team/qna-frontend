@@ -7,7 +7,7 @@ interface SignButtonContainerProps {
   currentPageName: "SignUp" | "SignIn";
 }
 
-const index: React.FC<SignButtonContainerProps> = (props) => {
+const Index: React.FC<SignButtonContainerProps> = (props) => {
   const onGithubClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
   };
@@ -45,4 +45,4 @@ const index: React.FC<SignButtonContainerProps> = (props) => {
   );
 };
 
-export default index;
+export default Index;

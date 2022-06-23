@@ -9,7 +9,7 @@ interface RecentQuestionProps {
   onDelete: (e: HTMLButtonElement) => void;
 }
 
-const index: React.FC<RecentQuestionProps> = (props) => {
+const Index: React.FC<RecentQuestionProps> = (props) => {
   return (
     <RecentQuestionList>
       <Link href={props.link}>
@@ -22,4 +22,4 @@ const index: React.FC<RecentQuestionProps> = (props) => {
   );
 };
 
-export default index;
+export default Index;

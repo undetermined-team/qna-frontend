@@ -20,7 +20,7 @@ interface FormInputProps {
   variant?: "password" | undefined;
 }
 
-const index: React.FC<FormInputProps> = (props) => {
+const Index: React.FC<FormInputProps> = (props) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
 
   const handleShowPassword: React.MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -68,4 +68,4 @@ const index: React.FC<FormInputProps> = (props) => {
   );
 };
 
-export default index;
+export default Index;

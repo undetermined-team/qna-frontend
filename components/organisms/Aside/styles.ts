@@ -14,7 +14,7 @@ export const RecentQuestionWrapper = styled.ol`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-height: 110px;
+  max-height: 97px;
   padding: 10px 9px;
   background-color: #eceff1;
   border-radius: 3px;

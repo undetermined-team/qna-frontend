@@ -5,10 +5,11 @@ import ThreadTrend from "../ThreadTrend";
 export const ThreadTitle = styled.h3`
   display: inline-flex;
   ${(props) => props.theme.typography.Heading3};
-  line-height: 19px;
+  line-height: 18px;
   margin-right: 12px;
   max-width: 470px;
   max-height: 58px;
+  font-weight: 800;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: normal;

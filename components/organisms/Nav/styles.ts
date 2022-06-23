@@ -30,7 +30,7 @@ export const NavUl = styled.ul`
   padding: 0;
 `;
 
-export const LogoWrapper = styled.p`
+export const LogoWrapper = styled.div`
   cursor: pointer;
   display: flex;
 `;
