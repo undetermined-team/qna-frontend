@@ -32,6 +32,7 @@ export const MiddeGroup = styled.div`
   display: flex;
   margin-bottom: 24px;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const AskQuestionButton = styled(Button)`
