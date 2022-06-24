@@ -53,6 +53,8 @@ const FilterArea = () => {
   const [tagSearch, setTagSearch] = useState("");
   const [selectedFilterTags, setSelectedFilterTags] = useState([]);
   const [toggle, setToggle] = useState("newest");
+  const [isDropDownFocus, setIsDropDownFocus] = useState(false);
+  const [dropDownItemIndex, setDropDownItemIndex] = useState(-1);
 
   const toggleClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setToggle(e.currentTarget.id);
@@ -61,17 +63,25 @@ const FilterArea = () => {
     setTagSearch(e.currentTarget.value);
   };
 
-  const dropDownRowClickHandler = (label: String) => {
-    setSelectedFilterTags([...selectedFilterTags, label]);
-    setTagSearch("");
-  };
-
   const handleDelete = (label: string) => {
     setSelectedFilterTags(selectedFilterTags.filter((tag) => tag !== label));
   };
 
   const tagAutoCompleteKeyDownHandler: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
     console.log(e.key);
+  };
+
+  const onTagInputFocusHandler = () => {
+    setIsDropDownFocus(true);
+  };
+
+  const onTagInputBlurHandler = () => {
+    setIsDropDownFocus(false);
+  };
+
+  const dropDownRowClickHandler = (label: String) => {
+    setSelectedFilterTags([...selectedFilterTags, label]);
+    setTagSearch("");
   };
 
   return (
@@ -124,11 +134,13 @@ const FilterArea = () => {
             value={tagSearch}
             onChange={tagSearchInputChangeHandler}
             onKeyDown={tagAutoCompleteKeyDownHandler}
+            onFocus={onTagInputFocusHandler}
+            onBlur={onTagInputBlurHandler}
             type="text"
             placeholder="태그명으로 검색"
           />
 
-          {tagSearch && (
+          {tagSearch && isDropDownFocus && (
             <TagSearchDropDownRowWrapper>
               {[{ label: tagSearch }].map((tag, key) => (
                 <TagSearchDropDownRow
