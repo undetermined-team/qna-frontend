@@ -13,8 +13,16 @@ import {
 } from "./styles";
 import { TagShowMore } from "../../../molecules/ThreadContainer/styles";
 import { VectorIcon } from "../../../../public/assets/SvgIcons";
+import { TrendType } from "../../../../types/threadType";
 
-const Index = () => {
+interface ThreadHeaderProps {
+  title: string;
+  tags: Array<string>;
+  threadTrend: TrendType;
+  createAt: string;
+}
+
+const Index: React.FC<ThreadHeaderProps> = (props) => {
   const [overflowActive, setOverflowActive] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const tagWrapperRef = useRef<HTMLDivElement | null>(null);
@@ -34,28 +42,13 @@ const Index = () => {
     setOpen(true);
   };
 
-  const tags = [
-    "android-studio",
-    "node.js",
-    "next.js",
-    "React",
-    "Vue",
-    "React-Native",
-    "Javascript",
-    "Typescript",
-    "Typescript",
-    "Typescript",
-    "Typescript",
-    "Typescript",
-  ];
-
   return (
     <ThreadHeader>
-      <ThreadTitle>정적 클랙스의 static 변수값은 왜 변하지 않을까요?</ThreadTitle>
+      <ThreadTitle>{props.title}</ThreadTitle>
 
       <div>
         <TagWrapper ref={tagWrapperRef}>
-          {tags.map((tag, i) => (
+          {props.tags?.map((tag, i) => (
             <ThreadHeaderTag label={tag} key={i} />
           ))}
         </TagWrapper>
@@ -70,9 +63,9 @@ const Index = () => {
       <ThreadInfoContainer>
         <div>
           <ThreadTrendWrapper>
-            <ThreadTrend label="조회" count={87} />
-            <ThreadTrend label="좋아요" count={87} />
-            <ThreadTrend label="답변" count={3} />
+            <ThreadTrend label="조회" count={props.threadTrend?.view} />
+            <ThreadTrend label="좋아요" count={props.threadTrend?.like} />
+            <ThreadTrend label="답변" count={props.threadTrend?.answerCount} />
           </ThreadTrendWrapper>
 
           <QuestionButtonPack shareLink="google.com" />
@@ -80,7 +73,7 @@ const Index = () => {
 
         <div>
           <ThreadUserSummary userName="jojorabbit21" bounty={8750} />
-          <ThreadCreateAt>2022-03-03 18:47 에 작성됨</ThreadCreateAt>
+          <ThreadCreateAt>{props?.createAt} 에 작성됨</ThreadCreateAt>
         </div>
       </ThreadInfoContainer>
     </ThreadHeader>

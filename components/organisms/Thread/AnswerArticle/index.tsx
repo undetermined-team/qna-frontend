@@ -12,17 +12,16 @@ import {
 } from "./styles";
 import QuestionButtonPack from "../../../molecules/QuestionButtonPack";
 import ThreadTrend from "../../../molecules/ThreadTrend";
+import { AnswerListType } from "../../../../types/threadType";
 
-interface AnswerArticleProps {}
+interface AnswerArticleProps {
+  answer: AnswerListType;
+}
 
-const index: React.FC<AnswerArticleProps> = (props) => {
+const index: React.FC<AnswerArticleProps> = ({ answer }) => {
   return (
     <AnswerArticle>
-      <AnswerContent>
-        static String m 은 스태틱 변수입니다. 스태틱 변수의 초기화 시점은 앱 기동할 때 딱~ 한
-        번입니다. 그래서static은 보통 상수를 정의할 때 사용합니다. get 클래스를 안스태틱으로
-        해봤다는 말은:
-      </AnswerContent>
+      <AnswerContent>{answer?.article}</AnswerContent>
 
       <ArticleInfoContainer>
         <div>
@@ -30,8 +29,8 @@ const index: React.FC<AnswerArticleProps> = (props) => {
 
           <div>
             <QuestionTrendWrapper>
-              <ThreadTrend label="댓글" count={4} />
-              <ThreadTrend label="좋아요" count={13} />
+              <ThreadTrend label="댓글" count={answer.comment.length} />
+              <ThreadTrend label="좋아요" count={answer.like} />
             </QuestionTrendWrapper>
 
             <QuestionButtonPackContainer>
@@ -41,7 +40,7 @@ const index: React.FC<AnswerArticleProps> = (props) => {
         </div>
 
         <div>
-          <UserRank userName="jojorabbit21" bounty={8750} />
+          <UserRank userName={answer.writer} bounty={8750} />
           <ThreadCreateAt>2022-03-03 18:47 에 작성됨</ThreadCreateAt>
         </div>
       </ArticleInfoContainer>

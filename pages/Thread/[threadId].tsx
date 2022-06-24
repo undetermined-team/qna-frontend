@@ -1,10 +1,60 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Aside from "../../components/organisms/Aside";
 import styled from "styled-components";
 import AnswerArticle from "../../components/organisms/Thread/AnswerArticle";
 import ThreadHeader from "../../components/organisms/Thread/ThreadHeader";
 import { DivideContainer } from "../../components/atoms/DivideContainer";
+import { fetcher } from "../../useRequest";
+import { GetServerSideProps } from "next";
+import { ThreadType } from "../../types/threadType";
+import useSWR, { SWRConfig } from "swr";
+
+const Thread = ({ fallback }) => {
+  const { data: threadData } = useSWR("https://example.com/thread/0", fetcher);
+
+  return (
+    <DivideContainer>
+      <ThreadPostSection>
+        <ThreadHeader
+          title={threadData.title}
+          tags={threadData.tags}
+          threadTrend={threadData.trend}
+          createAt={threadData.createAt}
+        />
+
+        <QuestionArticle>
+          <p>{threadData.questionArticle}</p>
+        </QuestionArticle>
+
+        <AnswerSection>
+          <AnswerCount>{threadData.answerList?.length}개의 답변이 있습니다.</AnswerCount>
+
+          <main>
+            {threadData.answerList?.map((threadInfo, key) => (
+              <AnswerArticle key={key} answer={threadInfo} />
+            ))}
+          </main>
+        </AnswerSection>
+      </ThreadPostSection>
+
+      <Aside />
+    </DivideContainer>
+  );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const thread = await (await fetcher("https://example.com/thread/0")).data;
+
+  return {
+    props: {
+      fallback: {
+        "https://example.com/thread/0": thread,
+      },
+    },
+  };
+};
+
+export default Thread;
 
 const AnswerCount = styled.h3`
   ${(props) => props.theme.typography.Heading3};
@@ -28,34 +78,3 @@ const ThreadPostSection = styled.section`
 const AnswerSection = styled.section`
   padding: 20px 16px;
 `;
-
-const Thread = () => {
-  return (
-    <DivideContainer>
-      <ThreadPostSection>
-        <ThreadHeader />
-
-        <QuestionArticle>
-          <p>
-            객체생성없이 변수를 사용할 목적으로 내부클래스로 정적클래스를 하나 만들고, static 변수를
-            불러오니 처음에는 에딧텍스트의 값을 읽어 텍스트뷰에 뿌렸는데 두번째 부터는 처음값
-            그대로를 불러오네요..... 맴버클래스로 바꾼뒤 객체 생성해서 불러오면 계속 바뀐 변수를
-            불러오는데, static은 그렇지 못한 이유가 뭘까요? 아래는 연습한 코드입니다.
-          </p>
-        </QuestionArticle>
-
-        <AnswerSection>
-          <AnswerCount>2개의 답변이 있습니다.</AnswerCount>
-
-          <main>
-            <AnswerArticle />
-          </main>
-        </AnswerSection>
-      </ThreadPostSection>
-
-      <Aside />
-    </DivideContainer>
-  );
-};
-
-export default Thread;
