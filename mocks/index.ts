@@ -1,11 +1,9 @@
-// index.ts
-
 if (typeof window === "undefined") {
-  const server = import("./server");
-  server.then((s) => s.server.listen());
+  const { server } = require("./server");
+  server.listen();
 } else {
-  const worker = import("./browser");
-  worker.then((w) => w.worker.start());
+  const { worker } = require("./browser");
+  worker.start();
 }
 
 export {};
