@@ -27,7 +27,7 @@ interface ToggleButtonStateType {
 
 const ToggleButton = styled(Button)<ToggleButtonStateType>`
   color: ${(props) => props.theme.palette.Gray500};
-  height: 28px;
+  height: 32px;
   padding: 6px 17px;
 
   ${(props) =>
@@ -90,34 +90,32 @@ const FilterArea = () => {
       </ServiceAbout>
 
       <MiddeGroup>
-        <div>
-          <ToggleButton
-            isSelected={toggle === "newest"}
-            borderRadius
-            id="newest"
-            onClick={toggleClickHandler}
-          >
-            최신
-          </ToggleButton>
-          <ToggleButton isSelected={toggle === "popular"} id="popular" onClick={toggleClickHandler}>
-            인기
-          </ToggleButton>
-          <ToggleButton
-            isSelected={toggle === "unanswered"}
-            id="unanswered"
-            onClick={toggleClickHandler}
-          >
-            답변 필요
-          </ToggleButton>
-          <ToggleButton
-            isSelected={toggle === "reward"}
-            borderRadius
-            id="reward"
-            onClick={toggleClickHandler}
-          >
-            리워드
-          </ToggleButton>
-        </div>
+        <ToggleButton
+          isSelected={toggle === "newest"}
+          borderRadius
+          id="newest"
+          onClick={toggleClickHandler}
+        >
+          최신
+        </ToggleButton>
+        <ToggleButton isSelected={toggle === "popular"} id="popular" onClick={toggleClickHandler}>
+          인기
+        </ToggleButton>
+        <ToggleButton
+          isSelected={toggle === "unanswered"}
+          id="unanswered"
+          onClick={toggleClickHandler}
+        >
+          답변 필요
+        </ToggleButton>
+        <ToggleButton
+          isSelected={toggle === "reward"}
+          borderRadius
+          id="reward"
+          onClick={toggleClickHandler}
+        >
+          리워드
+        </ToggleButton>
 
         <TagSearchDropDownContainer>
           <TagSearchInput
