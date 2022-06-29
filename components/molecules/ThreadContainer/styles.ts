@@ -4,12 +4,10 @@ import ThreadTrend from "../ThreadTrend";
 
 export const ThreadTitle = styled.h3`
   display: inline-flex;
-  ${(props) => props.theme.typography.Heading3};
-  line-height: 18px;
+  ${(props) => props.theme.typography.ThreadTitle};
   margin-right: 12px;
-  max-width: 470px;
+  max-width: 430px;
   max-height: 58px;
-  font-weight: 800;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: normal;
@@ -112,4 +110,8 @@ export const TrendWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 163px;
+`;
+
+export const ThreadTitleWrapper = styled.div`
+  display: flex;
 `;

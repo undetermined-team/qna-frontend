@@ -11,6 +11,7 @@ import {
   ThreadTag,
   ThreadTime,
   ThreadTitle,
+  ThreadTitleWrapper,
   TrendWrapper,
 } from "./styles";
 
@@ -51,12 +52,12 @@ const index: React.FC<ThreadContainerProps> = (props) => {
   return (
     <ThreadContainer>
       <ThreadHeader>
-        <div>
+        <ThreadTitleWrapper>
           <Link href="/Thread/1">
             <ThreadTitle>{props.title}</ThreadTitle>
           </Link>
           <ThreadBounty>+{props.bounty}</ThreadBounty>
-        </div>
+        </ThreadTitleWrapper>
 
         <TrendWrapper>
           <ThreadTrend label="조회" count={props.trend.view} />
