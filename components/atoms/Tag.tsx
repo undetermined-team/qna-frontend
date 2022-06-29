@@ -24,7 +24,6 @@ const StyledTag = styled.div`
   span {
     ${(props) => props.theme.typography.Tags};
     color: ${(props) => props.theme.palette.BlueGray600};
-    text-align: center;
     padding: 4px 10px;
 
     &:hover {
