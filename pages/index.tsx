@@ -7,6 +7,7 @@ import { DivideContainer } from "../components/atoms/DivideContainer";
 import Button from "../components/atoms/Button";
 import { GetServerSideProps } from "next";
 import axios from "axios";
+import Pagination from "../components/molecules/Pagination";
 
 const SearchResult = styled.h4`
   ${(props) => props.theme.typography.Body};
@@ -14,6 +15,7 @@ const SearchResult = styled.h4`
 `;
 
 const ThreadSection = styled.section`
+  position: relative;
   width: 708px;
   border: 1px solid #d6d6d6;
   border-top: none;
@@ -91,13 +93,24 @@ const SorterContainer = styled.div`
   align-items: center;
 `;
 
+const ThreadListPagination = styled(Pagination)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 262px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 1.688rem;
+`;
+
 const Thread = ({ thread }) => {
   return (
     <DivideContainer>
       <ThreadSection>
         <FilterArea />
-
         <ThreadList threadList={exampleThreadList} />
+        <ThreadListPagination />
       </ThreadSection>
 
       <Aside />
