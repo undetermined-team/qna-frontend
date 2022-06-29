@@ -352,16 +352,23 @@ export const theme = {
       line-height: normal;
       `,
     Footer: `
-    font-style: normal;
-    font-weight: 600;
-    font-size: 11px;
-    line-height: normal;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: normal;
     `,
     ButtonBold: `
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: normal;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: normal;
+    `,
+    ThreadTitle: `
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: -0.005em;
     `,
   },
 };
