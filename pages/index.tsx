@@ -94,10 +94,6 @@ const SorterContainer = styled.div`
 `;
 
 const ThreadListPagination = styled(Pagination)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 262px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
