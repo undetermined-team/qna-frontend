@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import FilterArea from "../components/organisms/Main/FilterArea";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Aside from "../components/organisms/Aside";
 import ThreadList from "../components/organisms/Main/ThreadList";
 import { DivideContainer } from "../components/atoms/DivideContainer";
@@ -8,6 +8,7 @@ import Button from "../components/atoms/Button";
 import { GetServerSideProps } from "next";
 import axios from "axios";
 import Pagination from "../components/molecules/Pagination";
+
 
 const SearchResult = styled.h4`
   ${(props) => props.theme.typography.Body};
@@ -115,8 +116,7 @@ const Thread = ({ thread }) => {
 };
 
 // export async function getServerSideProps() {
-//   const res = await fetch("https://example.com/thread");
-//   const thread = await res.json();
+//   const thread = await useGetThrad("1");
 
 //   return {
 //     props: {
