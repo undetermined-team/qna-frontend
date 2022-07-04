@@ -7,8 +7,8 @@ interface ThreadListProps {
 }
 
 const ThreadListWrapper = styled.main`
-  min-height: calc(100vh - 277px);
-  background-color: #f5f5f5;
+  background-color: white;
+  height: 816px;
 `;
 
 const index: React.FC<ThreadListProps> = (props) => {

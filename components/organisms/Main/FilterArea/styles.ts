@@ -31,7 +31,6 @@ export const QuestionDescription = styled.p`
 export const MiddeGroup = styled.div`
   display: flex;
   margin-bottom: 24px;
-  justify-content: space-between;
   align-items: center;
 `;
 
@@ -62,7 +61,7 @@ export const TagSearchInput = styled(Input)`
   border-radius: 2px;
   padding: 6px 10px;
   width: 204px;
-  height: 36px;
+  height: 32px;
 `;
 
 export const DeleteAllButton = styled(Button)`
@@ -89,6 +88,7 @@ export const TagSearchDropDownCount = styled.span`
 export const TagSearchDropDownContainer = styled.div`
   position: relative;
   z-index: 10;
+  margin-left: 13px;
 `;
 
 export const TagSearchDropDownRowWrapper = styled.div`

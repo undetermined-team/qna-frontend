@@ -43,7 +43,7 @@ export const SearchInput = styled(Input)`
   border-radius: 8px;
   padding: 9px 16px;
   padding-right: 45px;
-  width: 562px;
+  width: 480px;
   height: 40px;
 `;
 

@@ -5,13 +5,12 @@ import styled from "styled-components";
 import AnswerArticle from "../../components/organisms/Thread/AnswerArticle";
 import ThreadHeader from "../../components/organisms/Thread/ThreadHeader";
 import { DivideContainer } from "../../components/atoms/DivideContainer";
+import Button from "../../components/atoms/Button";
 
 const AnswerCount = styled.h3`
   ${(props) => props.theme.typography.Heading3};
   color: ${(props) => props.theme.palette.Gray900};
-  height: 38px;
-  border-bottom: 1px solid ${(props) => props.theme.palette.Gray500};
-  margin-bottom: 20px;
+  height: 36px;''
 `;
 
 const QuestionArticle = styled.article`
@@ -27,6 +26,38 @@ const ThreadPostSection = styled.section`
 
 const AnswerSection = styled.section`
   padding: 20px 16px;
+`;
+
+export const AnswerButton = styled(Button)`
+  ${(props) => props.theme.typography.ButtonBold};
+  padding: 12px 29px;
+  margin-bottom: 10px;
+  line-height: normal;
+  color: white;
+  width: 110px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid ${(props) => props.theme.palette.LightBlue500};
+  background-color: ${(props) => props.theme.palette.LightBlue500};
+  border-radius: 2px;
+
+  &:hover {
+    border-color: ${(props) => props.theme.palette.LightBlue700};
+    background-color: ${(props) => props.theme.palette.LightBlue700};
+  }
+
+  &:active {
+    border-color: ${(props) => props.theme.palette.LightBlue700};
+    background-color: ${(props) => props.theme.palette.LightBlue700};
+  }
+`;
+
+const AnswerButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid ${(props) => props.theme.palette.Gray500};
+  margin-bottom: 20px;
 `;
 
 const Thread = () => {
@@ -45,7 +76,10 @@ const Thread = () => {
         </QuestionArticle>
 
         <AnswerSection>
-          <AnswerCount>2개의 답변이 있습니다.</AnswerCount>
+          <AnswerButtonWrapper>
+            <AnswerCount>2개의 답변이 있습니다.</AnswerCount>
+            <AnswerButton>답변하기</AnswerButton>
+          </AnswerButtonWrapper>
 
           <main>
             <AnswerArticle />

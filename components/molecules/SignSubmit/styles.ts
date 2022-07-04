@@ -10,6 +10,7 @@ export const SignButton = styled(Button)`
   line-height: normal;
   width: 310px;
   height: 38px;
+  color: white;
   background-color: ${(props) => props.theme.palette.LightBlueA700};
   border: ${(props) => props.theme.palette.LightBlueA700};
   border-radius: 2px;
@@ -20,6 +21,7 @@ export const GithubSignButton = styled(Button)`
   ${(props) => props.theme.typography.Body};
   display: flex;
   justify-content: center;
+  color: white;
   align-items: center;
   width: 310px;
   height: 38px;
