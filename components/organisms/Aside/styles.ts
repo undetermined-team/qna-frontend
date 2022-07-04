@@ -7,7 +7,7 @@ export const AsideLayout = styled.aside`
   justify-content: space-between;
   border-right: 1px solid #d6d6d6;
   padding: 0px 16px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 3.75rem);
 `;
 
 export const RecentQuestionWrapper = styled.ol`
