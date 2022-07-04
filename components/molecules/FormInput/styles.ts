@@ -67,3 +67,29 @@ export const PasswordShowButton = styled(IconButton)`
 export const PasswordInputWrapper = styled.div`
   position: relative;
 `;
+
+export const PasswordStrengthWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+interface PasswordLabelProps {
+  strength: number;
+}
+
+export const PasswordLabel = styled.span<PasswordLabelProps>`
+  ${(props) => props.theme.typography.Footnote};
+  margin-right: 10px;
+  color: ${(props) =>
+    props.strength === 1
+      ? props.theme.palette.RedA400
+      : props.strength === 2
+      ? props.theme.palette.Amber900
+      : props.theme.palette.GreenA700};
+`;
+
+export const PasswrodStrengthContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;

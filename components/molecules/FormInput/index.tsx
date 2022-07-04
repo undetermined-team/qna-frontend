@@ -1,11 +1,15 @@
 import { FormikProps, FormikValues } from "formik";
 import React, { useState } from "react";
 import { HideEye, ShowEye } from "../../../public/assets/SvgIcons";
+import Progress from "../Progress";
 import {
   FormInputWrapper,
   FormLabel,
   PasswordInputWrapper,
+  PasswordLabel,
   PasswordShowButton,
+  PasswordStrengthWrapper,
+  PasswrodStrengthContainer,
   SignInput,
   ValidityGuidelines,
 } from "./styles";
@@ -30,7 +34,10 @@ const Index: React.FC<FormInputProps> = (props) => {
 
   return props.variant === "password" ? (
     <FormInputWrapper>
-      <FormLabel>{props.label}</FormLabel>
+      <PasswordStrengthWrapper>
+        <FormLabel>{props.label}</FormLabel>
+        <PasswordStrengthRender password={props.formik.values.password} />
+      </PasswordStrengthWrapper>
       <PasswordInputWrapper>
         <SignInput
           isError={props.formik.getFieldMeta(props.name).error}
@@ -65,6 +72,25 @@ const Index: React.FC<FormInputProps> = (props) => {
 
       <ValidityGuidelines isError>{props.formik.getFieldMeta(props.name).error}</ValidityGuidelines>
     </FormInputWrapper>
+  );
+};
+
+const PasswordStrengthRender = ({ password }: { password: string }) => {
+  const ScroreLabelRenderer = ({ score }: { score: number }) => {
+    const scroreLabel = {
+      1: <PasswordLabel strength={1}>약함</PasswordLabel>,
+      2: <PasswordLabel strength={2}>중간</PasswordLabel>,
+      3: <PasswordLabel strength={3}>강함</PasswordLabel>,
+    };
+
+    return scroreLabel[score] || score;
+  };
+
+  return (
+    <PasswrodStrengthContainer>
+      <ScroreLabelRenderer score={1} />
+      <Progress percent={80} />
+    </PasswrodStrengthContainer>
   );
 };
 
